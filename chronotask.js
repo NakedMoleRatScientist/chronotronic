@@ -1,6 +1,7 @@
 Events = new Meteor.Collection("events");
 
 Session.set("timer", false);
+Session.set("eventId", null);
 
 if (Meteor.isClient) {
   Template.nav.profile = function () {
@@ -15,11 +16,24 @@ if (Meteor.isClient) {
     }
   };
 
+  Template.timer.status = function() {
+    if (Session.get("timer") == true)
+    {
+      return "active";
+    }
+    else
+    {
+      return "inactive";
+    }
+    
+  };
+
   Template.timer.events({
     'click input' : function () {
       //Start the timer and add an event
       Session.set("timer", true);
-      Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()});
+      event = Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()};
+      Session.set("eventId", event.id);
     }
   });
 
