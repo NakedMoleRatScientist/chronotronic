@@ -1,6 +1,6 @@
 Events = new Meteor.Collection("events");
 
-Session.set("timer", 0)
+Session.set("timer", false);
 
 if (Meteor.isClient) {
   Template.nav.profile = function () {
@@ -14,6 +14,14 @@ if (Meteor.isClient) {
       return "noname";
     }
   };
+
+  Template.timer.events({
+    'click input' : function () {
+      //Start the timer and add an event
+      Session.set("timer", true);
+      Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()});
+    }
+  });
 
 
 }
