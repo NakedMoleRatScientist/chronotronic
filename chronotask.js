@@ -35,7 +35,7 @@ if (Meteor.isClient) {
       event = Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()});
       Session.set("eventId", event.id);
     }
-    'stop input' : function () {
+    ,'stop input' : function () {
       Session.set("timer",false);
     }
   });
