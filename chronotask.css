@@ -1,1 +1,10 @@
 /* CSS declarations go here */
+.stop
+{
+  border: 10px solid black;
+}
+
+.start
+{
+  border: 10px solid red;
+}
