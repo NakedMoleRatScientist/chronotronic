@@ -29,13 +29,13 @@ if (Meteor.isClient) {
   };
 
   Template.timer.events({
-    'start input' : function () {
+    'click #start' : function () {
       //Start the timer and add an event
       Session.set("timer", true);
       event = Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()});
       Session.set("eventId", event.id);
     }
-    ,'stop input' : function () {
+    ,'click #stop' : function () {
       Session.set("timer",false);
     }
   });
