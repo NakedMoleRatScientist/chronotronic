@@ -30,13 +30,15 @@ if (Meteor.isClient) {
 
   Template.events.size = function() {
     return Events.find({}).count();    
-  }
+  }  
 
   Template.timer.time = function() {
     if (Session.get("eventId") != null)
     {
-      return "00:00:00";
+      //Nothing here yet.
     }
+    return "00:00:00";
+
   }
 
   Template.timer.events({
