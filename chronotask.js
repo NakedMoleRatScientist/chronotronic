@@ -19,11 +19,11 @@ if (Meteor.isClient) {
   Template.timer.status = function() {
     if (Session.get("timer") == true)
     {
-      return "start";
+      return "stop";
     }
     else
     {
-      return "stop";
+      return "start";
     }
     
   };
