@@ -5,6 +5,7 @@
 <body>
   {{> nav}}
   {{> timer}}
+  {{> events}}
 </body>
 
 <template name="nav">
@@ -14,6 +15,10 @@
 
 <template name="timer">
   <div class={{status}}>{{time}}</div>
-  <input type="button" id="start" value="Start" />
+  <input type="button" id={{status}} value={{status}} />
 
+</template>
+
+<template name="events">
+  <p>{{size}} events logged so far.</p>
 </template>
