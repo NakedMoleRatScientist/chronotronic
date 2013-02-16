@@ -28,6 +28,10 @@ if (Meteor.isClient) {
     
   };
 
+  Template.events.size = function() {
+    return Events.find({}).count();    
+  }
+
   Template.timer.time = function() {
     if (Session.get("eventId") != null)
     {
