@@ -50,8 +50,7 @@ if (Meteor.isClient) {
     if (Session.get("eventId") != null)
     {
       e = Events.findOne(Session.get("eventId"));
-      sec = ((new Date(e.end) - new Date(e.start)) / 1000).toString();
-      return sec.toTime();
+      return e.seconds.toString().toTime();
     }
     return "00:00:00";
 
@@ -63,10 +62,10 @@ if (Meteor.isClient) {
       Session.set("timer", true);
       if (Session.get("eventId") == null)
       {
-        event = Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()});
+        event = Events.insert({user_id: Meteor.userId(), seconds: 0);
         Session.set("eventId", event);
         id = Meteor.setInterval(function() {
-          Events.update(Session.get("eventId"), {$set: {end: new Date()}});
+          Events.update(Session.get("eventId"), {$inc: {seconds: 1}});
         }, 1000);
       }      
     }
