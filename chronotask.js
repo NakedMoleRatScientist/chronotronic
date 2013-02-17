@@ -40,7 +40,7 @@ if (Meteor.isClient) {
     return "00:00:00";
 
   }
-
+  id = null;
   Template.timer.events({
     'click #start' : function () {
       //Start the timer and add an event
@@ -49,10 +49,14 @@ if (Meteor.isClient) {
       {
         event = Events.insert({user_id: Meteor.userId(), start: new Date(), end: new Date()});
         Session.set("eventId", event);
+        id = Meteor.setInterval(function() {
+          Events.update(Session.get("eventId"), {$set: {end: new Date()}});
+        }, 1000);
       }      
     }
     ,'click #stop' : function () {
       Session.set("timer",false);
+      Meteor.clearInterval(id);
     }
   });
 
