@@ -62,12 +62,13 @@ if (Meteor.isClient) {
       Session.set("timer", true);
       if (Session.get("eventId") == null)
       {
-        event = Events.insert({user_id: Meteor.userId(), seconds: 0);
+        event = Events.insert({user_id: Meteor.userId(), seconds: 0});
         Session.set("eventId", event);
-        id = Meteor.setInterval(function() {
-          Events.update(Session.get("eventId"), {$inc: {seconds: 1}});
-        }, 1000);
-      }      
+      }
+      id = Meteor.setInterval(function() {
+        Events.update(Session.get("eventId"), {$inc: {seconds: 1}});
+      }, 1000);
+
     }
     ,'click #stop' : function () {
       Session.set("timer",false);
