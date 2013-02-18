@@ -7,4 +7,5 @@ Template.event_manager.events = () ->
 
 Template.event_manager.events =
   'click #destroy' : () ->
-    Events.remove({user_id: Meteor.userId()})
+    if Session.get("eventId") == null
+      Events.remove({user_id: Meteor.userId()})
