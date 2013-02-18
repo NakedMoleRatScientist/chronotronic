@@ -14,4 +14,4 @@ getTodayDate = () ->
   day = date.getDate()
   month = date.getMonth()
   year = date.getFullYear()
-  month + "-" + day + "-" + "-" + year
+  month + "-" + day + "-" + year
