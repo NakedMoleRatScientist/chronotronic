@@ -12,7 +12,7 @@ Template.timer.time = () ->
 
 id = null
 
-Template.timer.events:
+Template.timer.events =
   'click #start' : () ->
     #Start the timer and add an event
     Session.set("timer", true)
