@@ -21,7 +21,7 @@
 
 <template name="event_manager">
   <p>{{size}} events logged so far.</p>
-  <input type="button" value="Destroy All!" />
+  <input type="button" id="destroy" value="Destroy All!" />
   {{#each events}}
     {{> event}}
   {{/each}}
