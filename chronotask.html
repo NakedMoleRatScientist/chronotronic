@@ -5,7 +5,7 @@
 <body>
   {{> nav}}
   {{> timer}}
-  {{> events}}
+  {{> event_manager}}
 </body>
 
 <template name="nav">
@@ -19,7 +19,7 @@
 
 </template>
 
-<template name="events">
+<template name="event_manager">
   <p>{{size}} events logged so far.</p>
   <input type="button" value="Destroy All!" />
   
