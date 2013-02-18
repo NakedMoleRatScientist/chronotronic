@@ -22,11 +22,14 @@
 <template name="event_manager">
   <p>{{size}} events logged so far.</p>
   <input type="button" value="Destroy All!" />
-  
+  {{#each events}}
+    {{> event}}
+  {{/each}}
 </template>
 
 <template name="event">
   <div>
     <span>{{seconds}}</span>
+    <span>{{date}}</span>
   </div>
 </template>
