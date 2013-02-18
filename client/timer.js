@@ -1,3 +1,15 @@
+Template.timer.status = function() {
+  if (Session.get("timer") == true)
+  {
+    return "stop";
+  }
+  else
+  {
+    return "start";
+  }
+  
+};
+
 Template.timer.time = function() {
   if (Session.get("eventId") != null)
   {

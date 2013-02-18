@@ -17,17 +17,6 @@ if (Meteor.isClient) {
     }
   };
 
-  Template.timer.status = function() {
-    if (Session.get("timer") == true)
-    {
-      return "stop";
-    }
-    else
-    {
-      return "start";
-    }
-    
-  };
 
   Template.events.size = function() {
     return Events.find({}).count();    
