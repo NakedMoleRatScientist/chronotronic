@@ -5,7 +5,7 @@ Template.timer.status = () ->
     return "start"
 
 Template.timer.activated = () ->
-  Session.get("timer")
+  Session.get("eventId") != null
 
 Template.timer.time = () ->
   if Session.get("eventId") != null
