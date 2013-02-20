@@ -4,6 +4,9 @@ Template.timer.status = () ->
   else
     return "start"
 
+Template.timer.activated = () ->
+  Session.get("timer")
+
 Template.timer.time = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
