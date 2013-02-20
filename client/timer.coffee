@@ -29,3 +29,7 @@ Template.timer.events =
   ,'click #stop' : () ->
     Session.set("timer",false)
     Meteor.clearInterval(id)
+  ,'click #finish' : () ->
+    Session.set("timer",false)
+    Session.set("eventId",null)
+    Meteor.clearInterval(id)
