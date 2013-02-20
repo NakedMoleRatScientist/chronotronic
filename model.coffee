@@ -1,4 +1,11 @@
 Events = new Meteor.Collection("Events")
 
-createNewEvent = () ->
-  Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate()})
+Events.allow({
+    insert: () ->
+     false
+  })
+
+Meteor.methods(
+  createNewEvent = () ->
+    Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate()})
+)
