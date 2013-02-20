@@ -3,4 +3,5 @@ Template.event.seconds = () ->
 
 Template.event.events =
   'click #destroy' : ()  ->
-    Events.remove({_id: this._id})
+    unless Session.get("eventId") == this._id
+      Events.remove({_id: this._id})
