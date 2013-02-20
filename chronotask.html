@@ -6,11 +6,22 @@
   {{> nav}}
   {{> timer}}
   {{> event_manager}}
+
 </body>
 
 <template name="nav">
-  {{profile}}
-  {{loginButtons}}
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Chronotask</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li>{{loginButtons}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="timer">
