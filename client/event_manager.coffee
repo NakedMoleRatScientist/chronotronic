@@ -1,3 +1,5 @@
+Meteor.subscribe("events")
+
 Template.event_manager.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
 
