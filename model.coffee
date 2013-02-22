@@ -4,7 +4,7 @@ Events.allow({
     insert: () ->
      false
     ,
-    remove: (userId,event) ->
+    remove: (userId,events) ->
        ! _.any(events, (event) -> return event.id == userId)
 
   })
