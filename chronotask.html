@@ -5,8 +5,10 @@
 <body>
   {{> nav}}
   <div class="container">
-    {{> timer}}
-    {{> event_manager}}
+    {{#if currentUser}}
+      {{> timer}}
+      {{> event_manager}}
+    {{/if}}
   </div>
 
 </body>
