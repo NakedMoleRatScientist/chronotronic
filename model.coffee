@@ -6,6 +6,9 @@ Events.allow({
     ,
     remove: (userId,events) ->
        ! _.any(events, (event) -> return event.id == userId)
+    update: (userId,events) ->
+       ! _.any(events, (event) -> return event.id == userId)
+
 
   })
 
