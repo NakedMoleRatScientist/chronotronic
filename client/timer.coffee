@@ -23,7 +23,7 @@ Template.timer.events =
       Meteor.call("createNewEvent", (err,result) ->
         if err
           console.log(err)
-        Session.set("eventId",result.id)
+        Session.set("eventId",result)
       )
 
     id = Meteor.setInterval(() ->
