@@ -3,6 +3,10 @@ Events = new Meteor.Collection("Events")
 Events.allow({
     insert: () ->
      false
+    ,
+    remove: (userId,event) ->
+       ! _.any(events, (event) -> return event.id == userId)
+
   })
 
 Meteor.methods({
