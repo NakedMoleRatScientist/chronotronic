@@ -8,3 +8,12 @@ Template.event.events =
   'click #select' : () ->
     if Session.get("timer") == false
       Session.set("eventId",this._id)
+  "click p" : () ->
+    id = "name-"+ this._id
+    hid = "#" + id
+    name = this.name
+    $(hid).replaceWith("<input id=#{id} type='text' value='" + name + "'/>").focus()
+    $(hid).focus()
+    $(hid).blur(() ->
+      $(hid).replaceWith("<p id=#{id}>" + name + "</p>")
+    )
