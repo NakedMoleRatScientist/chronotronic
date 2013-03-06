@@ -17,3 +17,8 @@ Template.event.events =
     $(hid).blur(() ->
       $(hid).replaceWith("<p id=#{id}>" + name + "</p>")
     )
+  "keydown input" : (e) ->
+    id = "name-"+ this._id
+    hid = "#" + id
+    if e.which == 13 && e.target.type == "text"
+      Events.update(this._id, {$set: {name: $(hid).val()}})
