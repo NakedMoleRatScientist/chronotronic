@@ -41,8 +41,16 @@
   <p>{{size}} events logged so far.</p>
   <input type="button" id="destroy" value="Destroy All!" />
   <table class="table">
-    {{#each list}}
-      {{> event}}
-    {{/each}}
+    <thead>
+      <th> Time </th>
+      <th> Date </th>
+      <th> Name </th>
+      <th> Actions </th>
+    </thead>
+    <tbody>
+      {{#each list}}
+        {{> event}}
+      {{/each}}
+    </tbody>
   </table>
 </template>
