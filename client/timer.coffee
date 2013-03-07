@@ -11,7 +11,7 @@ Template.timer.time = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
     return e.seconds.toString().toTime()
-  "00:00:00"
+  "NO EVENT SELECTED"
 
 id = null
 
