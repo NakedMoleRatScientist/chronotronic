@@ -3,7 +3,9 @@
   <p>{{size}} events logged so far.</p>
   <input type="button" id="create" value="create" />
   {{#if status}}
+    <hr/>
     {{> create_event_form }}
+    <hr/>
   {{/if}}
   <table class="table">
     <thead>
