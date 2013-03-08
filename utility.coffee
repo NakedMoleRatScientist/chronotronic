@@ -12,6 +12,6 @@ String.prototype.toTime = () ->
 getTodayDate = () ->
   date = new Date()
   day = date.getDate()
-  month = date.getMonth()
+  month = date.getMonth() + 1
   year = date.getFullYear()
   month + "-" + day + "-" + year
