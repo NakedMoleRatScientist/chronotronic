@@ -12,7 +12,7 @@ Template.create_event_form.events =
     minutes = $("#minutes").val() * 60
     seconds = $("#seconds").val() * 1
     time = hours + minutes + seconds
-    Meteor.call("createNewEvent", (err,result) ->
+    Meteor.call("createNewEvent", date, name, time (err,result) ->
       if err
         console.log(err)
       Session.set("create",false)
