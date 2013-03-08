@@ -20,7 +20,7 @@ Template.timer.events =
     #Start the timer and add an event
     Session.set("timer", true)
     if Session.get("eventId") == null
-      Meteor.call("createNewEvent", (err,result) ->
+      Meteor.call("createTimerEvent", (err,result) ->
         if err
           console.log(err)
         Session.set("eventId",result)
