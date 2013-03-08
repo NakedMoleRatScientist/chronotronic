@@ -1,6 +1,7 @@
 <template name="event_manager">
   <hr/>
   <p>{{size}} events logged so far.</p>
+  <input type="button" id="create" value="create" />
   {{#if status}}
     {{> create_event_form }}
   {{/if}}
