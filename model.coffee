@@ -13,7 +13,9 @@ Events.allow({
   })
 
 Meteor.methods({
-    createNewEvent: () ->
+    createTimerEvent: () ->
       Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate(), name: null})
+    createNewEvent: (date,name,time) ->
+      Events.insert({user_id: Meteor.userId(), seconds: time, date: date, name: name})
   }
 )
