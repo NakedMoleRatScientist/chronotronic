@@ -1,6 +1,9 @@
 <template name="event_manager">
   <hr/>
   <p>{{size}} events logged so far.</p>
+  {{#if status}}
+    {{> create_event_form }}
+  {{/if}}
   <table class="table">
     <thead>
       <th> Time </th>
