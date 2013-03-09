@@ -10,10 +10,12 @@
    <br/>
    {{#if activated}}
      <div class="well">
-       <ul>
-         <li><b>Name:</b> {{event_name}}</li>
-         <li><b>Date:</b> {{event_date}}</li>
-       </ul>
+       <dl class="dl-horizontal">
+         <dt>Name</dt>
+         <dd>{{event_name}}</dd>
+         <dt>Date</dt>
+         <dd>{{event_date}}</dd>
+       </dl>
      </div>
    {{/if}}
 </template>
