@@ -12,6 +12,10 @@ String.prototype.toTime = () ->
 getTodayDate = () ->
   date = new Date()
   day = date.getDate()
+  if day < 10
+    day = "0" + day
   month = date.getMonth() + 1
+  if month < 10
+    month = "0" + month
   year = date.getFullYear()
-  month + "-" + day + "-" + year
+  year + "-" + month + "-" + day
