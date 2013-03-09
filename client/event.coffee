@@ -1,6 +1,12 @@
 Template.event.seconds = () ->
   this.seconds.toString().toTime()
 
+Template.event.status = () ->
+  if Session.get("eventId") == this._id
+    console.log("this.id")
+    return "info"
+  return null
+
 Template.event.events =
   'click #destroy' : ()  ->
     unless Session.get("eventId") == this._id
