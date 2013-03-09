@@ -2,10 +2,7 @@ Template.create_event_form.date = () ->
   new Date().toISOString().substring(0,10)
 
 Template.create_event_form.events =
-  'click #cancel' : () ->
-    Session.set("create",false)
-  #This function below is a workaround for the fact that meteor only reacts to the first DOM object with #cancel.
-  'click #cancel_button' : () ->
+  'click .cancel' : () ->
     Session.set("create",false)
   'click #submit' : () ->
     name = $("#name").val()
