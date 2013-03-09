@@ -7,6 +7,14 @@ Template.timer.status = () ->
 Template.timer.activated = () ->
   Session.get("eventId") != null
 
+Template.timer.event_name = () ->
+  e = Events.findOne(Session.get("eventId"))
+  e.name
+
+Template.timer.event_date = () ->
+  e = Events.findOne(Session.get("eventId"))
+  e.date
+
 Template.timer.time = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
