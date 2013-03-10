@@ -27,3 +27,7 @@ getDate = (i) ->
   format_date(day,month,year)
 
 previousDays = (n) ->
+  list = []
+  for i in [0..n]
+    list.push(getDate(i))
+  list
