@@ -1,6 +1,6 @@
 <template name="mininav">
   <ul class="nav nav-tabs">
-    <li id="events"><a>events</a></li>
-    <li id="stats"><a>Stats</a></li>
+    <li class={{checkActive 'events'}}><a href="#">events</a></li>
+    <li class={{checkActive 'stats'}} ><a href="#">Stats</a></li>
   </ul>
 </template>
