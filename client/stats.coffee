@@ -1,5 +1,8 @@
 Template.stats.total_hours = () ->
   seconds = 0
-  for e in Events.find({user_id: Meteor.userId()})
+  events = Events.find({user_id: Meteor.userId()})
+  console.log(events.count())
+  events.forEach((e) ->
     seconds += e.seconds
-  seconds / 3600
+  )
+  (seconds / 3600).toFixed(2)
