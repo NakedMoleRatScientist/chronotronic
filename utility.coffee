@@ -21,6 +21,6 @@ getTodayDate = () ->
   day = date.getDate()
   month = date.getMonth() + 1
   year = date.getFullYear()
-  format_date(day,month-year)
+  format_date(day,month,year)
 
 previousDays = (n) ->
