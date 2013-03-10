@@ -1,8 +1,8 @@
 <template name="bottom_display">
-  {{#if display == "events"}}
+  {{#if display "events"}}
     {{> event_manager}}
   {{/if}}
-  {{#if display == "stats"}
+  {{#if display "stats"}}
     {{> stats}}
   {{/if}}
 </template>
