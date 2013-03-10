@@ -14,7 +14,7 @@ format_date = (day,month,year) ->
     day = "0" + day
   if month < 10
     month = "0" + month
-  year + "-" + month + '-' day
+  year + "-" + month + '-' + day
 
 getTodayDate = () ->
   getDate(0)
