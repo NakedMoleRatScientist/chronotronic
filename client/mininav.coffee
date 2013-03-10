@@ -6,3 +6,5 @@ Template.mininav.checkActive = (name) ->
 Template.mininav.events =
   'click #stats': () ->
     Session.set("mininav","stats")
+  'click #events': () ->
+    Session.set("mininav","events")
