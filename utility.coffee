@@ -9,15 +9,18 @@ String.prototype.toTime = () ->
   seconds = "0" + seconds if seconds < 10
   time = hours + ':' + minutes + ':' + seconds
 
+format_date = (day,month,year) ->
+  if day < 10
+    day = "0" + day
+  if month < 10
+    month = "0" + month
+  year + "-" + month + '-' day
+
 getTodayDate = () ->
   date = new Date()
   day = date.getDate()
-  if day < 10
-    day = "0" + day
   month = date.getMonth() + 1
-  if month < 10
-    month = "0" + month
   year = date.getFullYear()
-  year + "-" + month + "-" + day
+  format_date(day,month-year)
 
 previousDays = (n) ->
