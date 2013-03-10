@@ -3,7 +3,6 @@ Template.event.seconds = () ->
 
 Template.event.status = () ->
   if Session.get("eventId") == this._id
-    console.log("this.id")
     return "info"
   return null
 
