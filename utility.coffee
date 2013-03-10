@@ -17,11 +17,7 @@ format_date = (day,month,year) ->
   year + "-" + month + '-' day
 
 getTodayDate = () ->
-  date = new Date()
-  day = date.getDate()
-  month = date.getMonth() + 1
-  year = date.getFullYear()
-  format_date(day,month,year)
+  getDate(0)
 
 getDate = (i) ->
   date = new Date()
