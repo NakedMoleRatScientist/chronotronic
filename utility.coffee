@@ -23,4 +23,11 @@ getTodayDate = () ->
   year = date.getFullYear()
   format_date(day,month,year)
 
+getDate = (i) ->
+  date = new Date()
+  day = date.getDate() - i
+  month = date.getMonth() + 1
+  year = date.getFullYear()
+  format_date(day,month,year)
+
 previousDays = (n) ->
