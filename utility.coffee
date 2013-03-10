@@ -19,3 +19,5 @@ getTodayDate = () ->
     month = "0" + month
   year = date.getFullYear()
   year + "-" + month + "-" + day
+
+previousDays = (n) ->
