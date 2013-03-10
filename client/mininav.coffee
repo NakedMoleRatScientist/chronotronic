@@ -1,4 +1,4 @@
-Template.mininav = () ->
-  switch Session.get("mininav")
-    when 0
-      ("#events").addClass("active")
+Template.mininav.checkActive = (name) ->
+  if Session.get("mininav") == name
+    return "active"
+  ""
