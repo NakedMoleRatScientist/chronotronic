@@ -10,9 +10,11 @@ Template.event.events =
   'click #destroy' : ()  ->
     unless Session.get("eventId") == this._id
       Events.remove({_id: this._id})
+
   'click #select' : () ->
     if Session.get("timer") == false
       Session.set("eventId",this._id)
+
   "click p" : () ->
     id = "name-"+ this._id
     hid = "#" + id
@@ -40,3 +42,5 @@ Template.event.events =
     hid = '#' + e.srcElement.id
     if e.which == 13 && e.target.type == 'text'
       Events.update(this._id, {$set: {name: $(hid).val()}})
+    else if e.which == 13 && e.target.type == 'date'
+      Events.update(this._id, {$set: {date: $(hid).val()}})
