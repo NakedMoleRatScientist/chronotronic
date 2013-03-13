@@ -26,10 +26,10 @@ Template.event.events =
   "click .date" : () ->
     id = "date-" + this._id
     hid = "#" + id
-    $(hid).replaceWith("blah")
+    $(hid).replaceWith("<input class='input-small' type='number' id='hours' min='0' name='hours' value='0'>:<input class='input-small' type='number' id='minutes' min='0' max='59' name='minutes' value='0'>:<input class='input-small' type='number' id='seconds' min='0' max='59' id='seconds' name='seconds' value='0'>")
 
-  "keydown input" : (e) ->
-    id = "name-"+ this._id
-    hid = "#" + id
-    if e.which == 13 && e.target.type == "text"
+  'keydown input' : (e) ->
+    id = 'name-'+ this._id
+    hid = '#' + id
+    if e.which == 13 && e.target.type == 'text'
       Events.update(this._id, {$set: {name: $(hid).val()}})
