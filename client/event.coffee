@@ -17,7 +17,7 @@ Template.event.events =
     id = "name-"+ this._id
     hid = "#" + id
     name = this.name
-    $(hid).replaceWith("<input id=#{id} type='text' value='" + name + "'/>").focus()
+    $(hid).replaceWith("<input id=#{id} type='text' value='" + name + "'/>")
     $(hid).focus()
     $(hid).blur(() ->
       $(hid).replaceWith("<p id=#{id}>" + name + "</p>")
