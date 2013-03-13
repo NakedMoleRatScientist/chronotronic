@@ -22,6 +22,12 @@ Template.event.events =
     $(hid).blur(() ->
       $(hid).replaceWith("<p id=#{id}>" + name + "</p>")
     )
+
+  "click .date" : () ->
+    id = "date-" + this._id
+    hid = "#" + id
+    $(hid).replaceWith("blah")
+
   "keydown input" : (e) ->
     id = "name-"+ this._id
     hid = "#" + id
