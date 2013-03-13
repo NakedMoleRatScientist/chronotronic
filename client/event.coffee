@@ -28,6 +28,10 @@ Template.event.events =
     hid = "#" + id
     date = this.date
     $(hid).replaceWith("<input class='input-medium' type='date' id='date' name='date' value=#{date}>")
+    $(hid).focus()
+    $(hid).blur(() ->
+      $(hid).replaceWith("<td class='date' id='date-{{_id}}'>{{date}}</td>")
+    )
 
   "click .time" : () ->
     $(hid).replaceWith("<input class='input-small' type='number' id='hours' min='0' name='hours' value='0'>:<input class='input-small' type='number' id='minutes' min='0' max='59' name='minutes' value='0'>:<input class='input-small' type='number' id='seconds' min='0' max='59' id='seconds' name='seconds' value='0'>")
