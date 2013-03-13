@@ -28,7 +28,6 @@ Template.event.events =
     hid = "#" + id
     date = this.date
     $(hid).replaceWith("<input class='input-medium' type='date' id='#{id}' name='date' value=#{date}>")
-    console.log(hid)
     $(hid).focus()
     $(hid).blur(() ->
       $(hid).replaceWith("<td class='date' id='#{id}'>#{date}</td>")
