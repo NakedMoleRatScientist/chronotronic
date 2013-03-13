@@ -1,7 +1,7 @@
 <template name="event">
   <tr class={{status}}>
     <td>{{seconds}}</td>
-    <td class="date">{{date}}</td>
+    <td class="date" id="date-{{_id}}">{{date}}</td>
     <td><p id="name-{{_id}}">{{name}}</p></td>
     <td><input type="button" id="select" value="select" /><br /><br /><input type="button" id="destroy" value="delete" /></td>
   </tr>
