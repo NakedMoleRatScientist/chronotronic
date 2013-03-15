@@ -12,6 +12,9 @@ Template.event_manager.status = () ->
 Template.event_manager.events =
   'click #delete_all' : () ->
     if Session.get("eventId") == null
-      Events.remove({user_id: Meteor.userId()})
+      Meteor.call("removeAll", (err,result) ->
+        if err
+          console.log(err)
+      )
   'click #create' : () ->
     Session.set("create",true)
