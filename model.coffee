@@ -3,6 +3,8 @@ Events = new Meteor.Collection("Events")
 Events.allow({
     update: (userId,event) ->
       event.user_id == userId
+    remove: (userId,event) ->
+      event.user_id == userId
   })
 
 Meteor.methods({
