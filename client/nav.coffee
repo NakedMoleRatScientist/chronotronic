@@ -5,3 +5,6 @@ Template.nav.profile = () ->
     if name != null
       return name
   "noname"
+
+Template.nav.adminUser = () ->
+  false
