@@ -8,3 +8,5 @@ Template.mininav.events =
     Session.set("mininav","stats")
   'click #events': () ->
     Session.set("mininav","events")
+  'click #profile': () ->
+    Session.set("mininav","profile")
