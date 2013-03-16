@@ -6,7 +6,8 @@ Template.event_manager.size = () ->
 Template.event_manager.list = () ->
   Events.find({user_id: Meteor.userId(), date: getTodayDate() }, {sort: {seconds: 1}})
 
-Template.event_manager.status = () ->
+
+Template.event_manager.create = () ->
   Session.get("create")
 
 Template.event_manager.events =
