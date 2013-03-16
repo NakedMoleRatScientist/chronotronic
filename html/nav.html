@@ -6,7 +6,7 @@
         <div class="nav-collapse collapse">
           <ul class="nav">
             <li>{{loginButtons}}</li>
-            {{#if adminUser}}
+            {{#if isInRole 'admin'}}
               <li><a href="admin">Admin</a></li>
             {{/if}}
           </ul>
