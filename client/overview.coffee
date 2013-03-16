@@ -1,6 +1,9 @@
 Template.overview.count = () ->
+  users = 0
   Meteor.call("count", (err,result) ->
     if err
       console.log(err)
-    console.log(result)
+    else
+      users = result
   )
+  users
