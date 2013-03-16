@@ -1,6 +1,7 @@
 Template.event.seconds = () ->
   this.seconds.toString().toTime()
 
+
 Template.event.status = () ->
   if Session.get("eventId") == this._id
     return "info"
@@ -29,7 +30,7 @@ Template.event.events =
     id = "date-" + this._id
     hid = "#" + id
     date = this.date
-    $(hid).replaceWith("<input class='input-medium' type='date' id='#{id}' name='date' value=#{date}>")
+    $(hid).replaceWith("<td><input class='input-medium' type='date' id='#{id}' name='date' value=#{date}></td>")
     $(hid).focus()
     $(hid).blur(() ->
       $(hid).replaceWith("<td class='date' id='#{id}'>#{date}</td>")
