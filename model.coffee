@@ -14,5 +14,7 @@ Meteor.methods({
       Events.insert({user_id: Meteor.userId(), seconds: time, date: date, name: name})
     removeAll: () ->
       Events.remove({user_id: Meteor.userId()})
+    count: () ->
+      Meteor.users.find({}).count()
   }
 )
