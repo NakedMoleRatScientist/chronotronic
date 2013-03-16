@@ -16,14 +16,14 @@ Template.event.events =
     if Session.get("timer") == false
       Session.set("eventId",this._id)
 
-  "click p" : () ->
+  "click .name" : () ->
     id = "name-"+ this._id
     hid = "#" + id
     name = this.name
     $(hid).replaceWith("<input id=#{id} type='text' value='" + name + "'/>")
     $(hid).focus()
     $(hid).blur(() ->
-      $(hid).replaceWith("<p id=#{id}>" + name + "</p>")
+      $(hid).replaceWith("<p id=#{id} class='name'>" + name + "</p>")
     )
 
   "click .date" : () ->
