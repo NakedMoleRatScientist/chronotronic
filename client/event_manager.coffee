@@ -4,7 +4,10 @@ Template.event_manager.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
 
 Template.event_manager.list = () ->
-  Events.find({user_id: Meteor.userId(), date: getTodayDate() }, {sort: {seconds: 1}})
+  if (Session.get("events_toggl"))
+    Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
+  else
+    Events.find({user_id: Meteor.userId(), date: getTodayDate() }, {sort: {seconds: 1}})
 
 
 Template.event_manager.create = () ->
