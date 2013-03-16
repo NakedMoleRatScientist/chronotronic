@@ -1,0 +1,19 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master",
+    "commit": "f07715dc70de16a7aab84e56ab0c6cbd9c1f9dc6"
+  },
+  "dependencies": {
+    "basePackages": {
+      "blade": {}
+    },
+    "packages": {
+      "blade": {
+        "git": "https://github.com/bminer/node-blade.git",
+        "tag": "v3.0.2",
+        "commit": "68afeec7752c34ad47a61fe18319f2fbb6ff3913"
+      }
+    }
+  }
+}
