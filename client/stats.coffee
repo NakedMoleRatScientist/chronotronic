@@ -7,6 +7,9 @@ Template.stats.total_hours = () ->
   )
   (seconds / 3600).toFixed(2)
 
+Template.stats.size = () ->
+  Events.find({user_id: Meteor.userId()}).count()
+
 pastSevenDaysEvents = () ->
   findList = previousDays(6)
   events = []
