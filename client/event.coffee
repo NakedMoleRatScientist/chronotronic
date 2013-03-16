@@ -23,7 +23,7 @@ Template.event.events =
     $(hid).replaceWith("<input id=#{id} type='text' value='" + name + "'/>")
     $(hid).focus()
     $(hid).blur(() ->
-      $(hid).replaceWith("<p>" + name + "</p>")
+      $(hid).replaceWith("<p id=#{id}>" + name + "</p>")
     )
 
   "click .date" : () ->
