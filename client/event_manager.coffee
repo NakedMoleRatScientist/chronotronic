@@ -10,6 +10,10 @@ Template.event_manager.list = () ->
 Template.event_manager.create = () ->
   Session.get("create")
 
+Template.event_manager.toggl = () ->
+  Session.get("events_toggl")
+
+
 Template.event_manager.events =
   'click #delete_all' : () ->
     if Session.get("eventId") == null
