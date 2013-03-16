@@ -29,4 +29,4 @@ Template.event_manager.events =
   'click #all' : () ->
     Session.set('events_toggl', true)
   'click #today' : () ->
-    Session.set('events_toggl',true)
+    Session.set('events_toggl',false)
