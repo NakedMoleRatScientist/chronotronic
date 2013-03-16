@@ -9,8 +9,13 @@
   {{/if}}
 
   <table class="table">
-    <legend>Today's Events</legend>
-    <input type="button" id="all" value="Show All" />  
+    {{#if toggl}}
+      <legend>All Events</legend>
+      <input type="button" id="today" value="Show Today" />
+    {{else}}
+      <legend>Today's Events</legend>
+      <input type="button" id="all" value="Show All" />
+    {{/if}}     
     <thead>
       <th> Time </th>
       <th> Date </th>
