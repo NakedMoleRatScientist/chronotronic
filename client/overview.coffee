@@ -5,3 +5,4 @@ Template.overview.count = () ->
     else
       Session.set("users_count",result)
   )
+  Session.get("users_count")
