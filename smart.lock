@@ -6,13 +6,19 @@
   },
   "dependencies": {
     "basePackages": {
-      "blade": {}
+      "blade": {},
+      "roles": {}
     },
     "packages": {
       "blade": {
         "git": "https://github.com/bminer/node-blade.git",
         "tag": "v3.0.2",
         "commit": "68afeec7752c34ad47a61fe18319f2fbb6ff3913"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.0.3",
+        "commit": "1de73e6e43e3205472172ef24a3a01cf72482d38"
       }
     }
   }
