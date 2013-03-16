@@ -18,3 +18,5 @@ Template.event_manager.events =
       )
   'click #create' : () ->
     Session.set("create",true)
+  'click #all' : () ->
+    Session.set('event_toggl', true)
