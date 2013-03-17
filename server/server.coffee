@@ -10,7 +10,4 @@ Meteor.publish("users", () ->
     return Meteor.users.find({}, {fields: {roles: 1}})
 )
 
-user =  Meteor.users.findOne({profile: {username: "admin"}})
-if user == undefined
-  u = Accounts.createUser({username: "admin", email: Meteor.settings["email"]})
-  Accounts.sendEnrollmentEmail(u.id)
+user = Meteor.users.findOne({username: "admin"})
