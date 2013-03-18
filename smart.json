@@ -2,6 +2,7 @@
   "packages": {
     "blade": {},
     "roles": {},
-    "router": {}
+    "router": {},
+    "mini-pages": {}
   }
 }
