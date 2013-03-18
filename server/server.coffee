@@ -17,4 +17,4 @@ Meteor.publish("users", () ->
 
 user = Meteor.users.findOne({username: "admin"})
 if user == undefined
-  Accounts.createUser({username: "admin", password: "admin"})
+  Accounts.createUser({username: "admin", password: "admin", email: "fakeemail@fakeemail.com"})
