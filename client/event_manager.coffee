@@ -17,7 +17,7 @@ Template.event_manager.toggl = () ->
 Template.event_manager.events =
   'click #delete_all' : () ->
     if Session.get("eventId") == null
-      Meteor.call("removeAll", (err,result) ->
+      Meteor.call("removeAllEvents", (err,result) ->
         if err
           console.log(err)
       )
