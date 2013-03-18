@@ -10,13 +10,11 @@ Meteor.Router.add({
 
 #Copied directly from the README
 Meteor.Router.filters({
-  'checkLoggedIn': function(page) {
-    if (Meteor.loggingIn()) {
-      return 'loading';
-    } else if (Meteor.user()) {
-      return page;
-    } else {
-      return 'signin';
-    }
-  }
-});
+  'checkLoggedIn': (page) ->
+    if Meteor.loggingIn()
+      return 'loading'
+    else if Meteor.user()
+      return page
+    else
+      return 'signin'
+})
