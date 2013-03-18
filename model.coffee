@@ -8,6 +8,14 @@ Events.allow({
       event.user_id == userId
   })
 
+Goals.allow({
+    update: (userId,event) ->
+      event.user_id == userId
+    remove: (userId,event) ->
+      event.user_id == userId
+  })
+
+
 Meteor.methods({
     createTimerEvent: () ->
       Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate(), name: null})
