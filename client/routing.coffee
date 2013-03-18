@@ -6,6 +6,7 @@ Meteor.Router.add({
       'index'
   '/tracker' : 'tracker'
   '/admin' : 'admin'
+  '/loading' : 'loading'
   })
 
 #Copied directly from the README
