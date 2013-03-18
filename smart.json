@@ -1,6 +1,7 @@
 {
   "packages": {
     "blade": {},
-    "roles": {}
+    "roles": {},
+    "router": {}
   }
 }
