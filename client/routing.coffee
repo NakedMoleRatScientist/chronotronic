@@ -10,11 +10,13 @@ Meteor.Router.add({
 
 #Copied directly from the README
 Meteor.Router.filters({
-  'checkLoggedIn': (page) ->
+  'checkLoggedIn': () ->
     if Meteor.loggingIn()
-      return 'loading'
+      Meteor.Router.to("/loading")
     else if Meteor.user()
-      return page
+      Meteor.Router.to("/tracker")
     else
-      return 'signin'
+      Meteor.Router.to("/")
 })
+
+Meteor.Router.filter("checkLoggedIn")
