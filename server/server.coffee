@@ -15,6 +15,8 @@ Meteor.publish("users", () ->
     return Meteor.users.find({}, {fields: {roles: 1}})
 )
 
+#Meteor.users.remove({username: "admin"})
+
 user = Meteor.users.findOne({username: "admin"})
 if user == undefined
   Accounts.createUser({username: "admin", password: "admin", email: "fakeemail@fakeemail.com"})
