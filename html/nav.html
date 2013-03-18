@@ -14,6 +14,9 @@
             {{#if isInRole 'admin'}}
               <li><a href="/admin">Admin</a></li>
             {{/if}}
+            {{#if currentUser}}
+              <li><a href="/tracker">Tracker</a></li>
+            {{/if}}
           </ul>
         </div>
       </div>
