@@ -1,6 +1,6 @@
-chronotask
+ChronoTask
 ==========
 
-chronotast is a simple, in browser, time recorder.
+ChronoTask  is a simple, in browser, time recorder.
 
-You start and stop time entries with a click.
+You start and stop time entries with a single click.
