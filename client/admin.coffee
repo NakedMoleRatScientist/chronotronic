@@ -1,2 +1,2 @@
 Template.admin.list = () ->
-  Users.find({})
+  Meteor.users.find({})
