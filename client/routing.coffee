@@ -2,7 +2,6 @@
 loggingIn = () ->
   if Meteor.loggingIn() && !Meteor.UserId
     this.template("loading")
-    console.log("beep")
     this.stop()
 
 Meteor.pages({
