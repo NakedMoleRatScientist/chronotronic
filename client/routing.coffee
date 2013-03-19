@@ -1,11 +1,9 @@
 
 loggingIn = () ->
-  if Meteor.loggingIn() && Session.get("loginState",2)
+  if Meteor.loggingIn() && !Meteor.UserId
     this.template("loading")
-    Session.set("loginState",1)
-  else if Session.get("loginState") == 1 && Meteor.userId()
-    Session.set("loginState",2)
-    this.redirect("/dashboard")
+    console.log("beep")
+    this.stop()
 
 Meteor.pages({
   '/' : {to: 'index', as: 'index'}
