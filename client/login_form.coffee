@@ -1,2 +1,2 @@
-Template.loginForm.services = () ->
+Template.login_form.services = () ->
   "github"
