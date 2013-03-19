@@ -8,7 +8,6 @@
     "basePackages": {
       "blade": {},
       "roles": {},
-      "router": {},
       "mini-pages": {}
     },
     "packages": {
@@ -22,20 +21,10 @@
         "tag": "v1.0.3",
         "commit": "1de73e6e43e3205472172ef24a3a01cf72482d38"
       },
-      "router": {
-        "git": "https://github.com/tmeasday/meteor-router.git",
-        "tag": "v0.4.3",
-        "commit": "0691a6e2c4c249ce7d00cd6dc7ad27e1c7330a31"
-      },
       "mini-pages": {
         "git": "https://github.com/cmather/meteor-mini-pages.git",
         "tag": "v0.3.0",
         "commit": "3de8b93dd4355ebbdcfaed7891350b349ee54815"
-      },
-      "page-js-ie-support": {
-        "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
-        "tag": "v1.3.5",
-        "commit": "b99ed8380aefd10b2afc8f18d9eed4dd0d8ea9cb"
       },
       "page-js": {
         "git": "https://github.com/tmeasday/meteor-page-js.git",
