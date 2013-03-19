@@ -12,7 +12,7 @@ Meteor.publish("goals",
 Meteor.publish("users", () ->
   user = Meteor.users.findOne({_id: this.userId})
   if Roles.userIsInRole(user, ["admin"])
-    return Meteor.users.find({}, {fields: {roles: 1}})
+    return Meteor.users.find({})
 )
 
 #Meteor.users.remove({username: "admin"})
