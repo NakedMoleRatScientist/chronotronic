@@ -1,3 +1,3 @@
 Template.logout.events =
-  '#logout': () ->
+  'click #logout': () ->
     Meteor.logout()
