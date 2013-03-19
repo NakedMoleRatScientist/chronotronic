@@ -1,5 +1,6 @@
 Events = new Meteor.Collection("Events")
 Goals = new Meteor.Collection("Goals")
+Users = new Meteor.Collection("Users")
 
 Events.allow({
     update: (userId,event) ->
