@@ -6,3 +6,8 @@ Meteor.pages({
   {
     defaults: { layout: 'layout'}
   })
+
+loggingIn: () ->
+  if Meteor.isLoggingIn()
+    this.template("loading")
+    this.done()
