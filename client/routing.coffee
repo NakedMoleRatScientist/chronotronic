@@ -1,6 +1,6 @@
-Meteor.Router.add({
-  '/' : 'index'
-  '/tracker' : 'tracker'
-  '/admin' : 'admin'
-  '/loading' : 'loading'
+Meteor.pages({
+  '/' : {to: 'index', as: 'index'}
+  },
+  {
+    defaults: { layout: 'layout'}
   })
