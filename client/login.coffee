@@ -1,2 +1,2 @@
 Template.login.services = () ->
-  Accounts._loginButtons.getLoginServices();
+  Accounts._loginButtons.getLoginServices()
