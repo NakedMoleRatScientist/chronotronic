@@ -4,5 +4,6 @@ Session.set("create",false)
 Session.set("mininav","events")
 Session.set("users_count",0)
 Session.set("events_toggl",false)
+Session.set("loginState",false)
 
 Accounts.ui.config({passwordSignupFields: 'USERNAME_ONLY'})
