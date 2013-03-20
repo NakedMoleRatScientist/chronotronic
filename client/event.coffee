@@ -1,9 +1,9 @@
 Template.event.seconds = () ->
   this.seconds.toString().toTime()
 
+Template.event.date = () ->
+  formatDate(this.date)
 
-Template.events.date = () ->
-  dateFormat(this.date)
 
 Template.event.status = () ->
   if Session.get("eventId") == this._id
