@@ -9,6 +9,7 @@ Meteor.pages({
   '/dashboard' : 'dashboard'
   '/admin' : 'admin'
   '/about' : 'about'
+  '/login' : 'admin_login'
   },
   {
     defaults: { layout: 'layout', before: [loggingIn]}
