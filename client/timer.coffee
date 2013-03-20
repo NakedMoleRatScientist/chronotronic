@@ -26,7 +26,7 @@ id = null
 Template.timer.events =
   'click #start' : () ->
     if Session.get("eventId") == null && Meteor.user()
-      e = Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate(), name: null})
+      e = Events.insert({user_id: Meteor.userId(), seconds: 0, date: new Date(), name: null})
       Session.set("eventId",e)
       Session.set("timer", true)
       id = Meteor.setInterval(() ->
