@@ -8,6 +8,11 @@ dashboardLoggedOut = () ->
     Meteor.go("/")
     this.stop()
 
+adminLoggedOut = () ->
+  if !Roles.userIsInRole(Meteor.user(),["admin"])
+    Meteor.go("/")
+    this.stop()
+
 Meteor.pages({
   '/' : {to: 'index', as: 'index'}
   '/dashboard' : {to: 'dashboard', before: [dashboardLoggedOut]}
