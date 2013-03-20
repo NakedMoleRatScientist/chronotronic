@@ -28,12 +28,8 @@ Template.timer.events =
     #Start the timer and add an event
     Session.set("timer", true)
     if Session.get("eventId") == null
-      Meteor.call("createTimerEvent", (err,result) ->
-        if err
-          console.log(err)
-        Session.set("eventId",result)
-      )
-
+      e = Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate(), name: null})
+      Session.set("eventId",e)
     id = Meteor.setInterval(() ->
       Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
     , 1000)
