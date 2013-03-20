@@ -22,8 +22,6 @@ Goals.allow({
 
 
 Meteor.methods({
-    createTimerEvent: () ->
-      Events.insert({user_id: Meteor.userId(), seconds: 0, date: getTodayDate(), name: null})
     removeAllEvents: () ->
       Events.remove({user_id: Meteor.userId()})
     count: () ->
