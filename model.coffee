@@ -32,5 +32,8 @@ Meteor.methods({
       Events.remove({user_id: Meteor.userId()})
     count: () ->
       Meteor.users.find({}).count()
+    userList: () ->
+      return false if !Roles.userIsInRole(this.userId,['admin'])
+      Meteor.users.find({})
   }
 )
