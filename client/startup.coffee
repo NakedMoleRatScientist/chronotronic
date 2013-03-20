@@ -5,5 +5,5 @@ Session.set("mininav","events")
 Session.set("users_count",0)
 Session.set("events_toggl",false)
 Session.set("loginState",false)
-
+Events = new Meteor.Collection("Events")
 Accounts.ui.config({passwordSignupFields: 'USERNAME_ONLY'})
