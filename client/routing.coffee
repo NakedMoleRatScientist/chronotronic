@@ -9,7 +9,7 @@ dashboardLoggedOut = () ->
 
 Meteor.pages({
   '/' : {to: 'index', as: 'index'}
-  '/dashboard' : 'dashboard'
+  '/dashboard' : {to: 'dashboard', before: [dashboardLoggedOut]}
   '/admin' : 'admin'
   '/about' : 'about'
   '/login' : 'admin_login'
