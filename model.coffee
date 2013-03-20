@@ -35,10 +35,5 @@ Meteor.methods({
     userList: () ->
       return false if !Roles.userIsInRole(this.userId,['admin'])
       Meteor.users.find({})
-    oneTimeUpdate: () ->
-      list = Events.find({})
-      for e in list
-        if typeof e.date == 'string'
-          Events.update(e._id,{$set: {date: new Date(e.date)}})
   }
 )
