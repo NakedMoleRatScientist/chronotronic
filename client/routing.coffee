@@ -3,6 +3,9 @@ loggingIn = () ->
  if Meteor.loggingIn()
     this.template("loading")
 
+dashboardLoggedOut = () ->
+  if Meteor.user() == undefined
+    this.go("/")
 
 Meteor.pages({
   '/' : {to: 'index', as: 'index'}
