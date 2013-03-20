@@ -4,7 +4,6 @@ loggingIn = () ->
     this.template("loading")
 
 dashboardLoggedOut = () ->
-  console.log(Meteor.user())
   if Meteor.user() == null
     Meteor.go("/")
     this.stop()
