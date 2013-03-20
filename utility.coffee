@@ -31,3 +31,9 @@ previousDays = (n) ->
   for i in [0..n]
     list.push(getDate(i))
   list
+
+formatDate = (date) ->
+  day = date.getDate()
+  month = date.getMonth() + 1
+  year = date.getFullYear()
+  format_date(day,month,year)
