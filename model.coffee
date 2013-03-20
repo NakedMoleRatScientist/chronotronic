@@ -14,7 +14,7 @@ Events.allow(
       event.user_id == userId
 )
 Goals.allow({
-    insert: (userId,goal)
+    insert: (userId,goal) ->
       return false if !Meteor.user()
       goal.user_id == userId
     update: (userId,goal) ->
