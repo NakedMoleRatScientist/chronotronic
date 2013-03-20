@@ -13,7 +13,7 @@ Events.allow(
       return false if !Meteor.user()
       event.user_id == userId
 )
-Goals.allow({
+Goals.allow(
     insert: (userId,goal) ->
       return false if !Meteor.user()
       goal.user_id == userId
@@ -23,7 +23,7 @@ Goals.allow({
     remove: (userId,event) ->
       return false if !Meteor.user()
       goal.user_id == userId
-  })
+)
 
 
 Meteor.methods({
