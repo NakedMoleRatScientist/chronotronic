@@ -44,4 +44,4 @@ Template.event.events =
     if e.which == 13 && e.target.type == 'text'
       Events.update(this._id, {$set: {name: $(hid).val()}})
     else if e.which == 13 && e.target.type == 'date'
-      Events.update(this._id, {$set: {date: $(hid).val()}})
+      Events.update(this._id, {$set: {date: new Date($(hid).val())}})
