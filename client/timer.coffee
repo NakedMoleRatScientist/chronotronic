@@ -13,7 +13,7 @@ Template.timer.event_name = () ->
 
 Template.timer.event_date = () ->
   e = Events.findOne(Session.get("eventId"))
-  e.date
+  formatDate(e.date)
 
 Template.timer.time = () ->
   if Session.get("eventId") != null
