@@ -9,7 +9,7 @@ dashboardLoggedOut = () ->
     this.stop()
 
 adminLoggedOut = () ->
-  if !Roles.userIsInRole(Meteor.user(),["admin"])
+  if !Roles.userIsInRole(Meteor.userId(),["admin"])
     Meteor.go("/")
     this.stop()
 
