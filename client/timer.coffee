@@ -38,7 +38,6 @@ Template.timer.events =
         Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
       , 1000)
   ,'click #stop' : () ->
-    Session.set("eventId",null)
     Session.set("timer",false)
     Meteor.clearInterval(id)
   ,'click #finish' : () ->
