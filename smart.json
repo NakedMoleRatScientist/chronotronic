@@ -2,6 +2,7 @@
   "packages": {
     "blade": {},
     "roles": {},
-    "mini-pages": {}
+    "mini-pages": {},
+    "jade-handlebars": {}
   }
 }
