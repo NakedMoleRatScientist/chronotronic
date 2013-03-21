@@ -2,39 +2,21 @@ Events = new Meteor.Collection("Event")
 Goals = new Meteor.Collection("Goals")
 GoalTemplates = new Meteor.Collection("GoalTemplate")
 
-Events.allow(
-    insert: (userId,event) ->
+genericPermission = {
+    insert: (userId,object) ->
       return false if !Meteor.user()
-      event.user_id == userId
+      object.user_id == userId
     update: (userId,event) ->
       return false if !Meteor.user()
-      event.user_id == userId
+      object.user_id == userId
     remove: (userId,event) ->
       return false if !Meteor.user()
-      event.user_id == userId
-)
-Goals.allow(
-    insert: (userId,goal) ->
-      return false if !Meteor.user()
-      goal.user_id == userId
-    update: (userId,goal) ->
-      return false if !Meteor.user()
-      goal.user_id == userId
-    remove: (userId,event) ->
-      return false if !Meteor.user()
-      goal.user_id == userId
-)
-GoalTemplates.allow(
-    insert: (userId,goal) ->
-      return false if !Meteor.user()
-      goal.user_id == userId
-    update: (userId,goal) ->
-      return false if !Meteor.user()
-      goal.user_id == userId
-    remove: (userId,event) ->
-      return false if !Meteor.user()
-      goal.user_id == userId
-)
+      object.user_id == userId
+  }
+
+Events.allow(genericPermission)
+Goals.allow(genericPermission)
+GoalTemplates.allow(genericPermission)
 
 
 Meteor.methods({
