@@ -8,6 +8,10 @@ Meteor.publish("goals",
     Goals.find({$or:[{user_id: this.userId}]})
 )
 
+Meteor.publish("goaltemplates")
+  () ->
+    GoalTemplates.find({$or:[{user_id: this.userId}]})
+
 
 Meteor.publish("users", () ->
   user = Meteor.users.findOne({_id: this.userId})
