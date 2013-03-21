@@ -4,7 +4,9 @@ Template.event_manager.list = () ->
   if (Session.get("events_toggl"))
     Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
   else
-    Events.find({user_id: Meteor.userId(), date: getTodayDate() }, {sort: {seconds: 1}})
+    start = moment().startOf("day")._d
+    end = moment().endOf("end")._d
+    Events.find({user_id: Meteor.userId(), date: {$gte: start} })
 
 
 Template.event_manager.create = () ->
