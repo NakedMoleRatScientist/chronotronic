@@ -2,4 +2,9 @@
   <h2>Not Ready; Experimental</h2>
   <p>Feature currently under development.</p>
   <button id="template" class="btn btn-primary" class="btn btn-primary" data-toggle="button "type="button">Create Template</button>
+  </hr>
+  {{#if create}}
+    {{> create_goal_template_form}}
+  {{/if}}
+  </hr>
 </template>  
