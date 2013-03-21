@@ -6,7 +6,7 @@ Template.stats.total_hours = () ->
   )
   (seconds / 3600).toFixed(2)
 
-Template.stats.today = () ->
+Template.stats.today_hours = () ->
   seconds = 0
   start = moment().startOf("day")._d
   end = moment().endOf("end")._d
@@ -15,7 +15,6 @@ Template.stats.today = () ->
     seconds += e.seconds
   )
   (seconds / 3600).toFixed(2)
-
 
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
