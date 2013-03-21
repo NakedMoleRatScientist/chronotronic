@@ -22,9 +22,8 @@ if user == undefined
   id = Accounts.createUser({username: "admin", password: "admin"})
   Roles.addUsersToRoles(id,["admin"])
 
-Events = new Meteor.Collection("Events")
-list = Events.find({})
-for e in list
-  console.log("beep")
-  if typeof e.date == 'string'
-    Events.update(e._id,{$set: {date: new Date(e.date)}})
+# Events = new Meteor.Collection("Events")
+# list = Events.find({})
+# for e in list
+#   if typeof e.date == 'string'
+#     Events.update(e._id,{$set: {date: new Date(e.date)}})
