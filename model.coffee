@@ -1,5 +1,6 @@
 Events = new Meteor.Collection("Event")
 Goals = new Meteor.Collection("Goals")
+GoalTemplates = new Meteor.Collection("GoalTemplate")
 
 Events.allow(
     insert: (userId,event) ->
@@ -13,6 +14,17 @@ Events.allow(
       event.user_id == userId
 )
 Goals.allow(
+    insert: (userId,goal) ->
+      return false if !Meteor.user()
+      goal.user_id == userId
+    update: (userId,goal) ->
+      return false if !Meteor.user()
+      goal.user_id == userId
+    remove: (userId,event) ->
+      return false if !Meteor.user()
+      goal.user_id == userId
+)
+GoalTemplates.allow(
     insert: (userId,goal) ->
       return false if !Meteor.user()
       goal.user_id == userId
