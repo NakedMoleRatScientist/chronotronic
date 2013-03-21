@@ -1,6 +1,5 @@
 Events = new Meteor.Collection("Event")
 Goals = new Meteor.Collection("Goals")
-Users = new Meteor.Collection("Users")
 
 Events.allow(
     insert: (userId,event) ->
