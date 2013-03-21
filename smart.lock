@@ -18,8 +18,8 @@
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.0.3",
-        "commit": "1de73e6e43e3205472172ef24a3a01cf72482d38"
+        "tag": "v1.0.4",
+        "commit": "22deeecc57d68fc8c0a3342a6dfebc93d1548f39"
       },
       "mini-pages": {
         "git": "https://github.com/cmather/meteor-mini-pages.git",
