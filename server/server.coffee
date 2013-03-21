@@ -25,5 +25,6 @@ if user == undefined
 Events = new Meteor.Collection("Events")
 list = Events.find({})
 for e in list
+  console.log("beep")
   if typeof e.date == 'string'
     Events.update(e._id,{$set: {date: new Date(e.date)}})
