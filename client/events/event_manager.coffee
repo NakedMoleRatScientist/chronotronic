@@ -10,7 +10,7 @@ Template.event_manager.list = () ->
 
 
 Template.event_manager.create = () ->
-  Session.get("create")
+  Session.get("createEvent")
 
 Template.event_manager.toggl = () ->
   Session.get("events_toggl")
@@ -24,7 +24,7 @@ Template.event_manager.events =
           console.log(err)
       )
   'click #create' : () ->
-    Session.set("create",true)
+    Session.set("createEvent",true)
   'click #all' : () ->
     Session.set('events_toggl', true)
   'click #today' : () ->
