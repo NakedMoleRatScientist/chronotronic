@@ -3,7 +3,7 @@ Template.create_event_form.date = () ->
 
 Template.create_event_form.events =
   'click .cancel' : () ->
-    Session.set("create",false)
+    Session.set("createEvent",false)
   'click #submit' : () ->
     name = $("#name").val()
     date = $("#date").val()
@@ -13,4 +13,4 @@ Template.create_event_form.events =
     seconds = $("#seconds").val() * 1
     time = hours + minutes + seconds
     Events.insert({user_id: Meteor.userId(), seconds: time, date: moment(date)._d, name: name})
-    Session.set("create",false)
+    Session.set("createEvent",false)
