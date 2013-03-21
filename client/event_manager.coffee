@@ -6,7 +6,7 @@ Template.event_manager.list = () ->
   else
     start = moment().startOf("day")._d
     end = moment().endOf("end")._d
-    Events.find({user_id: Meteor.userId(), date: {$gte: start} })
+    Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
 
 
 Template.event_manager.create = () ->
