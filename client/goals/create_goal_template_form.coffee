@@ -7,4 +7,4 @@ Template.create_goal_template_form.events =
     minutes = $("#minutes").val() * 60
     seconds = $("#seconds").val() * 1
     time = hours + minutes + seconds
-    GoalTemplate.insert({user_id: Meteor.userId(), seconds: time, range: "day"})
+    GoalTemplates.insert({user_id: Meteor.userId(), seconds: time, range: "day"})
