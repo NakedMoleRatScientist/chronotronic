@@ -7,9 +7,7 @@ createGoalIntervalEvent = (userId,goal) ->
 
   id = Meteor.setInterval((userId,goal) ->
     #find all events belonging to a particular user between the specified range of goal.range.
-    start = moment(goal.date).startOf("day")
-    end = moment(goal.date).endOf("day")
-    e = Events.find({user_id: userId, date: {$gte: start, $lt: end}}).fetch()
+    e = Events.find({user_id: userId, date: {$gte: goal.start, $lt: goal.end}}).fetch()
     seconds = 0
     e.forEach((e) ->
       seconds += e.seconds
