@@ -4,3 +4,7 @@ Template.goal_template.seconds = () ->
 
 Template.goal_template.range = () ->
   "24 hours" if this.range == "day"
+
+Template.goal_template.events =
+  'click #destroy': () ->
+    Events.remove({_id: this._id})
