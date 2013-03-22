@@ -9,7 +9,7 @@ createGoalIntervalEvent = (userId,goal) ->
     if updateGoal(userId,goal)
       Meteor.clearInterval(this)
   , delay)
-  return {goal: goal, id}
+  return {tracked: goal, id}
 
 updateGoal = (userId,goal) ->
   #find all events belonging to a particular user between the specified range of goal.range.
