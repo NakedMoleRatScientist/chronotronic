@@ -26,7 +26,7 @@ updateGoal = (userId,goal) ->
     Goals.update({_id: goal._id}, {$set: {total: seconds}})
     false
 
-createGoal = (userId,template)
+createGoal = (userId,template) ->
   goal = Goals.insert({user_id: userId, total: 0, goal: template.goal, start: startOfDay, end: endOfDay, reach: false})
   createGoalInterval(userId,goal)
 
