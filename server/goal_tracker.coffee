@@ -27,7 +27,8 @@ updateGoal = (userId,goal) ->
     false
 
 createGoal = (userId,template)
-  Goals.insert({user_id: userId, total: 0, goal: template.goal, start: startOfDay, end: endOfDay, reach: false})
+  goal = Goals.insert({user_id: userId, total: 0, goal: template.goal, start: startOfDay, end: endOfDay, reach: false})
+  createGoalInterval(userId,goal)
 
 countTimers = () ->
   intervalObjects.length
