@@ -44,13 +44,8 @@ findBySpawnedGoal = (id) ->
 
 initializeTemplateTimer = (template,userId) ->
   return false if findBySpawnedGoal(template._id)
-  #replace delay with the next day seconds
-  delay = 1000 * 3600 * 24
+  delay = moment().endOf("day").diff(moment())
   id = Meteor.setInterval((template,userId) ->
     unless findBySpawnedGoal(template._id)
       createGoal(userId,template)
   ,delay)
-
-#funky math
-#moment().endOf("day").diff(moment()) / 1000
-#> 24844.329
