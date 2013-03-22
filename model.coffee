@@ -2,7 +2,7 @@ Events = new Meteor.Collection("Event")
 Goals = new Meteor.Collection("Goals")
 GoalTemplates = new Meteor.Collection("GoalTemplate")
 Users = new Meteor.Collection("Users")
-
+TL = TLog.getLogger(TLog.LOGLEVEL_MAX,true, true)
 genericPermission = {
     insert: (userId,object) ->
       return false if !Meteor.user()
