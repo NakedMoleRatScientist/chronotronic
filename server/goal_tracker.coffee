@@ -25,3 +25,6 @@ updateGoal = (userId,goal) ->
   else
     Goals.update({_id: goal._id}, {$set: {total: seconds}})
     false
+
+countTimers = () ->
+  intervalObjects.length
