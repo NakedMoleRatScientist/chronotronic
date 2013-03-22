@@ -1,6 +1,9 @@
 Template.goal_manager.goals = () ->
   Goals.find({user_id: Meteor.userId()})
 
+Template.goal_manager.templates = () ->
+  GoalTemplates.find({user_id: Meteor.userId()})
+
 Template.goal_manager.create = () ->
   Session.get("createGoalTemplate")
 
