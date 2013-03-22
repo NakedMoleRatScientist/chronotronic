@@ -20,8 +20,16 @@
   {{#if renderLayout 'goals'}}
     
   {{else}}
-    {{#each templates}}
-      {{> goal_template}}
-    {{/each}}
+    <table class="table">
+      <thead>
+        <th>Time</th>
+        <th>Range</th>
+      </thead>
+      <tbody>  
+      {{#each templates}}
+        {{> goal_template}}
+      {{/each}}
+      </tbody>
+    </table>
   {{/if}}
 </template>  
