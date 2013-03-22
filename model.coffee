@@ -6,10 +6,10 @@ genericPermission = {
     insert: (userId,object) ->
       return false if !Meteor.user()
       object.user_id == userId
-    update: (userId,event) ->
+    update: (userId,object) ->
       return false if !Meteor.user()
       object.user_id == userId
-    remove: (userId,event) ->
+    remove: (userId,object) ->
       return false if !Meteor.user()
       object.user_id == userId
   }
