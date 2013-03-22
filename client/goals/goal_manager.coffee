@@ -9,6 +9,9 @@ Template.goal_manager.checkActive = (name) ->
     return "active"
   ""
 
+Template.goal_manager.renderLayout = (name) ->
+  Session.get("goalnav") == name
+
 Template.goal_manager.events =
   'click #create': () ->
     Session.set("createGoalTemplate",true)
