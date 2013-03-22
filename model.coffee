@@ -1,6 +1,7 @@
 Events = new Meteor.Collection("Event")
 Goals = new Meteor.Collection("Goals")
 GoalTemplates = new Meteor.Collection("GoalTemplate")
+Users = new Meteor.Collection("Users")
 
 genericPermission = {
     insert: (userId,object) ->
