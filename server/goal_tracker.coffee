@@ -1,3 +1,5 @@
+intervalObjects = []
+
 createGoalIntervalEvent = (userId,goal) ->
   #1000 millisecond is one second multiplied by 3600 seconds is one hour
   #Every hour or so, we will check if we achieve our goal.
