@@ -7,4 +7,4 @@ Template.goal_template.range = () ->
 
 Template.goal_template.events =
   'click #destroy': () ->
-    Events.remove({_id: this._id})
+    GoalTemplates.remove({_id: this._id})
