@@ -32,5 +32,8 @@ countTimers = () ->
 findIntervalByTracked = (id) ->
   intervalObjects.forEach((o,id) -> return o if o.tracked._id == id)
 
+findBySpawnedGoal = (id) ->
+  intervalObjects.forEach((o,id) -> return o if o.tracked.template == id)
+
 initializeTemplateTimer = (template,userId) ->
   return false if findBySpawnedGoal(template._id)
