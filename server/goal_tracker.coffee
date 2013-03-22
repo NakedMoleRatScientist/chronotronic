@@ -28,3 +28,6 @@ updateGoal = (userId,goal) ->
 
 countTimers = () ->
   intervalObjects.length
+
+findIntervalByTracked = (id) ->
+  intervalObjects.forEach((o,id) -> return o if o.tracked._id == id)
