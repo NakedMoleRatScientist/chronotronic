@@ -14,6 +14,7 @@ createGoalIntervalEvent = (userId,goal) ->
     e.forEach((e) ->
       seconds += e.seconds
     )
+    #If we meet our goal, then we update the goal as complete and clear the interval function. Otherwise, we keep updating.
     if seconds >= goal.goal
       Goals.update({_id: goal._id}, {$set: {total: seconds, reach: true}})
       Meteor.clearInterval(this)
