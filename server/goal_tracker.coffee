@@ -18,3 +18,4 @@ createGoalIntervalEvent = (userId,goal) ->
     else
       Goals.update({_id: goal._id}, {$set: {total: seconds}})
   , delay)
+  return {goal: goal, id}
