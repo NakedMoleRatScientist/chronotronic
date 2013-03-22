@@ -1,7 +1,9 @@
 
 
 Template.event_manager.list = () ->
-  Meteor.subscribe("events")
+  Meteor.subscribe("events", () ->
+    console.log("beep")
+  )
   if (Session.get("events_toggl"))
     Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
   else
