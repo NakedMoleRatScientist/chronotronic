@@ -4,6 +4,11 @@ Template.goal_manager.list = () ->
 Template.goal_manager.create = () ->
   Session.get("createGoalTemplate")
 
+Template.goal_manager.checkActive = (name) ->
+  if Session.get("goalnav") == name
+    return "active"
+  ""
+
 Template.goal_manager.events =
   'click #create': () ->
     Session.set("createGoalTemplate",true)
