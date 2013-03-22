@@ -13,8 +13,8 @@ createTimerEvent = (userId,goal) ->
       seconds += e.seconds
     )
     if seconds >= goal.goal
-      Goals.update({_id: goal._id, {$set: {total: seconds, reach: true}})
+      Goals.update({_id: goal._id}, {$set: {total: seconds, reach: true}})
       Meteor.clearInterval(this)
     else
-      Goals.update({_id: goal._id, {$set: {total: seconds}})
+      Goals.update({_id: goal._id}, {$set: {total: seconds}})
   , delay)
