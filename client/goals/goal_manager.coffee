@@ -1,4 +1,4 @@
-Template.goal_manager.list = () ->
+Template.goal_manager.goals = () ->
   Goals.find({user_id: Meteor.userId()})
 
 Template.goal_manager.create = () ->
