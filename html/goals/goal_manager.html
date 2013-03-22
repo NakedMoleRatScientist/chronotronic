@@ -16,5 +16,12 @@
   <ul class="nav nav-pills">
     <li class={{checkActive 'goals'}}><a href="" id="goals">Goals</a></li>
     <li class={{checkActive 'templates'}}><a href=""  id="templates">Templates</a></li>
-  </ul>  
+  </ul>
+  {{#if renderLayout 'goals'}}
+    
+  {{else}}
+    {{#each list}}
+      {{> goal_template}}
+    {{end}}
+  {{#end}}
 </template>  
