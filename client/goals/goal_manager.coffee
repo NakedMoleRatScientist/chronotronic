@@ -14,3 +14,5 @@ Template.goal_manager.events =
     Session.set("createGoalTemplate",true)
   'click #goals': () ->
     Session.set("goalnav","goals")
+  'click #templates': () ->
+    Session.set("goalnav","templates")
