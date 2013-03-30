@@ -1,4 +1,4 @@
-Events = new Meteor.Collection("Event")
+Events = new Meteor.Collection("Events")
 Goals = new Meteor.Collection("Goals")
 GoalTemplates = new Meteor.Collection("GoalTemplate")
 Users = new Meteor.Collection("Users")
