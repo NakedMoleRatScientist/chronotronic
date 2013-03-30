@@ -1,6 +1,9 @@
 Meteor.publish("events",
-  () ->
-    Events.find({$or:[{user_id: this.userId}]})
+  () ->    
+#    Events.find({$or:[{user_id: this.userId}]})
+    e = Events.find({user_id: this.userId})
+    console.log("count: " + e.count())
+    e        
 )
 
 Meteor.publish("goals",
