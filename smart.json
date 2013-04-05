@@ -1,4 +1,7 @@
 {
+  "meteor": {
+    "tag": "v0.6.0"
+  },
   "packages": {
     "blade": {},
     "roles": {},
