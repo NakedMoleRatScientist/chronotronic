@@ -15,9 +15,9 @@ genericPermission = {
       object.user_id == userId
   }
 
-Events.allow(genericPermission)
-Goals.allow(genericPermission)
-GoalTemplates.allow(genericPermission)
+@Events.allow(genericPermission)
+@Goals.allow(genericPermission)
+@GoalTemplates.allow(genericPermission)
 
 
 Meteor.methods({
