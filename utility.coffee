@@ -32,7 +32,7 @@ previousDays = (n) ->
     list.push(getDate(i))
   list
 
-formatDate = (date) ->
+@formatDate = (date) ->
   day = date.getDate()
   month = date.getMonth() + 1
   year = date.getFullYear()
