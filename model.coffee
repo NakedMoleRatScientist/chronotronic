@@ -23,7 +23,7 @@ genericPermission = {
 Meteor.methods({
     removeAllEvents: () ->
       return false if !Meteor.user()
-      Events.remove({user_id: Meteor.userId()})
+      @Events.remove({user_id: Meteor.userId()})
     count: () ->
       Meteor.users.find({}).count()
     userList: () ->
