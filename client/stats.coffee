@@ -18,3 +18,8 @@ Template.stats.today_hours = () ->
 
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
+
+Template.stats.week = () ->
+  endWeek = moment().endOf("day")._d
+  beginWeek = moment().subtract("days",7).startOf("day")._d
+  events = Events.find({user_id: Meteor.userId(), date: {$gte: beginWeek, $lt: endWeek}})      
