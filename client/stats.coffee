@@ -9,7 +9,7 @@ Template.stats.total_hours = () ->
 Template.stats.today_hours = () ->
   seconds = 0
   start = moment().startOf("day")._d
-  end = moment().endOf("end")._d
+  end = moment().endOf("day")._d
   events = Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
   events.forEach((e) ->
     seconds += e.seconds
