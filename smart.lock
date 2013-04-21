@@ -1,8 +1,8 @@
 {
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
-    "tag": "release/0.6.0",
-    "commit": "bb9e78f562d1b93a82bb8ca254d3714f82abb677"
+    "tag": "release/0.6.2",
+    "commit": "777e36650d30f4faae62fc5c5a38d3b9ede80f23"
   },
   "dependencies": {
     "basePackages": {
@@ -13,14 +13,14 @@
     },
     "packages": {
       "blade": {
-        "git": "https://github.com/bminer/node-blade.git",
-        "tag": "v3.0.3",
-        "commit": "30e8c96e19afbda6c03d07250c4cc2fa63daec76"
+        "git": "https://github.com/bminer/meteor-blade.git",
+        "tag": "v3.2.2meteor2",
+        "commit": "1d7e6fd1287261a8f14da88e3ad829eb3195ef95"
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.0.4",
-        "commit": "22deeecc57d68fc8c0a3342a6dfebc93d1548f39"
+        "tag": "v1.0.5",
+        "commit": "a6e0ce33f8dc69a816165c458b138c2acb30ad0e"
       },
       "mini-pages": {
         "git": "https://github.com/cmather/meteor-mini-pages.git",
