@@ -6,6 +6,7 @@
     "blade": {},
     "roles": {},
     "mini-pages": {},
-    "jade-handlebars": {}
+    "jade-handlebars": {},
+    "nvd3": {}
   }
 }
