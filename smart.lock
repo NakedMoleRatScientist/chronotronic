@@ -1,8 +1,8 @@
 {
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
-    "tag": "release/0.6.2",
-    "commit": "777e36650d30f4faae62fc5c5a38d3b9ede80f23"
+    "tag": "release/0.6.3",
+    "commit": "1a3aa2531226c5465b28f032ed23c52af580f070"
   },
   "dependencies": {
     "basePackages": {
@@ -15,8 +15,8 @@
     "packages": {
       "blade": {
         "git": "https://github.com/bminer/meteor-blade.git",
-        "tag": "v3.2.2meteor2",
-        "commit": "1d7e6fd1287261a8f14da88e3ad829eb3195ef95"
+        "tag": "v3.2.6meteor1",
+        "commit": "f0810fd031781c84a9b5a14fd84c5b9d060ab336"
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
@@ -40,8 +40,8 @@
       },
       "HTML5-History-API": {
         "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
-        "tag": "v0.1.2",
-        "commit": "72333bfa71ae1ca75243085e83200eef40818088"
+        "tag": "v4.0.0",
+        "commit": "dc4965f1424cfca625ec3fbea17eace03f8e32c5"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

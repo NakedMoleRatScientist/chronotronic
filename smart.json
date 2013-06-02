@@ -1,6 +1,6 @@
 {
   "meteor": {
-    "tag": "release/0.6.2"
+    "tag": "release/0.6.3"
   },
   "packages": {
     "blade": {},
