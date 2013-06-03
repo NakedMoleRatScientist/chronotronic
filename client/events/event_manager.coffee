@@ -18,7 +18,11 @@ Template.event_manager.create = () ->
 Template.event_manager.toggl = () ->
   Session.get("events_toggl")
 
-Template.event_manager.date= () ->
+Template.event_manager.is_today = () ->
+  return true if Session.get("eventnav") == 0
+
+
+Template.event_manager.date = () ->
   d = Session.get("eventnav")
   moment().substract('days', d)
       
