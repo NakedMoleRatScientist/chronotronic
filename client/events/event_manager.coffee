@@ -36,6 +36,10 @@ Template.event_manager.events =
       )
   'click #create' : () ->
     Session.set("createEvent",true)
+  'click #previous' : () ->
+    d = Session.get("eventnav")
+    d += 1
+    Session.set("eventnav", d)
   'click #all' : () ->
     Session.set('events_toggl', true)
   'click #today' : () ->
