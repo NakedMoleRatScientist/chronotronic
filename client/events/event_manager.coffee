@@ -24,7 +24,7 @@ Template.event_manager.is_today = () ->
 
 Template.event_manager.date = () ->
   d = Session.get("eventnav")
-  moment().substract('days', d)
+  moment().subtract('days', d)
       
 Template.event_manager.events =
   'click #delete_all' : () ->
