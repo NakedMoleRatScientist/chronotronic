@@ -13,7 +13,7 @@ Template.event.status = () ->
 Template.event.events =
   'click #destroy' : ()  ->
     unless Session.get("eventId") == this._id
-      @Events.remove({_id: this._id})
+      Events.remove({_id: this._id})
 
   'click #select' : () ->
     if Session.get("timer") == false
@@ -45,6 +45,7 @@ Template.event.events =
   'keydown input' : (e) ->
     hid = '#' + e.srcElement.id
     if e.which == 13 && e.target.type == 'text'
-      @Events.update(this._id, {$set: {name: $(hid).val()}})
+      console.log("beep")  
+      Events.update(this._id, {$set: {name: $(hid).val()}})
     else if e.which == 13 && e.target.type == 'date'
-      @Events.update(this._id, {$set: {date: new Date($(hid).val())}})
+      Events.update(this._id, {$set: {date: new Date($(hid).val())}})
