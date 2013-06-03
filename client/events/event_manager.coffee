@@ -18,7 +18,10 @@ Template.event_manager.create = () ->
 Template.event_manager.toggl = () ->
   Session.get("events_toggl")
 
-
+Template.event_manager.date= () ->
+  d = Session.get("eventnav")
+  moment().substract('days', d)
+      
 Template.event_manager.events =
   'click #delete_all' : () ->
     if Session.get("eventId") == null
