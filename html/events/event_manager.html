@@ -15,7 +15,9 @@
       <legend>Events of</legend>
       <input type="button" id="all" value="Show All" />
       <input type="button", id="previous", value="previous" />
-      <input type="button", id="next", value="forward" />
+      {{#unless is_today}}
+        <input type="button", id="next", value="forward" />
+      {{/unless}}  
     {{/if}}
 
     <thead>
