@@ -5,12 +5,12 @@ Meteor.subscribe("events", () ->
 
 Template.event_manager.list = () ->
   if (Session.get("events_toggl"))
-    @Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
+    Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
   else
     d = Session.get("eventnav")
     start = moment().subtract("days",d).startOf("day")._d
     end = moment().subtract("days", d).endOf("end")._d
-    @Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
+    Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
 
 
 Template.event_manager.create = () ->
