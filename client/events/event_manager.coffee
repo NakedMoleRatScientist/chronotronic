@@ -7,8 +7,9 @@ Template.event_manager.list = () ->
   if (Session.get("events_toggl"))
     @Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
   else
-    start = moment().startOf("day")._d
-    end = moment().endOf("end")._d
+    d = Session.get("eventnav")
+    start = moment().subtract("days",d).startOf("day")._d
+    end = moment().subtract("days", d).endOf("end")._d
     @Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
 
 
