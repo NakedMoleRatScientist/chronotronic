@@ -1,6 +1,6 @@
 <template name="event">
   <tr class={{status}}>
-    <td>{{seconds}}</td>
+    <td><p id="time-{{_id}}" class="time">{{seconds}}</p></td>
     <td><p id="date-{{_id}}" class="date">{{date}}</p></td>
     <td><p id="name-{{_id}}" class="name">{{name}}</p></td>
     <td><input type="button" id="select" value="select" /><br /><br /><input type="button" id="destroy" value="delete" /></td>
