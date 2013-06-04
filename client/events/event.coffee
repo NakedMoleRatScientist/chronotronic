@@ -43,6 +43,7 @@ Template.event.events =
   "click .time" : () ->
     id = "time-" + this._id
     hid = "#" + id
+    time = this.seconds.toString().toTimeValue()
     $(hid).replaceWith("<input class='input-small' type='number' id='hours' min='0' name='hours' value='0'>:<input class='input-small' type='number' id='minutes' min='0' max='59' name='minutes' value='0'>:<input class='input-small' type='number' id='seconds' min='0' max='59' id='seconds' name='seconds' value='0'>")
 
   'keydown input' : (e) ->
