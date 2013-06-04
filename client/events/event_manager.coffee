@@ -36,7 +36,7 @@ Template.event_manager.events =
       )
   'click #create' : () ->
     Session.set("createEvent",true)
-  'click #previous' : () ->
+  'click #next' : () ->
     d = Session.get("eventnav")
     d += -1
     Session.set("eventnav", d)
