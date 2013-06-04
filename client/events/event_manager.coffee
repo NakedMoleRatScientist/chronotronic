@@ -38,6 +38,10 @@ Template.event_manager.events =
     Session.set("createEvent",true)
   'click #previous' : () ->
     d = Session.get("eventnav")
+    d += -1
+    Session.set("eventnav", d)
+  'click #forward' : () ->
+    d = Session.get("eventnav")
     d += 1
     Session.set("eventnav", d)
   'click #all' : () ->
