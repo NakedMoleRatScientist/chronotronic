@@ -12,7 +12,7 @@
       <legend>All Events</legend>
       <input type="button" id="today" value="Show Today" />
     {{else}}
-      <legend>Events of</legend>
+      <legend>Events of {{date}}</legend>
       <input type="button" id="all" value="Show All" />
       <input type="button", id="previous", value="previous" />
       {{#unless is_today}}
