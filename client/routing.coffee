@@ -19,6 +19,7 @@ Meteor.pages({
   '/admin' : {to: 'admin', before: [adminLoggedOut]}
   '/about' : 'about'
   '/login' : 'admin_login'
+  '/user' : 'user'
   },
   {
     defaults: { layout: 'layout', before: [loggingIn]}
