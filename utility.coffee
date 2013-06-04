@@ -9,6 +9,14 @@ String.prototype.toTime = () ->
   seconds = "0" + seconds if seconds < 10
   time = hours + ':' + minutes + ':' + seconds
 
+
+String.prototype.toTimeValue = () ->
+  sec_numb = parseInt(this)
+  hours = Math.floor(sec_numb / 3600)
+  minutes = Math.floor((sec_numb - (hours * 3600)) / 60)
+  seconds = sec_numb - (hours * 3600) - (minutes * 60)
+  return (hours: hours, minutes: minutes, seconds: seconds)
+
 format_date = (day,month,year) ->
   if day < 10
     day = "0" + day
