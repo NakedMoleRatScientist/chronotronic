@@ -5,7 +5,7 @@ Template.event.date = () ->
   formatDate(this.date)
 
 
-Template.event.status = () ->
+Template.event.selected = () ->
   if Session.get("eventId") == this._id
     return "info"
   return null
