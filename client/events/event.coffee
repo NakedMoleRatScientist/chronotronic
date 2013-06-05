@@ -46,10 +46,7 @@ Template.event.events =
     time = this.seconds.toString().toTimeValue()
     replaceTime = this.seconds.toString().toTime()
     $(hid).replaceWith("<input class='input-small' type='number' id=#{id} min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id=#{id} min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id=#{id} min='0' max='59' id='seconds' name='seconds' value='#{time.seconds}'>")
-    $(hid).focus()
-    $(hid).blur(() ->
-      $(hid).replaceWith("<p id=#{id} class='time'>#{replaceTime}</p>")
-    )
+
 
   'keydown input' : (e) ->
     hid = '#' + e.srcElement.id
