@@ -9,7 +9,7 @@ Template.event_manager.list = () ->
   else
     d = Session.get("eventnav")
     start = moment().subtract("days",d).startOf("day")._d
-    end = moment().subtract("days", d).endOf("end")._d
+    end = moment().subtract("days", d).endOf("day")._d
     Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
 
 
