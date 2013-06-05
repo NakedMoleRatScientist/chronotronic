@@ -57,4 +57,5 @@ Template.event.events =
       console.log("beep")  
       Events.update(this._id, {$set: {name: $(hid).val()}})
     else if e.which == 13 && e.target.type == 'date'
-      Events.update(this._id, {$set: {date: new Date($(hid).val())}})
+      d = moment($(hid).val())._d
+      Events.update(this._id, {$set: {date: d}})
