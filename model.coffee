@@ -15,15 +15,15 @@ genericPermission = {
       object.user_id == userId
   }
 
-@Events.allow(genericPermission)
-@Goals.allow(genericPermission)
-@GoalTemplates.allow(genericPermission)
+Events.allow(genericPermission)
+Goals.allow(genericPermission)
+GoalTemplates.allow(genericPermission)
 
 
 Meteor.methods({
     removeAllEvents: () ->
       return false if !Meteor.user()
-      @Events.remove({user_id: Meteor.userId()})
+      Events.remove({user_id: Meteor.userId()})
     count: () ->
       Meteor.users.find({}).count()
     userList: () ->
