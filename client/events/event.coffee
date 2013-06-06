@@ -57,6 +57,9 @@ Template.event.events =
       switch(e.target.type)
         when 'text'
           Events.update(this._id, {$set: {name: $(hid).val()}})
-        when  'date'
+        when 'date'
           d = moment($(hid).val())._d
           Events.update(this._id, {$set: {date: d}})
+      switch(e.target.class)
+        when 'time'
+          console.log("beep")  
