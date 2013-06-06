@@ -5,4 +5,16 @@
     <dt>Events Tracked</dt>
     <dd>{{size}}</dd>
   </dl>
+  <table class="table">
+    <legend>Last 7 Days</legend>
+    <thead>
+      <th>Date</th>
+      <th>Total</th>
+    </thead>
+    <tbody>
+    {{#each last_7_days}}
+      {{> total_column}}
+    {{/each}}
+    </tbody>
+  </table>
 </template>
