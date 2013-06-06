@@ -56,6 +56,7 @@ Template.event.events =
     minutes = $(hid + "-minutes").val() * 60
     seconds = $(hid + "-seconds").val() * 1
     total = hours + minutes + seconds
+    Events.update(this._id, {$set: {seconds: total}})
     
     
   "keydown input" : (e) ->
