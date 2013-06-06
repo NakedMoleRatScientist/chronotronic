@@ -45,7 +45,7 @@ Template.event.events =
     hid = "#" + id
     time = this.seconds.toString().toTimeValue()
     replaceTime = this.seconds.toString().toTime()
-    $(hid).replaceWith("<p id=#{id}><input class='input-small' type='number' id='hours-#{id}' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='minutes-#{id}' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='seconds-#{id}' min='0' max='59' id='seconds' name='seconds' value='#{time.seconds}'></p>")
+    $(hid).replaceWith("<p id=#{id} class='time'><input class='input-small' type='number' id='hours-#{id}' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='minutes-#{id}' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='seconds-#{id}' min='0' max='59' id='seconds' name='seconds' value='#{time.seconds}'></p>")
     $(hid).mouseleave(() ->
       $(hid).replaceWith("<p id=#{id} class='time'>#{replaceTime}</p>")   
     )
@@ -53,9 +53,10 @@ Template.event.events =
 
   'keydown input' : (e) ->
     hid = '#' + e.srcElement.id
-    if e.which == 13 && e.target.type == 'text'
-      console.log("beep")  
-      Events.update(this._id, {$set: {name: $(hid).val()}})
-    else if e.which == 13 && e.target.type == 'date'
-      d = moment($(hid).val())._d
-      Events.update(this._id, {$set: {date: d}})
+    if e.watch == 13
+      switch(e.target.type)
+        when 'text'
+          Events.update(this._id, {$set: {name: $(hid).val()}})
+        when  'date'
+          d = moment($(hid).val())._d
+          Events.update(this._id, {$set: {date: d}})
