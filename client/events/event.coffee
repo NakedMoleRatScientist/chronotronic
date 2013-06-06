@@ -41,16 +41,22 @@ Template.event.events =
     )
 
   "click .time" : () ->
-    id = "time-" + this._id
-    hid = "#" + id
+    id =  this._id
+    hid = "#" + id + '-time'
     time = this.seconds.toString().toTimeValue()
     replaceTime = this.seconds.toString().toTime()
-    $(hid).replaceWith("<p id=#{id} class='timeInput'><br /><input class='input-small' type='number' id='hours-#{id}' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='minutes-#{id}' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='seconds-#{id}' min='0' max='59' id='seconds' name='seconds' value='#{time.seconds}'> <input type='button' id='timeSubmit' value='OK'><br /></p>")
+    $(hid).replaceWith("<p id=#{id + '-time'} class='timeInput'><br /><input class='input-small' type='number' id='#{id}-hours' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='#{id}-minutes' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='#{id}-seconds' min='0' max='59' name='seconds' value='#{time.seconds}'> <input type='button' id='timeSubmit' value='OK'><br /></p>")
     $(hid).mouseleave(() ->
-      $(hid).replaceWith("<p id=#{id} class='time'>#{replaceTime}</p>")   
+      $(hid).replaceWith("<p id=#{id + '-time'} class='time'>#{replaceTime}</p>")   
     )
   "click #timeSubmit": () ->
-    console.log("beep")
+    id = this._id  
+    hid = "#" + id
+    hours = $(hid + "-hours").val() * 3600
+    minutes = $(hid + "-minutes").val() * 60
+    seconds = $(hid + "-seconds").val() * 1
+    total = hours + minutes + seconds
+    
     
   "keydown input" : (e) ->
     hid = '#' + e.srcElement.id
