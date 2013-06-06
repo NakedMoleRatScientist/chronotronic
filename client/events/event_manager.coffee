@@ -2,6 +2,8 @@ Meteor.subscribe("events", () ->
   console.log("Subscription to events successful.")
 )
 
+Template.event_manager.total = () ->
+  hours_by_day(Session.get("eventnav"))
 
 Template.event_manager.list = () ->
   if (Session.get("events_toggl"))
