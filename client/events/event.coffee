@@ -53,7 +53,7 @@ Template.event.events =
 
   'keydown input' : (e) ->
     hid = '#' + e.srcElement.id
-    if e.watch == 13
+    if e.which == 13
       switch(e.target.type)
         when 'text'
           Events.update(this._id, {$set: {name: $(hid).val()}})
