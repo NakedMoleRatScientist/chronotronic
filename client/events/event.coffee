@@ -49,9 +49,10 @@ Template.event.events =
     $(hid).mouseleave(() ->
       $(hid).replaceWith("<p id=#{id} class='time'>#{replaceTime}</p>")   
     )
-
-
-  'keydown input' : (e) ->
+  "click #timeSubmit": () ->
+    console.log("beep")
+    
+  "keydown input" : (e) ->
     hid = '#' + e.srcElement.id
     if e.which == 13
       switch(e.target.type)
