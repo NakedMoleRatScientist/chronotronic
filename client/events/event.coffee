@@ -46,7 +46,7 @@ Template.event.events =
     time = this.seconds.toString().toTimeValue()
     replaceTime = this.seconds.toString().toTime()
     $(hid).replaceWith("<p id=#{id}><input class='input-small' type='number' id='hours-#{id}' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='minutes-#{id}' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='seconds-#{id}' min='0' max='59' id='seconds' name='seconds' value='#{time.seconds}'></p>")
-    $(hid).mouseout(() ->
+    $(hid).mouseleave(() ->
       $(hid).replaceWith("<p id=#{id} class='time'>#{replaceTime}</p>")   
     )
 
