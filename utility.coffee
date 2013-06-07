@@ -54,9 +54,9 @@ previousDays = (n) ->
   events.forEach((e) ->
     seconds += e.seconds
   )
-  (seconds / 3600).toFixed(2)
+  (seconds / 3600)
 
-@total_for_week = (n) ->
+@total_for_week = () ->
   total = 0
   for n in [0..6]      
     total += hours_by_day(n)
