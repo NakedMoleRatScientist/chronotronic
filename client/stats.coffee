@@ -20,3 +20,6 @@ week = () ->
   endWeek = moment().endOf("day")._d
   beginWeek = moment().subtract("days",7).startOf("day")._d
   events = Events.find({user_id: Meteor.userId(), date: {$gte: beginWeek, $lt: endWeek}})
+
+Template.stats.this_week = () ->
+  total_for_week()        
