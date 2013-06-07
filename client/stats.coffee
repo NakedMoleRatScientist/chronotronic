@@ -22,4 +22,4 @@ week = () ->
   events = Events.find({user_id: Meteor.userId(), date: {$gte: beginWeek, $lt: endWeek}})
 
 Template.stats.this_week = () ->
-  total_for_week().toFixed(2)        
+  total_for_week()
