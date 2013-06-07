@@ -14,3 +14,9 @@ Template.user.events =
      $(id).blur(() ->
        $(id).replaceWith("<dd id='name'>#{Template.user.username()}</dd>")
      )
+   'keydown input' : (e) ->
+     console.log(e.target)   
+     if e.which == 13
+        switch(e.target.type)
+          when 'text'
+            Meteor.users.update({_id: Meteor.user()._id}, {$set: {"profile.name": e.target.value}})
