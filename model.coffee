@@ -2,6 +2,7 @@
 @Goals = new Meteor.Collection("Goals")
 @GoalTemplates = new Meteor.Collection("GoalTemplate")
 @Users = new Meteor.Collection("Users")
+@Posts = new Meteor.Collection("Posts")
 
 genericPermission = {
     insert: (userId,object) ->
@@ -18,7 +19,7 @@ genericPermission = {
 Events.allow(genericPermission)
 Goals.allow(genericPermission)
 GoalTemplates.allow(genericPermission)
-
+Posts.allow(genericPermission)
 
 Meteor.methods({
     removeAllEvents: () ->
