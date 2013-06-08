@@ -1,8 +1,14 @@
 <template name="admin">
-  <h2>Users</h2>
-  <ul>
-    {{#each list}}
-      {{> user}}
-    {{/each}}
-  </ul>
+  <table class="table">
+    <legend>List of Users</legend>
+    <thead>
+      <th>Name</th>
+      <th>Roles</th>
+    </thead>
+    <tbody>
+      {{#each list}}
+        {{> user}}
+      {{/each}}
+    </tbody>  
+  </table>
 </template>
