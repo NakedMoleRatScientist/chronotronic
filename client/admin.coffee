@@ -3,5 +3,5 @@ Template.admin.list = () ->
   Meteor.users.find({})
 
 Template.admin.events =
-  "click #new_post": () ->
+  "click #createPost": () ->
     console.log("beep")
