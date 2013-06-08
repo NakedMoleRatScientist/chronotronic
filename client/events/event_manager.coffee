@@ -3,7 +3,7 @@ Meteor.subscribe("events", () ->
 )
 
 Template.event_manager.total = () ->
-  hours_by_day(Session.get("eventnav"))
+  hours_by_day(Session.get("eventnav")).toFixed(2)
 
 Template.event_manager.list = () ->
   if (Session.get("events_toggl"))
