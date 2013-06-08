@@ -1,4 +1,4 @@
-Template.admin.list = () ->
+Template.admin.users = () ->
   Meteor.subscribe("users")
   Meteor.users.find({})
 
