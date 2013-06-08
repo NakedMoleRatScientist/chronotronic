@@ -6,5 +6,7 @@ Template.user.username = () ->
    "No name is defined"
 
 Template.user.roles = () ->
-  console.log(this.roles)
-  this.roles      
+  r = ""
+  unless this.roles == undefined
+    for i in this.roles
+      r += i      
