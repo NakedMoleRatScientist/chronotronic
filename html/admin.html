@@ -1,7 +1,9 @@
 <template name="admin">
 
   <input id="createPost" type="button" value="Create Post" >
-  <div id="createForm"></div>
+  {{#if create}}
+    {{> create_news_post}}
+  {{/if}
   <table class="table">
     <legend>List of Users</legend>
     <thead>
