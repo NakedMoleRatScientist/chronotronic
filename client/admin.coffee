@@ -4,4 +4,5 @@ Template.admin.list = () ->
 
 Template.admin.events =
   "click #createPost": () ->
-    console.log("beep")
+    Session.set("createPost", true)
+    
