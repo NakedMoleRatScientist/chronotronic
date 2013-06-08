@@ -1,11 +1,11 @@
-Template.user.username = () ->
+Template.profile.username = () ->
   unless Meteor.user() == undefined
     name = Meteor.user().profile.name
     if name == null
       return "click on this to edit"
     name
 
-Template.user.events =
+Template.profile.events =
   'click #name' : () ->
      id = "#name"
      name = Meteor.user().profile.name
