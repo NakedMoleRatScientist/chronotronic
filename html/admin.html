@@ -3,6 +3,11 @@
   {{#if create}}
     {{> create_news_post}}
   {{/if}}
+  <ul>
+    {{#each posts}}
+      {{> post}}
+    {{/each}}
+  </ul>  
   <table class="table">
     <legend>List of Users</legend>
     <thead>
