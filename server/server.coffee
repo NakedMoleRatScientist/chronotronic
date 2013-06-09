@@ -16,6 +16,10 @@ Meteor.publish("goaltemplates",
     GoalTemplates.find({$or:[{user_id: this.userId}]})
 )
 
+Meteor.publish("posts",
+  () ->
+    Posts.find()    
+)
 Meteor.publish("users", () ->
   user = Meteor.users.findOne({_id: this.userId})
   if Roles.userIsInRole(user, ["admin"])
