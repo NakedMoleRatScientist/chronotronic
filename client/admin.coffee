@@ -3,7 +3,7 @@ Template.admin.users = () ->
   Meteor.users.find({})
 
 Template.admin.posts = () ->
-  Meteor.posts.find({})      
+  Posts.find({})      
 
 Template.admin.create = () ->
   Session.get("createPost")        
