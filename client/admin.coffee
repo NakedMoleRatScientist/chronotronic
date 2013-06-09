@@ -8,7 +8,3 @@ Template.admin.create = () ->
 Template.admin.events =
   "click #createPost": () ->
     Session.set("createPost", true)
-
-  "click .cancel": () ->
-    Session.set('createPost', false)    
-    
