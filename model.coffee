@@ -16,10 +16,26 @@ genericPermission = {
       object.user_id == userId
   }
 
+admin_status = () ->
+  u = Meteor.user()        
+  !Roles.userIsInRole(u._id,['admin'])
+  
+adminPermissions = {
+  insert: (userId,object) ->
+    return false if !Meteor.user() || admin_status()
+    object.user_id == userId
+  update: (userId,object) ->
+    return false if !Meteor.user() || admin_status()
+    object.user_id == userId
+  remove: (userId,object) ->
+    return false if !Meteor.user() || admin_status()
+    object.user_id == userId        
+}
+
 Events.allow(genericPermission)
 Goals.allow(genericPermission)
 GoalTemplates.allow(genericPermission)
-Posts.allow(genericPermission)
+Posts.allow(adminPermissions)
 
 Meteor.methods({
     removeAllEvents: () ->
