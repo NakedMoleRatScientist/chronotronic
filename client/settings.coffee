@@ -23,3 +23,6 @@ Template.settings.events =
 
    'click #modeSubmit' : () ->
      choice = $("#modeSelect").val()
+     u = getUserProfile()
+     Meteor.users.updates({_id: u._id}, {$set: {"profile.mode": choice}})
+     $("#modeForm").replaceWith("<dd id='mode'>#{u.mode}</dd>")
