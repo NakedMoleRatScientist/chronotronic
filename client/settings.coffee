@@ -21,8 +21,7 @@ Template.settings.pomo = () ->
 
 Template.settings.events =
   'click #mode' : () ->
-    id = "#mode"
-    $(id).replaceWith("<dd id='modeForm'><select id='modeSelect'><option>Normal</option><option>Pomodoro</option></select><input type='button' value='submit' id='modeSubmit'/></dd>")
+    $("#mode").replaceWith("<dd id='modeForm'><select id='modeSelect'><option>Normal</option><option>Pomodoro</option></select><input type='button' value='submit' id='modeSubmit'/></dd>")
 
    'click #modeSubmit' : () ->
      choice = $("#modeSelect").val()
