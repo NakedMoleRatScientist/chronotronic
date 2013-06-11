@@ -9,7 +9,7 @@ Template.settings.mode = () ->
   u = getUserProfile()
   u.mode
 
-Template.settings.mode_status = () ->
+Template.settings.pomo = () ->
   u = getUserProfile()
   if u.mode == "Pomodoro"
     return true
