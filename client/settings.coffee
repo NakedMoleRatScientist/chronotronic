@@ -9,6 +9,10 @@ Template.settings.mode = () ->
   u = getUserProfile()
   u.mode
 
+Template.settings.pomotime = () ->
+  u = getUserProfile()
+  u.pomotime       
+
 Template.settings.pomo = () ->
   u = getUserProfile()
   if u.mode == "Pomodoro"
