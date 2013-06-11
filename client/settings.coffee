@@ -16,4 +16,8 @@ Template.settings.events =
   'click #mode' : () ->
     id = "#mode"
     u = getUserProfile()
-    $(id).replaceWith("<select name='mode'><option value='Normal'>Normal</option><option value='Pomodoro'>Pomodoro</option></select>")     
+    $(id).replaceWith("<select id='mode' name='mode'><option value='Normal'>Normal</option><option value='Pomodoro'>Pomodoro</option></select>")
+    $(id).focus()
+    $(id).blur(() ->
+        $(id).replaceWith("<dd id='mode'>#{u.mode}</dd>")
+    )
