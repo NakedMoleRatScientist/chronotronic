@@ -4,6 +4,11 @@
   border: 10px solid black;
 }
 
+.pomo
+{
+  border: 10px solid yellow;    
+}
+
 .stop
 {
   border: 10px solid red;
