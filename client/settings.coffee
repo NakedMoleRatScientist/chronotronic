@@ -4,13 +4,16 @@ getUserProfile = () ->
   if u.profile.mode == undefined
     Meteor.users.update({_id: u._id }, {$set: {"profile.mode": 0}})
   u.profile
-      
+
+decideMode = (mode) ->
+  if mode == 0
+    "Normal"
+  else if mode == 1
+    "Pomodoro"
+
 Template.settings.mode = () ->
   u = getUserProfile()
-  if u.mode == 0
-    "Normal"
-  else if u.mode == 1
-    "Pomodoro"      
+  decideMode(u.mode)
 
 Template.settings.events =
   'click #mode' : () ->
@@ -19,5 +22,5 @@ Template.settings.events =
     $(id).replaceWith("<select id='mode' name='mode'><option value='Normal'>Normal</option><option value='Pomodoro'>Pomodoro</option></select>")
     $(id).focus()
     $(id).blur(() ->
-        $(id).replaceWith("<dd id='mode'>#{u.mode}</dd>")
+        $(id).replaceWith("<dd id='mode'>#{decideMode(u.mode)}</dd>")
     )
