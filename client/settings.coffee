@@ -30,4 +30,5 @@ Template.settings.events =
      $("#modeForm").replaceWith("<dd id='mode'>#{u.mode}</dd>")
 
    'click #pomo' : () ->
-     console.log("beep")
+     u = getUserProfile()
+     $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='integer' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'></dd>")
