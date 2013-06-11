@@ -11,5 +11,9 @@ Template.settings.mode = () ->
     "Normal"
   else if u.mode == 1
     "Pomodoro"      
-        
-        
+
+Template.settings.events =
+  'click #mode' : () ->
+    id = "#mode"
+    u = getUserProfile()
+    $(id).replaceWith("<select name='mode'><option value='Normal'>Normal</option><option value='Pomodoro'>Pomodoro</option></select>")     
