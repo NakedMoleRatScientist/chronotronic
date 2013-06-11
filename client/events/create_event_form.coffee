@@ -12,5 +12,5 @@ Template.create_event_form.events =
     minutes = $("#minutes").val() * 60
     seconds = $("#seconds").val() * 1
     time = hours + minutes + seconds
-    Events.insert({user_id: Meteor.userId(), seconds: time, date: moment(date)._d, name: name})
+    Events.insert({user_id: Meteor.userId(), seconds: time, pomo: 0 ,date: moment(date)._d, name: name})
     Session.set("createEvent",false)
