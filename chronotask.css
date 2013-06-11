@@ -1,7 +1,7 @@
 /* CSS declarations go here */
 .start
 {
-  border: 10px solid green;
+  border: 10px solid red;
 }
 
 .pomo
@@ -11,7 +11,7 @@
 
 .stop
 {
-  border: 10px solid red;
+  border: 10px solid green;
 }
 
 #timer
