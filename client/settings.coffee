@@ -3,6 +3,7 @@ getUserProfile = () ->
   u = Meteor.users.findOne({_id: Meteor.userId})
   if u.profile.mode == undefined
     Meteor.users.update({_id: u.id , {$set: {"profile.mode": 0}}})
+  u
       
 Template.settings.mode = () ->
   u = Meteor.user()
