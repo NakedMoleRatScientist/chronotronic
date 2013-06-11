@@ -23,4 +23,4 @@ Template.settings.events =
 
    'click #modeSubmit' : () ->
      id = "#mode"
-     console.log($("#mode"))
+     choice =("#modeSelect").val())
