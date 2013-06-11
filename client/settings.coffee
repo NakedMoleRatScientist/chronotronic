@@ -29,3 +29,6 @@ Template.settings.events =
      u = getUserProfile()
      Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.mode": choice}})
      $("#modeForm").replaceWith("<dd id='mode'>#{u.mode}</dd>")
+
+   'click #pomo' : () ->
+     console.log("beep")
