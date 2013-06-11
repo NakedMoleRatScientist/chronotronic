@@ -19,8 +19,7 @@ Template.settings.events =
   'click #mode' : () ->
     id = "#mode"
     u = getUserProfile()
-    $(id).replaceWith("<dd id='mode'><select id='modeSelect' name='mode'><option value='Normal'>Normal</option><option value='Pomodoro'>Pomodoro</option></select><input type='button' value='submit' id='modeSubmit'/></dd>")
+    $(id).replaceWith("<dd id='modeForm'><select id='modeSelect'><option>Normal</option><option>Pomodoro</option></select><input type='button' value='submit' id='modeSubmit'/></dd>")
 
    'click #modeSubmit' : () ->
-     id = "#mode"
-     choice =("#modeSelect").val())
+     choice = $("#modeSelect").val()
