@@ -9,6 +9,12 @@ Template.settings.mode = () ->
   u = getUserProfile()
   u.mode
 
+Template.settings.mode_status = () ->
+  u = getUserProfile()
+  if u.mode == "Pomodoro"
+    return true
+  false             
+
 Template.settings.events =
   'click #mode' : () ->
     id = "#mode"
