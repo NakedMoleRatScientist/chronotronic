@@ -1,8 +1,5 @@
 Template.timer.status = () ->
-  if Session.get("timer") == true
-    return "stop"
-  else
-    return "start"
+  Session.get("timer")
 
 Template.timer.activated = () ->
   Session.get("eventId") != null
@@ -28,19 +25,19 @@ Template.timer.events =
     if Session.get("eventId") == null && Meteor.user()
       e = Events.insert({user_id: Meteor.userId(), seconds: 0, date: new Date(), name: null})
       Session.set("eventId",e)
-      Session.set("timer", true)
+      Session.set("timer", "stop")
       id = Meteor.setInterval(() ->
         Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
       , 1000)
     else if Session.get("eventId") != null && Meteor.user()
-      Session.set("timer",true)
+      Session.set("timer","stop")
       id = Meteor.setInterval(() ->
         Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
       , 1000)
   ,'click #stop' : () ->
-    Session.set("timer",false)
+    Session.set("timer","start")
     Meteor.clearInterval(id)
   ,'click #finish' : () ->
-    Session.set("timer",false)
+    Session.set("timer","start")
     Session.set("eventId",null)
     Meteor.clearInterval(id)
