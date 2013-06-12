@@ -20,6 +20,12 @@ Template.timer.time = () ->
 
 id = null
 
+pomoInterval = () ->
+  id = Meteor.setInterval(() ->
+    e = Events.update(Session.get("eventId"), {$inc: {pomo: 1}})
+    pomoTimer()
+  , 1000)
+
 activityTimer = () ->
   u = getUserProfile()
   return if u.mode == "Normal"
