@@ -1,4 +1,4 @@
-Session.set("timer", false)
+Session.set("timer", "start")
 Session.set("eventId", null)
 Session.set("createEvent",false)
 Session.set("createPost", false)
