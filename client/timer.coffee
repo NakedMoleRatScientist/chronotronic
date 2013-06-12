@@ -28,6 +28,14 @@ activityTimer = () ->
     Meteor.clearInterval(id)
     Session.set("timer","pomo")
 
+pomoTimer = () ->
+  u = getUserProfile()
+  e = Events.findOne({_id: Session.get("eventId")})
+  if (e.seconds % (u.pomotime * 60)) == 0
+    Meteor.clearInterval(id)
+    Session.set("timer","stop")
+
+
 Template.timer.events =
   'click #start' : () ->
     if Session.get("eventId") == null && Meteor.user()
