@@ -27,7 +27,7 @@ Template.timer.events =
       Session.set("eventId",e)
       Session.set("timer", "stop")
       id = Meteor.setInterval(() ->
-        Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
+        e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
       , 1000)
     else if Session.get("eventId") != null && Meteor.user()
       Session.set("timer","stop")
