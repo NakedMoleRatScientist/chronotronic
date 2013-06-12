@@ -27,11 +27,15 @@ Template.settings.events =
   'click #mode' : () ->
     $("#mode").replaceWith("<dd id='modeForm'><select id='modeSelect'><option>Normal</option><option>Pomodoro</option></select><input type='button' value='submit' id='modeSubmit'/></dd>")
 
+  'click #active': () ->
+    u = getUserProfile()     
+    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='integer' value='#{u.activitylength}'><input type='button' value='submit' id='activitySubmit'></dd>")
+ 
   'click #modeSubmit' : () ->
-     choice = $("#modeSelect").val()
-     u = getUserProfile()
-     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.mode": choice}})
-     $("#modeForm").replaceWith("<dd id='mode'>#{u.mode}</dd>")
+    choice = $("#modeSelect").val()
+    u = getUserProfile()
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.mode": choice}})
+    $("#modeForm").replaceWith("<dd id='mode'>#{u.mode}</dd>")
 
   'click #pomo' : () ->
     u = getUserProfile()
