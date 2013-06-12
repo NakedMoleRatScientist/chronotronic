@@ -13,6 +13,10 @@ Template.settings.pomotime = () ->
   u = getUserProfile()
   u.pomotime       
 
+Template.settings.activitylength = () ->
+  u = getUserProfile()
+  u.activitylength
+      
 Template.settings.pomo = () ->
   u = getUserProfile()
   if u.mode == "Pomodoro"
