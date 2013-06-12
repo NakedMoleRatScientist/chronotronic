@@ -18,6 +18,11 @@ Template.timer.time = () ->
     return e.seconds.toString().toTime()
   "NO EVENT SELECTED"
 
+Template.timer.pomo = () ->
+  if Session.get("eventId") != null
+    e = Events.findOne(Session.get("eventId"))
+    return (e.pomo % 60).toString().toTime()
+
 id = null
 
 pomoInterval = () ->
