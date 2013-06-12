@@ -20,6 +20,12 @@ Template.timer.time = () ->
 
 id = null
 
+checkTimer = (e) ->
+  u = getUserProfile()
+  return if u.mode == "Normal"
+  if (e.seconds / 60) == u.activity.length
+    console.log("beep")        
+
 Template.timer.events =
   'click #start' : () ->
     if Session.get("eventId") == null && Meteor.user()
