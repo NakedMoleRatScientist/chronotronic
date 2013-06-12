@@ -29,13 +29,13 @@ Template.settings.events =
 
   'click #active': () ->
     u = getUserProfile()     
-    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='integer' value='#{u.activitylength}'><input type='button' value='submit' id='activeSubmit'></dd>")
+    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='number' value='#{u.activitylength}'><input type='button' value='submit' id='activeSubmit'></dd>")
 
   'click #activeSubmit': () ->
     u = getUserProfile()
-    choice = $("#activeInput").val()
+    choice = parseInt($("#activeInput").val())
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.activitylength": choice}})
-    $("#activeForm").replaceWith("<dd id='active'>#{u.activitylength}</dd>")
+    $("#activeForm").replaceWith("<dd id='active'>#{u.activitylength} minutes</dd>")
      
   'click #modeSubmit' : () ->
     choice = $("#modeSelect").val()
@@ -45,9 +45,9 @@ Template.settings.events =
 
   'click #pomo' : () ->
     u = getUserProfile()
-    $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='integer' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'></dd>")
+    $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='number' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'></dd>")
   'click #pomoSubmit' : () ->
-    choice = $("#pomoInput").val()
+    choice = parseInt($("#pomoInput").val())
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.pomotime": choice}})
     u = getUserProfile()
-    $("#pomoForm").replaceWith("<dd id='mode'>#{u.pomotime}</dd>")       
+    $("#pomoForm").replaceWith("<dd id='mode'>#{u.pomotime} minutes</dd>")       
