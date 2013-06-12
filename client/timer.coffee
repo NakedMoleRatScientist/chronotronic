@@ -20,12 +20,13 @@ Template.timer.time = () ->
 
 id = null
 
-checkTimer = () ->
+activityTimer = () ->
   u = getUserProfile()
   return if u.mode == "Normal"
   e = Events.findOne({_id: Session.get("eventId")})
   if (e.seconds % (u.activitylength * 60)) == 0
-    console.log("beep")
+    Meteor.clearInterval(id)
+    Session.set("timer","pomo")
 
 Template.timer.events =
   'click #start' : () ->
@@ -35,7 +36,7 @@ Template.timer.events =
       Session.set("timer", "stop")
       id = Meteor.setInterval(() ->
         e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
-        checkTimer()
+        activityTimer()
       , 1000)
     else if Session.get("eventId") != null && Meteor.user()
       Session.set("timer","stop")
