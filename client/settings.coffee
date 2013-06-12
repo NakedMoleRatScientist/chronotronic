@@ -2,7 +2,7 @@
 getUserProfile = () ->
   u = Meteor.user()
   if u.profile.mode == undefined
-    Meteor.users.update({_id: u._id }, {$set: {"profile.mode": "Normal", "profile.pomotime": 10}})
+    Meteor.users.update({_id: u._id }, {$set: {"profile.mode": "Normal", "profile.pomotime": 10, "profile.activitylength": 60}})
   u.profile
 
 Template.settings.mode = () ->
