@@ -41,6 +41,12 @@ pomoTimer = () ->
     Meteor.clearInterval(id)
     Session.set("timer","stop")
 
+activityInterval = () ->
+  id = Meteor.setInterval(() ->
+    e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
+    activityTimer()
+  , 1000)
+
 
 Template.timer.events =
   'click #start' : () ->
@@ -48,15 +54,10 @@ Template.timer.events =
       e = Events.insert({user_id: Meteor.userId(), seconds: 0, date: new Date(), name: null})
       Session.set("eventId",e)
       Session.set("timer", "stop")
-      id = Meteor.setInterval(() ->
-        e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
-        activityTimer()
-      , 1000)
+      activityInterval()
     else if Session.get("eventId") != null && Meteor.user()
       Session.set("timer","stop")
-      id = Meteor.setInterval(() ->
-        Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
-      , 1000)
+      activityInterval()
   ,'click #stop' : () ->
     Session.set("timer","start")
     Meteor.clearInterval(id)
