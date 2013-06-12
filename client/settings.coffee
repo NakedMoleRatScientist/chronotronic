@@ -29,11 +29,11 @@ Template.settings.events =
 
   'click #active': () ->
     u = getUserProfile()     
-    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='integer' value='#{u.activitylength}'><input type='button' value='submit' id='activitySubmit'></dd>")
+    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='integer' value='#{u.activitylength}'><input type='button' value='submit' id='activeSubmit'></dd>")
 
   'click #activeSubmit': () ->
     u = getUserProfile()
-    choice = $("#activeSelect").val()        
+    choice = $("#activeInput").val()
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.activitylength": choice}})
     $("#activeForm").replaceWith("<dd id='active'>#{u.activitylength}</dd>")
      
