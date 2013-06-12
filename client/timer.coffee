@@ -38,6 +38,7 @@ activityTimer = () ->
   if (e.seconds % (u.activitylength * 60)) == 0
     Meteor.clearInterval(id)
     Session.set("timer","pomo")
+    pomoInterval()
 
 pomoTimer = () ->
   u = getUserProfile()
@@ -45,6 +46,7 @@ pomoTimer = () ->
   if (e.seconds % (u.pomotime * 60)) == 0
     Meteor.clearInterval(id)
     Session.set("timer","stop")
+    activityInterval()
 
 activityInterval = () ->
   id = Meteor.setInterval(() ->
