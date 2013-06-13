@@ -1,6 +1,11 @@
 Template.timer.status = () ->
   Session.get("timer")
 
+Template.timer.mode = () ->
+  if Session.get("timer") == "stop" || Session.get("timer") == "start"
+    return true
+  false
+     
 Template.timer.activated = () ->
   Session.get("eventId") != null
 
@@ -22,6 +27,7 @@ Template.timer.pomo = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
     return (e.pomo % 60).toString().toTime()
+  
 
 id = null
 
