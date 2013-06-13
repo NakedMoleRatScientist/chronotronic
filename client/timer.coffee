@@ -1,11 +1,6 @@
 Template.timer.status = () ->
   Session.get("timer")
 
-Template.timer.mode = () ->
-  if Session.get("timer") == "stop" || Session.get("timer") == "start"
-    return true
-  false
-     
 Template.timer.activated = () ->
   Session.get("eventId") != null
 
