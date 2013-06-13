@@ -15,10 +15,11 @@ Template.timer.event_date = () ->
 Template.timer.timer = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
-    unless Session.get("timer") == "pomo"
+    if Session.get("timer") == "stop"
       return e.seconds.toString().toTime()
-    return (e.pomo % 60).toString().toTime()
-  "NO EVENT SELECTED"
+    else
+      return (e.pomo % 60).toString().toTime()
+   "NO EVENT SELECTED"
 
 id = null
 
