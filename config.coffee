@@ -1,1 +1,1 @@
-config =  {environment: "development"}
+@config =  {environment: "development"}
