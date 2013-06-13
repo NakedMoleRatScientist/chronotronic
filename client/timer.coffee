@@ -25,7 +25,6 @@ id = null
 pomoInterval = () ->
   id = Meteor.setInterval(() ->
     e = Events.update(Session.get("eventId"), {$inc: {pomo: 1}})
-    console.log("pomo")
     pomoTimer()
   , 1000)
 
@@ -75,5 +74,6 @@ Template.timer.events =
     Meteor.clearInterval(id)
 
 this.incTime = (s = 30) ->
-  e = Events.update(Session.get("eventId"), {$inc: {seconds: s}})
+  if Session.get("timer") == "stop"
+    e = Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   
