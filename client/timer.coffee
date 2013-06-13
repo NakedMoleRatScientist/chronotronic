@@ -25,7 +25,15 @@ id = null
 pomoInterval = () ->
   id = Meteor.setInterval(() ->
     e = Events.update(Session.get("eventId"), {$inc: {pomo: 1}})
+    console.log("pomo")
     pomoTimer()
+  , 1000)
+
+activityInterval = () ->
+  id = Meteor.setInterval(() ->
+    console.log("active")
+    e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
+    activityTimer()
   , 1000)
 
 activityTimer = () ->
@@ -45,11 +53,7 @@ pomoTimer = () ->
     Session.set("timer","stop")
     activityInterval()
 
-activityInterval = () ->
-  id = Meteor.setInterval(() ->
-    e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
-    activityTimer()
-  , 1000)
+
 
 
 Template.timer.events =
