@@ -17,17 +17,13 @@ Template.timer.event_date = () ->
   e = Events.findOne(Session.get("eventId"))
   formatDate(e.date)
 
-Template.timer.time = () ->
+Template.timer.timer = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
-    return e.seconds.toString().toTime()
-  "NO EVENT SELECTED"
-
-Template.timer.pomo = () ->
-  if Session.get("eventId") != null
-    e = Events.findOne(Session.get("eventId"))
+    unless Session.get("timer") == "pomo"
+      return e.seconds.toString().toTime()
     return (e.pomo % 60).toString().toTime()
-  
+  "NO EVENT SELECTED"
 
 id = null
 
