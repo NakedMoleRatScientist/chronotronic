@@ -48,7 +48,7 @@ activityTimer = () ->
 pomoTimer = () ->
   u = getUserProfile()
   e = Events.findOne({_id: Session.get("eventId")})
-  if (e.seconds % (u.pomotime * 60)) == 0
+  if (e.pomo % (u.pomotime * 60)) == 0
     Meteor.clearInterval(id)
     Session.set("timer","stop")
     activityInterval()
@@ -74,9 +74,18 @@ Template.timer.events =
     Session.set("eventId",null)
     Meteor.clearInterval(id)
 
-this.incTime = (s = 20) ->
+this.inc = (s = 20) ->
   if Session.get("timer") == "stop"
     e = Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
     e = Events.update(Session.get("eventId"), {$inc: {pomo: s}})  
 
+this.jump = () ->
+  e = Events.findOne({Session.get("eventId")})
+  if Session.get("timer") == "stop"
+    jump = (59 - (e.seconds % 60))
+    Events.update(Session.get("eventId"), {$set: {seconds: jump }})
+  else
+    jump = (59 - (e.pomo % 60))
+    Events.update(Session.get("eventId"), {$set: {pomo: jump}})      
+  
