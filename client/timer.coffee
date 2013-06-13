@@ -53,9 +53,6 @@ pomoTimer = () ->
     Session.set("timer","stop")
     activityInterval()
 
-
-
-
 Template.timer.events =
   'click #start' : () ->
     if Session.get("eventId") == null && Meteor.user()
@@ -76,9 +73,9 @@ Template.timer.events =
 
 this.inc = (s = 20) ->
   if Session.get("timer") == "stop"
-    e = Events.update(Session.get("eventId"), {$inc: {seconds: s}})
+    Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
-    e = Events.update(Session.get("eventId"), {$inc: {pomo: s}})
+    Events.update(Session.get("eventId"), {$inc: {pomo: s}})
     
 this.jump = () ->
   e = Events.findOne(Session.get("eventId"))
