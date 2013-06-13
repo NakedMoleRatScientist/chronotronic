@@ -74,7 +74,7 @@ Template.timer.events =
     Session.set("eventId",null)
     Meteor.clearInterval(id)
 
-this.incTime = (s = 30) ->
+this.incTime = (s = 20) ->
   if Session.get("timer") == "stop"
     e = Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
