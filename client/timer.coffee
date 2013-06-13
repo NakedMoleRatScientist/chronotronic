@@ -78,10 +78,10 @@ this.inc = (s = 20) ->
   if Session.get("timer") == "stop"
     e = Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
-    e = Events.update(Session.get("eventId"), {$inc: {pomo: s}})  
-
+    e = Events.update(Session.get("eventId"), {$inc: {pomo: s}})
+    
 this.jump = () ->
-  e = Events.findOne({Session.get("eventId")})
+  e = Events.findOne(Session.get("eventId"))
   if Session.get("timer") == "stop"
     jump = (59 - (e.seconds % 60))
     Events.update(Session.get("eventId"), {$set: {seconds: jump }})
