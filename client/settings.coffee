@@ -29,7 +29,7 @@ Template.settings.events =
 
   'click #active': () ->
     u = getUserProfile()     
-    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='number' value='#{u.activitylength}'><input type='button' value='submit' id='activeSubmit'></dd>")
+    $("#active").replaceWith("<dd id='activeForm'><input id='activeInput' type='number' value='#{u.activitylength}'><input type='button' value='submit' id='activeSubmit'><input type='button' value='cancel' id='activeCancel'></dd>")
 
   'click #activeSubmit': () ->
     u = getUserProfile()
@@ -45,7 +45,7 @@ Template.settings.events =
 
   'click #pomo' : () ->
     u = getUserProfile()
-    $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='number' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'></dd>")
+    $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='number' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'><input type='button' id='pomoCancel' value='cancel'>/dd>")
   'click #pomoSubmit' : () ->
     choice = parseInt($("#pomoInput").val())
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.pomotime": choice}})
