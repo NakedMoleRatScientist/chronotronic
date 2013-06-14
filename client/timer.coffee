@@ -16,9 +16,11 @@ Template.timer.timer = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
     if Session.get("timer") == "stop"
-      return e.seconds.toString().toTime()
+      normalSec = e.seconds.toString().toTime()
+      return normalSec
     else
-      return (e.pomo % 60).toString().toTime()
+      pomoSec = (e.pomo % 60).toString().toTime()
+      return pomoSec
    "NO EVENT SELECTED"
 
 id = null
