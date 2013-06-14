@@ -20,7 +20,7 @@ Template.timer.event_date = () ->
 Template.timer.timer = () ->
   if Session.get("eventId") != null
     e = Events.findOne(Session.get("eventId"))
-    if Session.get("timer") == "stop"
+    if Session.get("timer") != "pomo"
       normalSec = e.seconds.toString().toTime()
       return normalSec
     else
