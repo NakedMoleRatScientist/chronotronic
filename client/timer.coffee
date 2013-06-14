@@ -89,7 +89,7 @@ Template.timer.events =
   'click #work' : () ->
     activeMode()
     
-  'click #pomo' : () ->
+  'click #skip' : () ->
     activeMode()
         
   'click #stop' : () ->
