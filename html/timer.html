@@ -6,6 +6,9 @@
     <h2>Control Panel</h2>
     {{#if checkButton "stop" }}
       <input type="button" id="stop" value="stop"/>
+      {{#if transition}}
+        <input type="button" id="rest" value="rest">
+      {{/if}}
     {{/if}}
     {{#if checkButton "start" }}
       <input type="button" id="start" value="start"/>
