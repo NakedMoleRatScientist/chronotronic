@@ -36,6 +36,7 @@ pomoInterval = () ->
   id = Meteor.setInterval(() ->
     console.log("pomo")
     e = Events.update(Session.get("eventId"), {$inc: {pomo: 1}})
+    pomoSec += 1
     pomoTimer()
   , 1000)
 
