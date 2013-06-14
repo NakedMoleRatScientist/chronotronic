@@ -4,14 +4,15 @@
   </div>
   <center>
     <h2>Control Panel</h2>
-    {{#if checkButton("stop") }}
+    {{#if checkButton "stop" }}
       <input type="button" id="stop" value="stop"/>
     {{/if}}
-    {{#if checkButton("start")}}  
+    {{#if checkButton "start" }}
       <input type="button" id="start" value="start"/>
-    {{/if}}
-    {{#if checkButton("pomo")}}  
+    {{/if}}  
+    {{#if checkButton "pomo"}}
       <input type="button" id="pomo" value="skip" />
+      <input type="button" id="stop" value="stop"/>
     {{/if}}  
     {{#if activated}}
       <input type="button" id="finish" value="finish" />
