@@ -48,28 +48,29 @@ activityInterval = () ->
     activityTimer()
   , 1000)
 
+activeMode = () ->
+  transition = false
+  Session.set("timer","stop")
+  Meteor.clearInterval(id)
+  activityInterval()
+
+pomoMode = () ->  
+  Meteor.clearInterval(id)
+  Session.set("timer","pomo")
+  pomoInterval()
+
 activityTimer = () ->
   u = getUserProfile()
   return if u.mode == "Normal"
   e = Events.findOne({_id: Session.get("eventId")})
   if (e.seconds % (u.activitylength * 60)) == 0
-    Meteor.clearInterval(id)
-    Session.set("timer","pomo")
-    pomoInterval()
-
-activeMode = () ->
-  Session.set("timer","stop")
-  Meteor.clearInterval(id)
-  activityInterval()
-
-
+    transition = true
+    
 pomoTimer = () ->
   u = getUserProfile()
   e = Events.findOne({_id: Session.get("eventId")})
   if (pomoSec % (u.pomotime * 60)) == 0
-    Meteor.clearInterval(id)
-    Session.set("timer","stop")
-    activityInterval()
+    transition = true
 
 Template.timer.events =
   'click #start' : () ->
