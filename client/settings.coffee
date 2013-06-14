@@ -45,7 +45,7 @@ Template.settings.events =
 
   'click #pomo' : () ->
     u = getUserProfile()
-    $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='number' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'><input type='button' id='pomoCancel' value='cancel'>/dd>")
+    $("#pomo").replaceWith("<dd id='pomoForm'><input id='pomoInput' type='number' value='#{u.pomotime}'><input type='button' value='submit' id='pomoSubmit'><input type='button' id='pomoCancel' value='cancel'></dd>")
   'click #pomoSubmit' : () ->
     choice = parseInt($("#pomoInput").val())
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.pomotime": choice}})
