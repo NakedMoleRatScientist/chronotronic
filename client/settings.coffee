@@ -55,3 +55,6 @@ Template.settings.events =
   'click #pomoCancel' : () ->
     u = getUserProfile()
     $("#pomoForm").replaceWith("<dd id='mode'>#{u.pomotime} minutes</dd>")
+  'click #activeCancel' : () ->
+    u = getUserProfile()
+    $("#activeForm").replaceWith("<dd id='active'>#{u.activitylength} minutes</dd>")
