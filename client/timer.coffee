@@ -93,6 +93,7 @@ this.inc = (s = 20) ->
   if Session.get("timer") == "stop"
     Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
+    pomoSec += s
     Events.update(Session.get("eventId"), {$inc: {pomo: s}})
     
 this.jump = () ->
@@ -101,6 +102,5 @@ this.jump = () ->
     jump = e.seconds + (59 - (e.seconds % 60))
     Events.update(Session.get("eventId"), {$set: {seconds: jump }})
   else
-    jump = e.pomo + (59 - (e.pomo % 60))
-    Events.update(Session.get("eventId"), {$set: {pomo: jump}})      
-  
+    jump = pomoSec + (59 - (pomoSec % 60))
+    Events.update(Session.get("eventId"), {$set: {pomo: jump}})  
