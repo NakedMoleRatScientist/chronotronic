@@ -57,7 +57,8 @@ activeMode = () ->
   Meteor.clearInterval(id)
   activityInterval()
 
-pomoMode = () ->  
+pomoMode = () ->
+  transition = false
   Meteor.clearInterval(id)
   Session.set("timer","pomo")
   pomoInterval()
