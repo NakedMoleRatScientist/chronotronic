@@ -102,5 +102,6 @@ this.jump = () ->
     jump = e.seconds + (59 - (e.seconds % 60))
     Events.update(Session.get("eventId"), {$set: {seconds: jump }})
   else
-    jump = pomoSec + (59 - (pomoSec % 60))
+    pomoSec = 59
+    jump = e.pomo + (59 - (e.pomo % 60))
     Events.update(Session.get("eventId"), {$set: {pomo: jump}})  
