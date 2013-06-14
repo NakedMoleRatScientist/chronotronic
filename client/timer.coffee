@@ -4,6 +4,9 @@ transition = false
 Template.timer.status = () ->
   Session.get("timer")
 
+Template.timer.transition = () ->
+  transition
+
 Template.timer.checkButton = (name) ->
   if Session.get("timer") == name
     return true
