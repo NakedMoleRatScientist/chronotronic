@@ -58,7 +58,7 @@ activityTimer = () ->
 pomoTimer = () ->
   u = getUserProfile()
   e = Events.findOne({_id: Session.get("eventId")})
-  if (e.pomo % (u.pomotime * 60)) == 0
+  if (pomoSec % (u.pomotime * 60)) == 0
     Meteor.clearInterval(id)
     Session.set("timer","stop")
     activityInterval()
