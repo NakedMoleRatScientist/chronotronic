@@ -1,4 +1,4 @@
-
+pomoSec = 0
   
 Template.timer.status = () ->
   Session.get("timer")
@@ -26,7 +26,7 @@ Template.timer.timer = () ->
       result = e.seconds.toString().toTime()
       return result
     else
-      result = (e.pomo % 60).toString().toTime()
+      result = (pomoSec).toString().toTime()
       return result
    "NO EVENT SELECTED"
 
