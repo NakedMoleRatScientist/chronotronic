@@ -62,6 +62,7 @@ activeMode = () ->
   activityInterval()
 
 pomoMode = () ->
+  playAlarm()
   transition = false
   Meteor.clearInterval(id)
   Session.set("timer","pomo")
