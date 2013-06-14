@@ -16,7 +16,7 @@ Template.event.events =
       Events.remove({_id: this._id})
 
   'click #select' : () ->
-    if Session.get("timer") == false
+    if Session.get("timer") == "start"      
       Session.set("eventId",this._id)
 
   "click .name" : () ->
