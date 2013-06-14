@@ -1,6 +1,10 @@
 pomoSec = 0
 transition = false
-    
+alarm = new Audio("alarmclock.mp3")
+
+playAlarm = () ->
+  alarm.play()
+                  
 Template.timer.status = () ->
   Session.get("timer")
 
