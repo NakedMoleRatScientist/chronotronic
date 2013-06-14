@@ -59,7 +59,7 @@ pomoTimer = () ->
 Template.timer.events =
   'click #start' : () ->
     if Session.get("eventId") == null && Meteor.user()
-      e = Events.insert({user_id: Meteor.userId(), seconds: 0, pomo: 0 date: new Date(), name: null})
+      e = Events.insert({user_id: Meteor.userId(), seconds: 0, pomo: 0, date: new Date(), name: null})
       Session.set("eventId",e)
       Session.set("timer", "stop")
       activityInterval()
