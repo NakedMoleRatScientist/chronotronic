@@ -71,10 +71,16 @@ Template.timer.events =
     else if Session.get("eventId") != null && Meteor.user()
       Session.set("timer","stop")
       activityInterval()
-  ,'click #stop' : () ->
+  'click #pomo' : () ->
+    Session.set("timer","stop")
+    Meteor.clearInterval(id)
+    activityInterval()
+    
+  'click #stop' : () ->
     Session.set("timer","start")
     Meteor.clearInterval(id)
-  ,'click #finish' : () ->
+    
+  'click #finish' : () ->
     Session.set("timer","start")
     Session.set("eventId",null)
     Meteor.clearInterval(id)
