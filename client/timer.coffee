@@ -1,6 +1,11 @@
 Template.timer.status = () ->
   Session.get("timer")
 
+Template.timer.checkButton = (name) ->
+  if Session.get("timer") == name
+    return true
+  false  
+
 Template.timer.activated = () ->
   Session.get("eventId") != null
 
