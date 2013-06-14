@@ -14,7 +14,11 @@
       <input type="button" id="start" value="start"/>
     {{/if}}  
     {{#if checkButton "pomo"}}
-      <input type="button" id="skip" value="skip" />
+      {{#if transition}}
+         <input type="button" id="work" value="work" />
+      {{else}}
+         <input type="button" id="skip" value="skip" />
+      {{/if}}  
       <input type="button" id="stop" value="stop"/>
     {{/if}}  
     {{#if activated}}
