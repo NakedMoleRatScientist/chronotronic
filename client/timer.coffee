@@ -110,6 +110,8 @@ Template.timer.events =
         
   'click #stop' : () ->
     Session.set("timer","start")
+    pomoSec = 0
+    transition = false
     Meteor.clearInterval(id)
     
   'click #finish' : () ->
