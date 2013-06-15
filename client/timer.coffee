@@ -4,7 +4,7 @@ alarm = new Audio("alarmclock.mp3")
 
 playAlarm = () ->
   alarm.play()
-                  
+
 Template.timer.status = () ->
   Session.get("timer")
 
@@ -62,7 +62,6 @@ activeMode = () ->
   activityInterval()
 
 pomoMode = () ->
-  playAlarm()
   transition = false
   Meteor.clearInterval(id)
   Session.set("timer","pomo")
@@ -74,12 +73,14 @@ activityTimer = () ->
   e = Events.findOne({_id: Session.get("eventId")})
   if (e.seconds % (u.activitylength * 60)) == 0
     transition = true
+    playAlarm()
     
 pomoTimer = () ->
   u = getUserProfile()
   e = Events.findOne({_id: Session.get("eventId")})
   if (pomoSec % (u.pomotime * 60)) == 0
     transition = true
+    playAlarm()
 
 Template.timer.events =
   'click #start' : () ->
