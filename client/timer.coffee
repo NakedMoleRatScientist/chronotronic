@@ -5,6 +5,10 @@ alarm = new Audio("alarmclock.mp3")
 playAlarm = () ->
   alarm.play()
 
+stopAlarm = () ->
+  alarm.pause()
+  alarm.currentTime = 0
+
 Template.timer.status = () ->
   Session.get("timer")
 
