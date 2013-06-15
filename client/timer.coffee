@@ -115,6 +115,9 @@ Template.timer.events =
     Meteor.clearInterval(id)
     
   'click #finish' : () ->
+    stopAlarm()
+    pomoSec = 0
+    transition = false
     Session.set("timer","start")
     Session.set("eventId",null)
     Meteor.clearInterval(id)
