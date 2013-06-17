@@ -96,10 +96,12 @@ Template.timer.events =
       Session.set("eventId",e)
       Session.set("timer", "stop")
       activityInterval()
-    else if Session.get("eventId") != null && Meteor.user()
+
+  'click #resume'
+    if resume == "normal"
       Session.set("timer","stop")
       activityInterval()
-
+      
   'click #rest' : () ->
     pomoMode()
 
