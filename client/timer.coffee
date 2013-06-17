@@ -109,9 +109,11 @@ Template.timer.events =
     activeMode()
         
   'click #stop' : () ->
-    Session.set("timer","start")
-    pomoSec = 0
-    transition = false
+    if (Session.get("timer") == "pomo")
+      resume = "pomo"
+    else
+      resume = "normal"  
+    Session.set("timer", "resume") 
     Meteor.clearInterval(id)
     
   'click #finish' : () ->
