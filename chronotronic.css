@@ -6,12 +6,17 @@
 
 .pomo
 {
-  border: 10px solid yellow;    
+  border: 10px solid blue;    
 }
 
 .stop
 {
   border: 10px solid #90ee90;
+}
+
+.resume
+{
+  border: 10px solid yellow;
 }
 
 #timer
