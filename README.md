@@ -1,7 +1,7 @@
-ChronoTask
+ChronoTronic
 ==========
 
-ChronoTask  is a simple, in browser, time recorder.
+Chronotronic  is a simple, in browser, time recorder.
 
 You start and stop time entries with a single click.
 
