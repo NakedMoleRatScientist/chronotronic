@@ -97,7 +97,7 @@ Template.timer.events =
       Session.set("timer", "stop")
       activityInterval()
 
-  'click #resume'
+  'click #resume' : () ->
     if resume == "normal"
       Session.set("timer","stop")
       activityInterval()
