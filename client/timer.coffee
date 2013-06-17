@@ -101,6 +101,9 @@ Template.timer.events =
     if resume == "normal"
       Session.set("timer","stop")
       activityInterval()
+    else
+      Session.set("timer", "pomo")
+      pomoInterval()  
       
   'click #rest' : () ->
     pomoMode()
