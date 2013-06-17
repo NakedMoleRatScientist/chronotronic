@@ -1,6 +1,7 @@
 pomoSec = 0
 transition = false
 alarm = new Audio("alarmclock.mp3")
+resume = "normal"
 
 playAlarm = () ->
   alarm.play()
