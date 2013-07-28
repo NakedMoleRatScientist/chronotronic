@@ -16,10 +16,5 @@ Template.stats.last_7_days = () ->
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
 
-week = () ->
-  endWeek = moment().endOf("day")._d
-  beginWeek = moment().subtract("days",7).startOf("day")._d
-  events = Events.find({user_id: Meteor.userId(), date: {$gte: beginWeek, $lt: endWeek}})
-
 Template.stats.this_week = () ->
   total_for_week().toFixed(2)
