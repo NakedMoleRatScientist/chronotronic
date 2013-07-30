@@ -7,7 +7,7 @@ Template.stats.total_hours = () ->
   (seconds / 3600).toFixed(2)
 
 
-Template.stats.last_7_days = () ->
+Template.stats.this_week = () ->
   graph = []
    
   for n in [0..6]
