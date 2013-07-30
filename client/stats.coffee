@@ -10,13 +10,13 @@ Template.stats.total_hours = () ->
 Template.stats.this_week = () ->
   graph = []
   begin = moment().startOf("week")
-  now = moment().startOf("day")
+  day = moment().endOf("week").startOf("day") #Start looping at the end of the week and work backward to the beginning of this week.
   n = 0
   while true  
-    graph.push({date: formatDate(now._d), total: hours_by_day(n).toFixed(2)})
-    if now._d.toUTCString() == begin._d.toUTCString()
+    graph.push({date: formatDate(day._d), total: hours_by_day(n).toFixed(2)})
+    if day._d.toUTCString() == begin._d.toUTCString()
       break
-    now.subtract("day",1).startOf("day")
+    day.subtract("day",1).startOf("day")
     n += 1
   graph
   
