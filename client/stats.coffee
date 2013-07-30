@@ -17,8 +17,9 @@ Template.stats.this_week = () ->
     if now._d.toUTCString() == begin._d.toUTCString()
       break
     now.subtract("day",1).startOf("day")
-    n -= 1
-
+    n += 1
+  graph
+  
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
 
