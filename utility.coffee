@@ -55,10 +55,3 @@ previousDays = (n) ->
     seconds += e.seconds
   )
   (seconds / 3600)
-
-@total_for_week = () ->
-  total = 0
-  for n in [0..6]      
-    total += hours_by_day(n)
-  total
-    
