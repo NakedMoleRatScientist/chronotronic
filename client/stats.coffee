@@ -8,13 +8,13 @@ Template.stats.total_hours = () ->
 
 
 Template.stats.last_7_days = () ->
-  graph = []      
+  graph = []
+   
   for n in [0..6]
     graph.push({date: formatDate(moment().subtract("days",n).startOf("day")._d), total: hours_by_day(n).toFixed(2)})
   graph
 
+
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
 
-Template.stats.this_week = () ->
-  total_for_week().toFixed(2)
