@@ -9,11 +9,15 @@ Template.stats.total_hours = () ->
 
 Template.stats.this_week = () ->
   graph = []
-   
-  for n in [0..6]
-    graph.push({date: formatDate(moment().subtract("days",n).startOf("day")._d), total: hours_by_day(n).toFixed(2)})
-  graph
-
+  begin = moment().startOf("week")
+  now = moment().startOf("day")
+  n = 0
+  while true  
+    graph.push({date: formatDate(now._d), total: hours_by_day(n).toFixed(2)})
+    if now._d.toUTCString() == begin._d.toUTCString()
+      break
+    now.subtract("day",1).startOf("day")
+    n -= 1
 
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
