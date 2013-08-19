@@ -8,13 +8,17 @@ Template.stats.total_hours = () ->
 
 
 Template.stats.this_week = () ->
-  get_week()
+  dates = get_week()
+  newdates = []
+  for d in dates
+    newdates.push(date: d.date, total: d.total.toFixed(2))
+  newdates  
   
 Template.stats.total_for_week = () ->  
   seconds = 0
-  date = get_week()
-  date.forEach((d) ->
-    seconds += d.seconds
+  dates = get_week()
+  dates.forEach((d) ->
+    seconds += d.total
   )
   (seconds / 3600).toFixed(2)
     
