@@ -60,8 +60,9 @@ previousDays = (n) ->
   graph = []
   end = moment().endOf("week")
   day = moment().startOf("week").startOf("day") #Start looping at the beginning of the week and work forward to the beginning of the week.
-  n = 0
-  while (n != 7)
+  n = 0 - moment().diff(moment().startOf("week"),"days") #Figure out the difference between today and the beginning of the week and make that our starting point.
+  stop = n + 7
+  while (n != stop)
     neg = 0 - n
     graph.push({date: formatDate(day._d), total: hours_by_day(neg)})
     day.add("day",1).startOf("day")
