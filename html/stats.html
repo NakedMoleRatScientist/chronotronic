@@ -4,15 +4,17 @@
     <dd>{{total_hours}}</dd>
     <dt>Events Tracked</dt>
     <dd>{{size}}</dd>
+    <dt>This Week's Total</dt>
+    <dd>{{total_for_week}}
   </dl>
   <table class="table">
-    <legend>Last 7 Days</legend>
+    <legend>This week</legend>
     <thead>
       <th>Date</th>
       <th>Total</th>
     </thead>
     <tbody>
-    {{#each last_7_days}}
+    {{#each this_week}}
       {{> total_column}}
     {{/each}}
     </tbody>
