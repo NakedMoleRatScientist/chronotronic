@@ -20,7 +20,7 @@ Template.stats.total_for_week = () ->
   dates.forEach((d) ->
     seconds += d.total
   )
-  (seconds / 3600).toFixed(2)
+  seconds.toFixed(2)
     
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
