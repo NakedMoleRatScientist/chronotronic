@@ -61,8 +61,9 @@ previousDays = (n) ->
   end = moment().endOf("week")
   day = moment().startOf("week").startOf("day") #Start looping at the beginning of the week and work forward to the beginning of the week.
   n = 0
-  while (n != 7)  
-    graph.push({date: formatDate(day._d), total: hours_by_day(n)})
+  while (n != 7)
+    neg = 0 - n
+    graph.push({date: formatDate(day._d), total: hours_by_day(neg).toFixed(2)})
     day.add("day",1).startOf("day")
     n += 1
   graph
