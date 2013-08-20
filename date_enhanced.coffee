@@ -63,7 +63,7 @@ previousDays = (n) ->
   n = 0
   while (n != 7)
     neg = 0 - n
-    graph.push({date: formatDate(day._d), total: hours_by_day(neg).toFixed(2)})
+    graph.push({date: formatDate(day._d), total: hours_by_day(neg)})
     day.add("day",1).startOf("day")
     n += 1
   graph
