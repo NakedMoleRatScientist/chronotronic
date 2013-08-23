@@ -1,5 +1,5 @@
 Template.create_event_form.date = () ->
-  new Date().toISOString().substring(0,10)
+  formatDate(new Date())
 
 Template.create_event_form.events =
   'click .cancel' : () ->
