@@ -1,14 +1,19 @@
 pomoSec = 0
 transition = false
-alarm = new Audio("alarmclock.mp3")
+unless navigator.appCodeName == "Mozilla"
+  alarm = new Audio("alarmclock.mp3")
+
+alarm = false    
 resume = "normal"
 
 playAlarm = () ->
-  alarm.play()
+  if alarm != false
+    alarm.play()
 
 stopAlarm = () ->
-  alarm.pause()
-  alarm.currentTime = 0
+  if alarm != false
+    alarm.pause()
+    alarm.currentTime = 0
 
 Template.timer.status = () ->
   Session.get("timer")
