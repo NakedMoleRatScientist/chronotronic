@@ -1,6 +1,9 @@
 Template.create_event_form.date = () ->
   formatDate(new Date())
 
+Template.create_event_form.rendered = () ->
+  $("#date").datepicker()
+
 Template.create_event_form.events =
   'click .cancel' : () ->
     Session.set("createEvent",false)
