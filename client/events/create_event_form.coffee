@@ -2,7 +2,7 @@ Template.create_event_form.date = () ->
   formatDate(new Date())
 
 Template.create_event_form.rendered = () ->
-  $("#date").datepicker()
+  $("#date").datepicker({dateFormat: "yy-mm-dd"})
 
 Template.create_event_form.events =
   'click .cancel' : () ->
