@@ -35,7 +35,7 @@ Template.event.events =
     hid = "#" + id
     date = this.date
     console.log(date)
-    $(hid).replaceWith("<input class='input-medium' type='text' id='#{id}' name='date' value=#{formatDate(date)}>")
+    $(hid).replaceWith("<input class='input-medium' type='text' id='#{id}' name='date' value=#{formatDate(date)}><input type='button' id='dateSubmit' value='OK'>")
     $(hid).datepicker({dateFormat: "yy-mm-dd"})
 
   "click .time" : () ->
@@ -55,7 +55,12 @@ Template.event.events =
     seconds = $(hid + "-seconds").val() * 1
     total = hours + minutes + seconds
     Events.update(this._id, {$set: {seconds: total}})
-    
+
+  "click #dateSubmit": () ->
+    id = "date-" + this._id
+    hid = "#" + id
+    date = $(hid).val()
+    Events.update(this._id, {$set: {date: moment(date)._d}})   
     
   "keydown input" : (e) ->
     hid = '#' + e.srcElement.id
