@@ -31,12 +31,15 @@ Template.event.events =
     )
 
   "click .date" : () ->
-    id = "date-" + this._id
-    hid = "#" + id
+    id = this._id
+    hid = "#" + "date-" + id
     date = this.date
-    console.log(date)
-    $(hid).replaceWith("<input class='input-medium' type='text' id='#{id}' name='date' value=#{formatDate(date)}><input type='button' id='dateSubmit' value='OK'>")
+    $(hid).replaceWith("<p id='dateForm-#{this._id}'><input class='input-medium' type='text' id='#{id}' name='date' value=#{formatDate(date)}><input type='button' id='dateSubmit' value='OK'><input type='button' id='dateCancel' value='Cancel'></p>")
     $(hid).datepicker({dateFormat: "yy-mm-dd"})
+    $("#dateCancel").click(() ->
+      $("#dateForm-#{id}").replaceWith("<p id='date-#{id}'>#{formatDate(date)}</p>")
+    )
+    
 
   "click .time" : () ->
     id =  this._id
@@ -44,7 +47,7 @@ Template.event.events =
     time = this.seconds.toString().toTimeValue()
     replaceTime = this.seconds.toString().toTime()
     $(hid).replaceWith("<p id=#{id + '-time'} class='timeInput'><br /><input class='input-small' type='number' id='#{id}-hours' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='#{id}-minutes' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='#{id}-seconds' min='0' max='59' name='seconds' value='#{time.seconds}'> <input type='button' id='timeSubmit' value='OK'><br /></p>")
-    $(hid).mouseleave(() ->
+    $().mouseleave(() ->
       $(hid).replaceWith("<p id=#{id + '-time'} class='time'>#{replaceTime}</p>")   
     )
   "click #timeSubmit": () ->
@@ -61,7 +64,7 @@ Template.event.events =
     hid = "#" + id
     date = $(hid).val()
     Events.update(this._id, {$set: {date: moment(date)._d}})   
-    
+
   "keydown input" : (e) ->
     hid = '#' + e.srcElement.id
     if e.which == 13
