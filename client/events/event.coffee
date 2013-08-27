@@ -65,8 +65,11 @@ Template.event.events =
     date = $(hid).val()
     Events.update(this._id, {$set: {date: moment(date)._d}})   
 
-  "keydown input" : (e) ->
-    hid = '#' + e.srcElement.id
+  "keydown" : (e) ->
+    if navigator.appCodeName == "Mozilla"
+      hid = '#' + e.target.id
+    else
+      hid = '#' + e.srcElement.id
     if e.which == 13
       switch(e.target.type)
         when 'text'
