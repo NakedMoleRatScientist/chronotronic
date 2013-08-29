@@ -68,6 +68,6 @@ previousDays = (n) ->
     n += 1
   graph
 
-@week_of = (week = 0)
+@week_of = (week = 0) ->
   which = moment().subtract("days", week * 7)
   which.startOf("week").startOf("day")._d
