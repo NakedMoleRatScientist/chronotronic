@@ -9,6 +9,9 @@ Template.stats.total_hours = () ->
 Template.stats.last_page = () ->
   return true if Session.get("weeknav") == 0
 
+Template.stats.week_of = () ->
+  formatDate(week_of(Session.get("weeknav")))
+
 Template.stats.this_week = () ->
   dates = get_week(Session.get("weeknav"))
   newdates = []
