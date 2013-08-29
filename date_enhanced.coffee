@@ -46,10 +46,10 @@ previousDays = (n) ->
   year = date.getFullYear()
   format_date(day,month,year)
 
-@hours_by_day = (n) ->
+@hours_by_day = (date) ->
   seconds = 0
-  start = moment().subtract("days", n).startOf("day")._d
-  end = moment().subtract("days",n).endOf("day")._d
+  start = moment(date).startOf("day")._d
+  end = moment(date).endOf("day")._d
   events = Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
   events.forEach((e) ->
     seconds += e.seconds
