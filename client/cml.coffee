@@ -1,5 +1,5 @@
 #Create new random events.
-@c-newe = (days = -1) ->
+@cnewe = (days = -1) ->
   date = moment()
   if days > 0
     date = moment().subtract("days",days)
@@ -8,14 +8,14 @@
 
 #commands for the javascript console
 
-@t-inc = (s = 20) ->
+@cinc = (s = 20) ->
   if Session.get("timer") == "stop"
     Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
     pomoSec += s
     Events.update(Session.get("eventId"), {$inc: {pomo: s}})
     
-@t-jump = () ->
+@cjump = () ->
   e = Events.findOne(Session.get("eventId"))
   if Session.get("timer") == "stop"
     jump = e.seconds + (59 - (e.seconds % 60))
