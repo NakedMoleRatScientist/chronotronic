@@ -6,7 +6,7 @@ Template.stats.total_hours = () ->
   )
   (seconds / 3600).toFixed(2)
 
-Template.stats.is_today = () ->
+Template.stats.last_page = () ->
   return true if Session.get("weeknav", 0)
 
 Template.stats.this_week = () ->
