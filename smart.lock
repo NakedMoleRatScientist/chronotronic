@@ -15,18 +15,18 @@
     "packages": {
       "blade": {
         "git": "https://github.com/bminer/meteor-blade.git",
-        "tag": "v3.2.6meteor1",
-        "commit": "f0810fd031781c84a9b5a14fd84c5b9d060ab336"
+        "tag": "v3.2.6meteor2",
+        "commit": "28a9f9bf121c3410ab70138ba39862468bfe836b"
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.0.5",
-        "commit": "a6e0ce33f8dc69a816165c458b138c2acb30ad0e"
+        "tag": "v1.0.6",
+        "commit": "f81cbf7c765a4ed7e16a580c288db6f10a90856b"
       },
       "mini-pages": {
         "git": "https://github.com/cmather/meteor-mini-pages.git",
-        "tag": "v0.3.1",
-        "commit": "d218140d37b0dbec975880755c2035ae9e022936"
+        "tag": "v0.3.2",
+        "commit": "4d885ffb6d0108ee2e47a13a6296c98a2f7b5059"
       },
       "jade-handlebars": {
         "git": "https://github.com/SimonDegraeve/meteor-jade-handlebars.git",
