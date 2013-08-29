@@ -56,11 +56,12 @@ previousDays = (n) ->
   )
   (seconds / 3600)
 
-@get_week = () ->
+@get_week = (n) ->
+  which = moment().subtract("days", n * 7)
   graph = []
-  end = moment().endOf("week")
-  day = moment().startOf("week").startOf("day") #Start looping at the beginning of the week and work forward to the beginning of the week.
-  n = 0 - moment().diff(moment().startOf("week"),"days") #Figure out the difference between today and the beginning of the week and make that our starting point.
+  end = which.endOf("week")
+  day = which.startOf("week").startOf("day") #Start looping at the beginning of the week and work forward to the beginning of the week.
+  n = 0 - which.diff(which.startOf("week"),"days") #Figure out the difference between today and the beginning of the week and make that our starting point.
   stop = n + 7
   while (n != stop)
     neg = 0 - n
