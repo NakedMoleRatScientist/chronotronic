@@ -56,7 +56,7 @@ previousDays = (n) ->
   )
   (seconds / 3600)
 
-@get_week = (n) ->
+@get_week = (n = 0) ->
   which = moment().subtract("days", n * 7)
   graph = []
   end = which.endOf("week")
