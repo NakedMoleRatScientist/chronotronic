@@ -7,8 +7,14 @@
     <dt>This Week's Total</dt>
     <dd>{{total_for_week}}
   </dl>
-  <table class="table">
+  
+    <table class="table">
     <legend>This week</legend>
+    <input type="button" id="previous" value="previous">
+    {{#unless last_page}}
+      <input type="button" id="next" value="next">
+    {{/unless}}
+
     <thead>
       <th>Date</th>
       <th>Total</th>
