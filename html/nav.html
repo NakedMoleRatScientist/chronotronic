@@ -5,8 +5,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>  
-      
       <a class="navbar-brand" href="/">Chronotronic</a>
     </div>
     <div class="collapse navbar-collapse">
@@ -18,13 +18,14 @@
             {{> login_form}}
           {{/if}}
         </li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/about">About</a></li>
         <li>
           {{#if isInRole 'admin'}}
             <a href="/admin">Admin</a>
           {{/if}}
         </li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/about">About</a></li>
+
       </ul>
     </div><!--/.nav-collapse -->
   </div>  
