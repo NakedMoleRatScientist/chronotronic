@@ -1,16 +1,11 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "tag": "release/0.6.5.1",
-    "commit": "6a4216f16fe2c469e63fe5876e2f733ef771389a"
-  },
+  "meteor": {},
   "dependencies": {
     "basePackages": {
       "blade": {},
       "roles": {},
       "mini-pages": {},
-      "jade-handlebars": {},
-      "nvd3": {}
+      "jade-handlebars": {}
     },
     "packages": {
       "blade": {
@@ -32,11 +27,6 @@
         "git": "https://github.com/SimonDegraeve/meteor-jade-handlebars.git",
         "tag": "v0.2.7",
         "commit": "82f6f9ac43a68ffabe1d9b9620be2a4ca6790b56"
-      },
-      "nvd3": {
-        "git": "https://github.com/adaptivelab/meteor-nvd3.git",
-        "tag": "v0.1.0",
-        "commit": "1fa8242dacdde1c8da7df605e6cd76ef450da921"
       },
       "HTML5-History-API": {
         "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
