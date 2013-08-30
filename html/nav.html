@@ -14,9 +14,9 @@
         <ul class="nav navbar-nav">
           <li>
             {{#if currentUser}}
-            {{> logout}}
+              {{> logout}}
             {{else}}
-            {{> login_form}}
+              <a data-toggle="modal" href="#loginModal">Login</a>
             {{/if}}
           </li>
           <li><a href="/dashboard">Dashboard</a></li>
@@ -30,5 +30,22 @@
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-  </div>  
+  </div>
+    <div id="loginModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3>login</h3>          
+         </div>
+         <div class="modal-body">
+           {{> login_form}}
+         </div>
+         <div class="modal-footer">
+           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+         </div>
+      </div>  <!-- modal-content -->
+    </div> <!-- modal-dialog-->
+  </div>
+
 </template>
