@@ -1,11 +1,9 @@
 {
   "meteor": {
-    "tag": "release/0.6.5.1"
+    "tag": "release/0.6.4.1"
   },
   "packages": {
-    "blade": {},
     "roles": {},
-    "mini-pages": {},
-    "jade-handlebars": {}
+    "mini-pages": {}
   }
 }

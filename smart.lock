@@ -2,17 +2,10 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "blade": {},
       "roles": {},
-      "mini-pages": {},
-      "jade-handlebars": {}
+      "mini-pages": {}
     },
     "packages": {
-      "blade": {
-        "git": "https://github.com/bminer/meteor-blade.git",
-        "tag": "v3.2.6meteor2",
-        "commit": "28a9f9bf121c3410ab70138ba39862468bfe836b"
-      },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
         "tag": "v1.0.6",
@@ -22,11 +15,6 @@
         "git": "https://github.com/cmather/meteor-mini-pages.git",
         "tag": "v0.3.2",
         "commit": "4d885ffb6d0108ee2e47a13a6296c98a2f7b5059"
-      },
-      "jade-handlebars": {
-        "git": "https://github.com/SimonDegraeve/meteor-jade-handlebars.git",
-        "tag": "v0.2.7",
-        "commit": "82f6f9ac43a68ffabe1d9b9620be2a4ca6790b56"
       },
       "HTML5-History-API": {
         "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
