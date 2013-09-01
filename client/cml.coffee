@@ -8,13 +8,15 @@
 
 #commands for the javascript console
 
+#OUTDATED
 @cinc = (s = 20) ->
   if Session.get("timer") == "stop"
     Events.update(Session.get("eventId"), {$inc: {seconds: s}})
   else
     pomoSec += s
     Events.update(Session.get("eventId"), {$inc: {pomo: s}})
-    
+
+#OUTDATED        
 @cjump = () ->
   e = Events.findOne(Session.get("eventId"))
   if Session.get("timer") == "stop"
