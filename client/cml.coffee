@@ -23,4 +23,8 @@
   else
     pomoSec = 59
     jump = e.pomo + (59 - (e.pomo % 60))
-    Events.update(Session.get("eventId"), {$set: {pomo: jump}})    
+    Events.update(Session.get("eventId"), {$set: {pomo: jump}})
+
+@cdestroylast = () ->
+  events = Events.find({user_id: Meteor.userId()}).fetch()
+  e = Events.remove({_id: events[events.length -1]._id})
