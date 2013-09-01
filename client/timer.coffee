@@ -46,17 +46,29 @@ Template.timer.timer = () ->
 id = null
 
 pomoInterval = () ->
+  start = new Date()
+  e = Events.findOne({_id: Session.get("eventId")})
+  original = e.seconds
   id = Meteor.setInterval(() ->
     console.log("pomo")
-    e = Events.update(Session.get("eventId"), {$inc: {pomo: 1}})
-    pomoSec += 1
+    now = new Date()
+    additional = (now.getTime() - start.getTime()) / 1000
+    total = original + additional 
+    e = Events.update(Session.get("eventId"), {$set: {pomo: total}})
+    pomoSec = total
     pomoTimer()
   , 1000)
 
 activityInterval = () ->
+  start = new Date()
+  e = Events.findOne({_id: Session.get("eventId")})
+  original = e.seconds
   id = Meteor.setInterval(() ->
     console.log("active")
-    e = Events.update(Session.get("eventId"), {$inc: {seconds: 1}})
+    now = new Date()
+    additional = (now.getTime() - start.getTime()) / 1000
+    total = original + additional
+    e = Events.update(Session.get("eventId"), {$set: {seconds: total}})
     activityTimer()
   , 1000)
 
