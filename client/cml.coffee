@@ -27,4 +27,4 @@
 
 @cdestroylast = () ->
   events = Events.find({user_id: Meteor.userId()}).fetch()
-  e = Events.remove({_id: events[events.length -1]._id})
+  e = Events.remove({_id: events[events.length - 1]._id})
