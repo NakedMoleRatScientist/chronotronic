@@ -45,7 +45,13 @@ Template.timer.timer = () ->
 
 id = null
 
-pomoInterval = () ->
+tickPomo = () ->
+  tick(pomoTick)
+
+tickActive = () ->    
+  tick(activeTick)
+  
+tick = (timeFunction) ->
   start = new Date()
   e = Events.findOne({_id: Session.get("eventId")})
   original = e.seconds
@@ -54,52 +60,40 @@ pomoInterval = () ->
     now = new Date()
     additional = (now.getTime() - start.getTime()) / 1000
     total = original + additional 
-    e = Events.update(Session.get("eventId"), {$set: {pomo: total}})
-    pomoSec = total
-    pomoTimer()
+    timeFunction(total)
   , 1000)
-
-activityInterval = () ->
-  start = new Date()
+  
+pomoTick = (total) ->
+  e = Events.update(Session.get("eventId"), {$set: {pomo: total}})
+  pomoSec = total
+  u = getUserProfile()
   e = Events.findOne({_id: Session.get("eventId")})
-  original = e.seconds
-  id = Meteor.setInterval(() ->
-    console.log("active")
-    now = new Date()
-    additional = (now.getTime() - start.getTime()) / 1000
-    total = original + additional
-    e = Events.update(Session.get("eventId"), {$set: {seconds: total}})
-    activityTimer()
-  , 1000)
+  if (pomoSec % (u.pomotime * 60)) == 0
+    transition = true
+    playAlarm()
 
-activeMode = () ->
-  stopAlarm()
-  transition = false
-  Session.set("timer","stop")
-  Meteor.clearInterval(id)
-  activityInterval()
-
-pomoMode = () ->
-  stopAlarm()
-  transition = false
-  Meteor.clearInterval(id)
-  Session.set("timer","pomo")
-  pomoInterval()
-
-activityTimer = () ->
+activeTick = (total) ->
+  e = Events.update(Session.get("eventId"), {$set: {seconds: total}})
   u = getUserProfile()
   return if u.mode == "Normal"
   e = Events.findOne({_id: Session.get("eventId")})
   if (e.seconds % (u.activitylength * 60)) == 0
     transition = true
     playAlarm()
-    
-pomoTimer = () ->
-  u = getUserProfile()
-  e = Events.findOne({_id: Session.get("eventId")})
-  if (pomoSec % (u.pomotime * 60)) == 0
-    transition = true
-    playAlarm()
+
+activeMode = () ->
+  stopAlarm()
+  transition = false
+  Session.set("timer","stop")
+  Meteor.clearInterval(id)
+  tickActive()
+
+pomoMode = () ->
+  stopAlarm()
+  transition = false
+  Meteor.clearInterval(id)
+  Session.set("timer","pomo")
+  tickPomo()
 
 Template.timer.events =
   'click #start' : () ->
@@ -107,15 +101,15 @@ Template.timer.events =
       e = Events.insert({user_id: Meteor.userId(), seconds: 0, pomo: 0, date: new Date(), name: null})
       Session.set("eventId",e)
       Session.set("timer", "stop")
-      activityInterval()
+      tickActive()
 
   'click #resume' : () ->
     if resume == "normal"
       Session.set("timer","stop")
-      activityInterval()
+      tickActive()
     else
       Session.set("timer", "pomo")
-      pomoInterval()  
+      tickPomo()
       
   'click #rest' : () ->
     pomoMode()
@@ -141,4 +135,3 @@ Template.timer.events =
     Session.set("timer","start")
     Session.set("eventId",null)
     Meteor.clearInterval(id)
-
