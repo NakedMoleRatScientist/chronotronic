@@ -68,7 +68,7 @@ pomoTick = (total) ->
   pomoSec = total
   u = getUserProfile()
   e = Events.findOne({_id: Session.get("eventId")})
-  if (pomoSec % (u.pomotime * 60)) == 0
+  if (Math.floor(pomoSec) % (u.pomotime * 60)) == 0
     transition = true
     playAlarm()
 
@@ -78,7 +78,7 @@ activeTick = (total) ->
   u = getUserProfile()
   return if u.mode == "Normal"
   e = Events.findOne({_id: Session.get("eventId")})
-  if (e.seconds % (u.activitylength * 60)) == 0
+  if (Math.floor(e.seconds) % (u.activitylength * 60)) == 0
     transition = true
     playAlarm()
 
