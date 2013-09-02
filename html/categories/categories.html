@@ -1,3 +1,6 @@
 <template name="categories">
-  <p>Not Built Yet</p>
+  <input type="button" id="create" value="create" />
+  {{#if create}}
+    {{> create_category_form }}
+  {{/if}}
 </template>  
