@@ -56,7 +56,6 @@ tick = (timeFunction) ->
   e = Events.findOne({_id: Session.get("eventId")})
   original = e.seconds
   id = Meteor.setInterval(() ->
-    console.log("pomo")
     now = new Date()
     additional = (now.getTime() - start.getTime()) / 1000
     total = original + additional 
@@ -64,6 +63,7 @@ tick = (timeFunction) ->
   , 1000)
   
 pomoTick = (total) ->
+  console.log("pomoTick")
   e = Events.update(Session.get("eventId"), {$set: {pomo: total}})
   pomoSec = total
   u = getUserProfile()
@@ -73,6 +73,7 @@ pomoTick = (total) ->
     playAlarm()
 
 activeTick = (total) ->
+  console.log("activeTick")
   e = Events.update(Session.get("eventId"), {$set: {seconds: total}})
   u = getUserProfile()
   return if u.mode == "Normal"
