@@ -6,6 +6,11 @@ Meteor.publish("events",
     e        
 )
 
+Meteor.publish("categories",
+  () ->
+    Categories.find({$or:[{user_id: this.userId}]})
+)
+
 Meteor.publish("goals",
   () ->
     Goals.find({$or:[{user_id: this.userId}]})
