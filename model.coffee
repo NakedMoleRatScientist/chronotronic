@@ -3,6 +3,7 @@
 @GoalTemplates = new Meteor.Collection("GoalTemplate")
 @Users = new Meteor.Collection("Users")
 @Posts = new Meteor.Collection("Posts")
+@Categories = new Meteor.Collection("Categories")
 
 genericPermission = {
     insert: (userId,object) ->
@@ -35,6 +36,7 @@ adminPermissions = {
 Events.allow(genericPermission)
 Goals.allow(genericPermission)
 GoalTemplates.allow(genericPermission)
+Categories.allow(genericPermission)
 Posts.allow(adminPermissions)
 
 Meteor.methods({
