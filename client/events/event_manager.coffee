@@ -1,6 +1,9 @@
 Meteor.subscribe("events", () ->
   console.log("Subscription to events successful.")
 )
+Meteor.subscribe("categories", () ->
+  console.log("Subscription to categories successful.")
+)
 
 Template.event_manager.total = () ->
   day = moment().subtract("days",Session.get("eventnav"))
