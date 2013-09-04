@@ -21,7 +21,7 @@ Template.stats.this_week = () ->
   
 Template.stats.total_for_week = () ->  
   seconds = 0
-  dates = get_week()
+  dates = get_week(Session.get("weeknav"))
   dates.forEach((d) ->
     seconds += d.total
   )
