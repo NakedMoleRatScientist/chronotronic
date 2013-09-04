@@ -4,7 +4,8 @@ Template.create_event_form.date = () ->
 Template.create_event_form.categories = () ->
   names = []
   Categories.find({user_id: Meteor.userId()}).fetch().forEach((c) ->
-    names.push(c.name)
+    unless c.name == null
+      names.push(c.name)
   )
   names
   
