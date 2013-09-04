@@ -4,15 +4,14 @@
     <dd>{{total_hours}}</dd>
     <dt>Events Tracked</dt>
     <dd>{{size}}</dd>
-    <dt>This Week's Total</dt>
-    <dd>{{total_for_week}}
   </dl>
   
-    <table class="table">
+  <table class="table">
     <legend>Week of {{week_of}}</legend>
+    <p>Week total: {{total_for_week}}</p>
     <input type="button" id="previous" value="previous">
     {{#unless last_page}}
-      <input type="button" id="next" value="next">
+    <input type="button" id="next" value="next">
     {{/unless}}
 
     <thead>
@@ -20,9 +19,9 @@
       <th>Total</th>
     </thead>
     <tbody>
-    {{#each this_week}}
-      {{> total_column}}
-    {{/each}}
+      {{#each this_week}}
+        {{> total_column}}
+      {{/each}}
     </tbody>
   </table>
 </template>
