@@ -16,6 +16,8 @@ Template.create_event_form.events =
     Session.set("createEvent",false)
   'click #submit' : () ->
     name = $("#name").val()
+    if name == "No Name Yet"
+      name =="null"
     date = $("#date").val()
     #multiplying by a number coverts the value of hours, seconds, and minutes from string to integers.
     hours = $("#hours").val() * 3600
