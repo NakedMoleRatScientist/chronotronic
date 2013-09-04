@@ -30,3 +30,11 @@
 @cdestroylast = () ->
   events = Events.find({user_id: Meteor.userId()}).fetch()
   e = Events.remove({_id: events[events.length - 1]._id})
+
+@cpopcat = () ->
+  events = Events.find({user_id: Meteor.userId()}).fetch()
+  names = _pluck(events, 'name')
+  names.forEach((n) ->
+    unless Categories.find({user_id: Meteor.userId(), name: n}).fetch().length == 0
+      Categories.insert({user_id: Meteor.userId(), name: n})
+  )
