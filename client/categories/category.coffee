@@ -3,4 +3,6 @@ Template.category.name = () ->
 
 Template.category.events =
   'click #destroy' : () ->
-    Categories.remove({_id: this._id})
+    if Events.find({name: this.name}).fetch().length == 0
+      console.log("Removing")
+      Categories.remove({_id: this._id})
