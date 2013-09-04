@@ -33,8 +33,8 @@
 
 @cpopcat = () ->
   events = Events.find({user_id: Meteor.userId()}).fetch()
-  names = _pluck(events, 'name')
+  names = _.pluck(events, 'name')
   names.forEach((n) ->
-    unless Categories.find({user_id: Meteor.userId(), name: n}).fetch().length == 0
+    unless Categories.find({user_id: Meteor.userId(), name: n}).fetch().length > 0
       Categories.insert({user_id: Meteor.userId(), name: n})
   )
