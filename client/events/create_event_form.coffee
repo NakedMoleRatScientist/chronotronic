@@ -1,6 +1,13 @@
 Template.create_event_form.date = () ->
   formatDate(new Date())
 
+Template.create_event_form.categories = () ->
+  names = []
+  Categories.find({user_id: Meteor.userId()}).fetch().forEach((c) ->
+    names.push(c.name)
+  )
+  names
+  
 Template.create_event_form.rendered = () ->
   $("#date").datepicker({dateFormat: "yy-mm-dd"})
 
