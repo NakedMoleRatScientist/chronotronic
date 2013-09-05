@@ -11,8 +11,6 @@ Session.set("loginState",false)
 Session.set("goalnav","goals")
 Session.set("eventnav", 0)
 Session.set("weeknav", 0)
-
-Session.set("categoryGraph",false)
 Meteor.subscribe("posts", () ->
   console.log("Subscription to posts successful")        
 )
