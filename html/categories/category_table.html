@@ -1,4 +1,9 @@
 <template name="category_table">
+  {{#if create}}
+    {{> create_category_form }}
+  {{else}}
+    <input type="button" id="new_category" value="New Category" />
+  {{/if}}
   <table class="table">
     <legend>Categories</legend>
     <thead>
