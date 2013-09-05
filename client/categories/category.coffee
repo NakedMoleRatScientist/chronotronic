@@ -9,3 +9,5 @@ Template.category.events =
     if Events.find({name: this.name}).fetch().length == 0
       console.log("Removing")
       Categories.remove({_id: this._id})
+  'click #find' : () ->
+    Session.set("category",this.name)
