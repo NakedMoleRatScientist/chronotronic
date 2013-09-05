@@ -1,0 +1,15 @@
+<template name="category_events">
+  <table class="table">
+    <thead>
+      <th> Time </th>
+      <th> Date </th>
+      <th> Name </th>
+      <th> Actions </th>
+    </thead>
+    <tbody>
+      {{#each list}}
+        {{> event}}
+      {{/each}}
+    </tbody>  
+  </table>  
+</template>  
