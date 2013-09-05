@@ -1,0 +1,15 @@
+<template name="category_table">
+  <table class="table">
+    <legend>Categories</legend>
+    <thead>
+      <th>Name</th>
+      <th>Event Counts</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+    {{#each categories}}
+      {{> category}}
+    {{/each}}
+    </tbody>
+  </table>
+</template>  
