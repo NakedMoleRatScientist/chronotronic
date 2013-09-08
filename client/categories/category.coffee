@@ -3,10 +3,6 @@ Template.category.category_name = () ->
     return "No name yet"
   this.name
 
-Template.category.count = () ->
-  this.count
-  
-
 Template.category.events =
   'click #destroy' : () ->
     if Events.find({name: this.name}).fetch().length == 0
