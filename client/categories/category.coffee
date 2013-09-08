@@ -1,5 +1,6 @@
-Template.category.name = () ->
-  console.log("deep")
+Template.category.category_name = () ->
+  if this.name == "null"
+    return "No name yet"
   this.name
 
 Template.category.count = () ->
