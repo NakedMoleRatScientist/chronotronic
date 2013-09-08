@@ -1,5 +1,5 @@
 Template.category_table.categories = () ->
-  Categories.find({user_id: Meteor.userId()})
+  Categories.find({})
 
 Template.category_table.create = () ->
   Session.get("createCategory")
