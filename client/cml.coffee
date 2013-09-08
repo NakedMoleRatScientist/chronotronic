@@ -36,5 +36,5 @@
   names = _.pluck(events, 'name')
   names.forEach((n) ->
     unless Categories.find({user_id: Meteor.userId(), name: n}).fetch().length > 0
-      Categories.insert({user_id: Meteor.userId(), name: n})
-  )
+      Categories.insert({user_id: Meteor.userId(), name: n, count: Events.find({user_id: Meteor.userid(), name: n}).fetch().length})
+  )  
