@@ -1,5 +1,5 @@
 Template.category.category_name = () ->
-  if this.name == "null"
+  if this.name == null
     return "No name yet"
   this.name
 
