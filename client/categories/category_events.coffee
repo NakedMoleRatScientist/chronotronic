@@ -6,4 +6,4 @@ Template.category_events.category_name = () ->
 
 Template.category_events.events = 
   "click #return" : () ->
-    Session.set("category", null)  
+    Session.set("category", false)  
