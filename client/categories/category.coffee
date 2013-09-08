@@ -2,7 +2,7 @@ Template.category.name = () ->
   this.name()
 
 Template.category.count = () ->
-  Events.find({name: this.name}).fetch().length
+  this.count()
 
 Template.category.events =
   'click #destroy' : () ->
