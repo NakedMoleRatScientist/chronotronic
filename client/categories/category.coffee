@@ -2,7 +2,10 @@ Template.category.name = () ->
   this.name()
 
 Template.category.count = () ->
-  this.count()
+  length = Events.find({name: this.name}).fetch().length
+  console.log("beep")
+  Categories.update({_id: this._id}, {$set: {count: length}})
+  length
 
 Template.category.events =
   'click #destroy' : () ->
