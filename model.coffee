@@ -38,7 +38,6 @@ Goals.allow(genericPermission)
 GoalTemplates.allow(genericPermission)
 Categories.allow(genericPermission)
 Posts.allow(adminPermissions)
-Accounts.allow(adminPermissions)
 
 Meteor.methods({
     removeAllEvents: () ->
