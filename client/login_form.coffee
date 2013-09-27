@@ -1,5 +1,5 @@
 Template.login_form.events =
-  'click #login' : () ->
+  'click #login-github' : () ->
     Meteor.loginWithGithub({requestPermissions: []}, (err) ->
       if err
         console.log(err)
