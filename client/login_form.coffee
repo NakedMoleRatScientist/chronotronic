@@ -7,7 +7,7 @@ Template.login_form.events =
         Meteor.go("/dashboard")
     )
   'click #login-twitter' : () ->
-    Meteor.loginWithTwitter({requestPermissions: []}, (err) ->
+    Meteor.loginWithTwitter((err) ->
       if err
         console.log(err)
       else
