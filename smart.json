@@ -4,6 +4,7 @@
   },
   "packages": {
     "roles": {},
-    "mini-pages": {}
+    "mini-pages": {},
+    "bootstrap-3": {}
   }
 }
