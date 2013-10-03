@@ -5,7 +5,6 @@
 
 preserve-inputs
 coffeescript
-accounts-ui
 accounts-github
 jquery
 spiderable
@@ -15,3 +14,4 @@ mini-pages
 d3
 underscore
 accounts-twitter
+less
