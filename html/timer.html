@@ -5,7 +5,9 @@
   <center>
     <h2>Control Panel</h2>
     {{#if checkButton "stop" }}
-      <input type="button" id="stop" value="stop"/>
+      <button type="button" class="btn btn-default" id="stop">
+        <span class="glyphicon glyphicon-pause"></span> Stop
+      </button>  
       {{#if transition}}
         <input type="button" id="rest" value="rest">
       {{/if}}
@@ -16,7 +18,9 @@
       </button>  
     {{/if}}
     {{#if checkButton "resume"}}
-      <input type="button" id="resume" value="resume">
+      <button type="button" class="btn btn-default" id="resume">
+        <span class="glyphicon glyphicon-play"></span> Resume
+      </button>  
     {{/if}}  
     {{#if checkButton "pomo"}}
       {{#if transition}}
