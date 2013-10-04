@@ -1,6 +1,9 @@
 <template name="event_manager">
   <hr/>
-  <input type="button" id="create" value="New Event" />
+
+  <button type="button" class="btn btn-default" id="create">
+    <span class="glyphicon glyphicon-plus"></span> Create Event
+  </button>
   {{#if create}}
     <hr/>
     {{> create_event_form }}
