@@ -1,3 +1,3 @@
 
 Template.event_edit.selected = () ->
-  return this
+  return this._id
