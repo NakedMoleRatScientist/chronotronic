@@ -19,10 +19,14 @@
       <b>Total Hours Spent: {{total}}</b>
       <br />
       <input type="button" id="all" value="Show All" />
-      <input type="button" id="previous" value="previous" />
+      <button type="button" class="btn btn-default" id="previous">
+        <span class="glyphicon glyphicon-chevron-left"></span> Left
+      </button>
       {{#unless is_today}}
-        <input type="button" id="next" value="next" />
-      {{/unless}}  
+        <button type="button" class="btn btn-default" id="next">
+          <span class="glyphicon glyphicon-chevron-right"></span> Right
+        </button>
+      {{/unless}}
     {{/if}}
 
     <thead>
