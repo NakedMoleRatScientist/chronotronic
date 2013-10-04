@@ -15,6 +15,9 @@ Template.event.events =
     unless Session.get("eventId") == this._id
       Events.remove({_id: this._id})
 
+  'click #edit': () ->
+    console.log("beep")    
+
   'click #select' : () ->
     if Session.get("timer") == "start"
       Session.set("timer","resume")      
