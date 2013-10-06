@@ -17,6 +17,14 @@ String.prototype.toTimeValue = () ->
   seconds = sec_numb - (hours * 3600) - (minutes * 60)
   return (hours: hours, minutes: minutes, seconds: seconds)
 
+Number.prototype.toTimeValue = () ->
+  sec_numb = this
+  hours = Math.floor(sec_numb / 3600)
+  minutes = Math.floor((sec_numb - (hours * 3600)) / 60)
+  seconds = sec_numb - (hours * 3600) - (minutes * 60)
+  return (hours: hours, minutes: minutes, seconds: seconds)
+  
+
 format_date = (day,month,year) ->
   if day < 10
     day = "0" + day
