@@ -26,16 +26,6 @@ Template.event.events =
       $(hid).replaceWith("<p id=#{id} class='name'>" + name + "</p>")
     )
 
-  "click .date" : () ->
-    id = this._id
-    hid = "#" + "date-" + id
-    date = this.date
-    $(hid).replaceWith("<p id='dateForm-#{this._id}'><input class='input-medium' type='text' id='#{id}' name='date' value=#{formatDate(date)}><input type='button' id='dateSubmit' value='OK'><input type='button' id='dateCancel' value='Cancel'></p>")
-    $(hid).datepicker({dateFormat: "yy-mm-dd"})
-    $("#dateCancel").click(() ->
-      $("#dateForm-#{id}").replaceWith("<p id='date-#{id}'class='date'>#{formatDate(date)}</p>")
-    )
-    
   "click #dateSubmit": () ->
     id = "date-" + this._id
     hid = "#" + id
