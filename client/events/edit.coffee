@@ -4,6 +4,9 @@ Template.event_edit.selected = () ->
 
 Template.event_edit.hours = () ->
   this.seconds.toTimeValue().hours
+
+Template.event_edit.minutes = () ->
+  this.seconds.toTimeValue().minutes
   
 Template.event_edit.seconds = () ->
   this.seconds.toTimeValue().seconds
