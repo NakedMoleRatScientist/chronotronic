@@ -3,8 +3,8 @@ Template.event_edit.selected = () ->
   return this._id
 
 Template.event_edit.rendered = () ->
-  $("#date").datepicker({dateFormat: "yy-mm-dd"})  
-
+  $(".date").datepicker({dateFormat: "yy-mm-dd"})
+  
 Template.event_edit.date = () ->
   formatDate(this.date)
 
@@ -29,9 +29,9 @@ Template.event_edit.events =
     #DATE
     date = $("#date-" + id).val()
     console.log(date)
-
+    
     #Update everything
-    Events.update(this._id,{$set: {seconds: total}})
+    Events.update(this._id,{$set: {seconds: total, date: moment(date)._d}})
 
     
     
