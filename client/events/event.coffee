@@ -36,25 +36,6 @@ Template.event.events =
       $("#dateForm-#{id}").replaceWith("<p id='date-#{id}'class='date'>#{formatDate(date)}</p>")
     )
     
-
-  "click .time" : () ->
-    id =  this._id
-    hid = "#" + id + '-time'
-    time = this.seconds.toString().toTimeValue()
-    replaceTime = this.seconds.toString().toTime()
-    $(hid).replaceWith("<p id=#{id + '-time'} class='timeInput'><br /><input class='input-small' type='number' id='#{id}-hours' min='0' name='hours' value='#{time.hours}'>:<input class='input-small' type='number' id='#{id}-minutes' min='0' max='59' name='minutes' value='#{time.minutes}'>:<input class='input-small' type='number' id='#{id}-seconds' min='0' max='59' name='seconds' value='#{time.seconds}'> <input type='button' id='timeSubmit' value='OK'><br /></p>")
-    $().mouseleave(() ->
-      $(hid).replaceWith("<p id=#{id + '-time'} class='time'>#{replaceTime}</p>")   
-    )
-  "click #timeSubmit": () ->
-    id = this._id  
-    hid = "#" + id
-    hours = $(hid + "-hours").val() * 3600
-    minutes = $(hid + "-minutes").val() * 60
-    seconds = $(hid + "-seconds").val() * 1
-    total = hours + minutes + seconds
-    Events.update(this._id, {$set: {seconds: total}})
-
   "click #dateSubmit": () ->
     id = "date-" + this._id
     hid = "#" + id
