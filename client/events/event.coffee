@@ -26,12 +26,6 @@ Template.event.events =
       $(hid).replaceWith("<p id=#{id} class='name'>" + name + "</p>")
     )
 
-  "click #dateSubmit": () ->
-    id = "date-" + this._id
-    hid = "#" + id
-    date = $(hid).val()
-    Events.update(this._id, {$set: {date: moment(date)._d}})   
-
   "keydown" : (e) ->
     if navigator.appCodeName == "Mozilla"
       hid = '#' + e.target.id
