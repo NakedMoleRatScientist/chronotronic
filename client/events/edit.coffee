@@ -2,6 +2,9 @@
 Template.event_edit.selected = () ->
   return this._id
 
+Template.event_edit.rendered = () ->
+  $("#date").datepicker({dateFormat: "yy-mm-dd"})  
+
 Template.event_edit.date = () ->
   formatDate(this.date)
 
