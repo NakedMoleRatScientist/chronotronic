@@ -2,7 +2,7 @@
 Template.event_edit.selected = () ->
   return this._id
 
-Template.create_event_form.categories = () ->
+Template.event_edit.categories = () ->
   names = []
   Categories.find({user_id: Meteor.userId()}).fetch().forEach((c) ->
     unless c.name == null
