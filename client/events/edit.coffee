@@ -4,8 +4,9 @@ Template.event_edit.selected = () ->
 
 Template.event_edit.categories = () ->
   names = []
+  name = this.name
   Categories.find({user_id: Meteor.userId()}).fetch().forEach((c) ->
-    unless c.name == this.name
+    unless c.name == name
       names.push(c.name)
   )
   names
