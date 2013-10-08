@@ -2,15 +2,6 @@
   <a class="cancel close">×</a>
   <form class="form-horizontal" role="form">
     <div class="form-group">
-      <label for="name">Category</label>
-      <select id="name" name="name">
-        <option value="null">No name yet</option>
-        {{#each categories}}
-          {{> name_option}}
-        {{/each}}
-      </select>
-    </div>
-    <div class="form-group">
       <label for="date">Date</label>
       <input class="form-control" type="text" id="date" name="date" value={{date}}>
     </div>
