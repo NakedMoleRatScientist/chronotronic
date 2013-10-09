@@ -10,8 +10,8 @@
          <div class="modal-body">
            <div class="form-group">
              <label for="name">Category</label>
-             <select id="name" name="name">
-               <option id="name-{{selected}}"value={{name}}>{{name}}</option>
+             <select id="name-{{selected}}" name="name">
+               <option value={{name}}>{{name}}</option>
                {{#each categories}}
                  {{> name_option}}
                {{/each}}
