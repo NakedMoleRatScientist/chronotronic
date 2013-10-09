@@ -16,16 +16,6 @@ Template.event.events =
       Session.set("timer","resume")      
       Session.set("eventId",this._id)
 
-  "click .name" : () ->
-    id = "name-"+ this._id
-    hid = "#" + id
-    name = this.name
-    $(hid).replaceWith("<input id=#{id} type='text' value='" + name + "'/>")
-    $(hid).focus()
-    $(hid).blur(() ->
-      $(hid).replaceWith("<p id=#{id} class='name'>" + name + "</p>")
-    )
-
   "keydown" : (e) ->
     if navigator.appCodeName == "Mozilla"
       hid = '#' + e.target.id
