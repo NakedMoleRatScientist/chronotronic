@@ -15,16 +15,3 @@ Template.event.events =
     if Session.get("timer") == "start"
       Session.set("timer","resume")      
       Session.set("eventId",this._id)
-
-  "keydown" : (e) ->
-    if navigator.appCodeName == "Mozilla"
-      hid = '#' + e.target.id
-    else
-      hid = '#' + e.srcElement.id
-    if e.which == 13
-      switch(e.target.type)
-        when 'text'
-          Events.update(this._id, {$set: {name: $(hid).val()}})
-        when 'date'
-          d = moment($(hid).val())._d
-          Events.update(this._id, {$set: {date: d}})
