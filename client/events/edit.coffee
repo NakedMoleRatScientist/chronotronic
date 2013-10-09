@@ -37,7 +37,9 @@ Template.event_edit.events =
 
     #DATE
     date = $("#date-" + id).val()
-    console.log(date)
+
+    #CATEGORY
+    name = $("#name").val()
     
     #Update everything
     Events.update(this._id,{$set: {seconds: total, date: moment(date)._d}})
