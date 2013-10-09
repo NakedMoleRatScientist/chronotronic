@@ -13,12 +13,16 @@
   <table class="table">
     {{#if toggl}}
       <legend>All Events</legend>
-      <input type="button" id="today" value="Show Today" />
+      <button type="button" class="btn btn-default" id="today">
+        <span class="glyphicon glyphicon-list"></span> Show Today
+      </button>
     {{else}}
       <legend>Events of {{date}}</legend>
       <b>Total Hours Spent: {{total}}</b>
       <br />
-      <input type="button" id="all" value="Show All" />
+      <button type="button" class="btn btn-default" id="all">
+        <span class="glyphicon glyphicon-list"></span> Show All
+      </button>
       <button type="button" class="btn btn-default" id="previous">
         <span class="glyphicon glyphicon-chevron-left"></span> Left
       </button>
