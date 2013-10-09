@@ -39,10 +39,10 @@ Template.event_edit.events =
     date = $("#date-" + id).val()
 
     #CATEGORY
-    name = $("#name").val()
+    name = $("#name-" + id).val()
     
     #Update everything
-    Events.update(this._id,{$set: {seconds: total, date: moment(date)._d}})
+    Events.update(this._id,{$set: {seconds: total, date: moment(date)._d, name: name}})
 
     
     
