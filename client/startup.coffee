@@ -12,6 +12,7 @@ Session.set("goalnav","goals")
 Session.set("eventnav", 0)
 Session.set("weeknav", 0)
 Session.set("category", false)
+Session.set("edit_event", false)
 Meteor.subscribe("posts", () ->
   console.log("Subscription to posts successful")        
 )
