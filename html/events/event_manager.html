@@ -46,6 +46,6 @@
     </tbody>
   </table>
   {{#if is_event_ready}}
-    {{> event_edit}}
+    {{> event_edit Session.get("edit_event")}}
   {{/if}}
 </template>
