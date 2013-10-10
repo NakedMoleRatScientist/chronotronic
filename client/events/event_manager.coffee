@@ -18,6 +18,10 @@ Template.event_manager.list = () ->
     end = moment().subtract("days", d).endOf("day")._d
     Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
 
+Template.event_manager.is_event_ready = () ->
+  if Session.get("edit_event") != false
+    return true
+  false
 
 Template.event_manager.create = () ->
   Session.get("createEvent")
