@@ -52,4 +52,6 @@ Template.event_edit.events =
     unless Session.get("eventId") == this._id
       Events.remove({_id: this._id})
       Session.set("edit_event",false)
+  'click #close': () ->
+    Session.set("edit_event",false)            
     
