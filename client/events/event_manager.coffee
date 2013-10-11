@@ -23,6 +23,9 @@ Template.event_manager.is_event_ready = () ->
     return true
   false
 
+Template.event_manager.get_edit_event = () ->
+  Session.get("edit_event")
+  
 Template.event_manager.create = () ->
   Session.get("createEvent")
 
