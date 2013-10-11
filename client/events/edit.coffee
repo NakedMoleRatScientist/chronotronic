@@ -44,6 +44,7 @@ Template.event_edit.events =
     
     #Update everything
     Events.update(this._id,{$set: {seconds: total, date: moment(date)._d, name: name}})
+    Session.set("edit_event",false)
 
     
     
