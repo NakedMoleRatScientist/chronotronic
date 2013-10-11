@@ -9,7 +9,9 @@
   <table class="table">
     <legend>Week of {{week_of}}</legend>
     <p>Week total: {{total_for_week}}</p>
-    <input type="button" id="previous" value="previous">
+    <button type="button" class="btn btn-default" id="previous">
+      <span class="glyphicon glyphicon-chevron-left"></span> Previous
+    </button>
     {{#unless last_page}}
     <input type="button" id="next" value="next">
     {{/unless}}
