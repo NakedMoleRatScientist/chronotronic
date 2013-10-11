@@ -16,4 +16,4 @@ Template.event.events =
       Session.set("timer","resume")      
       Session.set("eventId",this._id)
   'click #edit' : () ->
-    Session.set("edit_event",this._id)
+    Session.set("edit_event",this)
