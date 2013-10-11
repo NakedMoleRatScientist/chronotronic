@@ -12,6 +12,7 @@ Template.event_edit.categories = () ->
   names
 
 Template.event_edit.rendered = () ->
+  $("#editModal").modal().show()
   $(".date").datepicker({dateFormat: "yy-mm-dd"})
 
 Template.event_edit.date = () ->
