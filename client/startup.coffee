@@ -11,6 +11,8 @@ Session.set("loginState",false)
 Session.set("goalnav","goals")
 Session.set("eventnav", 0)
 Session.set("weeknav", 0)
+
+#category ID for selected category
 Session.set("category", false)
 
 #random ID for a non-logged in user.
