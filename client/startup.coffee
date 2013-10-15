@@ -13,6 +13,9 @@ Session.set("eventnav", 0)
 Session.set("weeknav", 0)
 Session.set("category", false)
 
+#random ID for a non-logged in user.
+Session.set("anon_id",Random.id())
+
 #Determine what event to edit.
 Session.set("edit_event", false)
 
