@@ -1,7 +1,3 @@
-@One = new Meteor.Collection("Events")
-@Two = new Meteor.Collection(null)
-  
-@Events = @One
 @Goals = new Meteor.Collection("Goals")
 @GoalTemplates = new Meteor.Collection("GoalTemplate")
 @Users = new Meteor.Collection("Users")
@@ -36,7 +32,6 @@ adminPermissions = {
     object.user_id == userId        
 }
 
-One.allow(genericPermission)
 Goals.allow(genericPermission)
 GoalTemplates.allow(genericPermission)
 Categories.allow(genericPermission)
