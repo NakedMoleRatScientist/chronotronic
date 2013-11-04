@@ -10,6 +10,8 @@ Session.set("events_toggl",false)
 Session.set("loginState",false)
 Session.set("goalnav","goals")
 Session.set("eventnav", 0)
+
+#weekNav for navigating event history by weeks
 Session.set("weeknav", 0)
 
 #category ID for selected category
