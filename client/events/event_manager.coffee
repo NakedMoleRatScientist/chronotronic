@@ -10,13 +10,16 @@ Template.event_manager.total = () ->
   hours_by_day(day._d).toFixed(2)
 
 Template.event_manager.list = () ->
+  id = Meteor.userId()
+  if id == null
+    id = Session.get("anon_id")
   if (Session.get("events_toggl"))
-    Events.find({user_id: Meteor.userId()}, {sort: {seconds: 1}})
+    Events.find({user_id: id}, {sort: {seconds: 1}})
   else
     d = Session.get("eventnav")
     start = moment().subtract("days",d).startOf("day")._d
     end = moment().subtract("days", d).endOf("day")._d
-    Events.find({user_id: Meteor.userId(), date: {$gte: start, $lt: end} })
+    Events.find({user_id: id, date: {$gte: start, $lt: end} })
 
 Template.event_manager.get_edit_event = () ->
   Session.get("edit_event")
