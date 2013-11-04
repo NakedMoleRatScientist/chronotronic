@@ -11,6 +11,9 @@ Session.set("loginState",false)
 Session.set("goalnav","goals")
 Session.set("eventnav", 0)
 
+#anonymous user profile
+@profile = {pomotime: 10, activitylength: 60, mode: "Normal"}
+
 #weekNav for navigating event history by weeks
 Session.set("weeknav", 0)
 
