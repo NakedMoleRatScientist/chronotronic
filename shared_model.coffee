@@ -36,7 +36,7 @@ adminPermissions = {
     object.user_id == userId        
 }
 
-Events.allow(genericPermission)
+One.allow(genericPermission)
 Goals.allow(genericPermission)
 GoalTemplates.allow(genericPermission)
 Categories.allow(genericPermission)
