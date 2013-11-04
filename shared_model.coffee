@@ -1,3 +1,6 @@
+@One = new Meteor.Collection("Events")
+@Two = new Meteor.Collection(null)
+  
 @Events = new Meteor.Collection("Events")
 @Goals = new Meteor.Collection("Goals")
 @GoalTemplates = new Meteor.Collection("GoalTemplate")
