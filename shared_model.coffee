@@ -1,7 +1,7 @@
 @One = new Meteor.Collection("Events")
 @Two = new Meteor.Collection(null)
   
-@Events = new Meteor.Collection("Events")
+@Events = @One
 @Goals = new Meteor.Collection("Goals")
 @GoalTemplates = new Meteor.Collection("GoalTemplate")
 @Users = new Meteor.Collection("Users")
