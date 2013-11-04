@@ -1,3 +1,17 @@
+@Events = new Meteor.Collection("Events")
+genericPermission = {
+    insert: (userId,object) ->
+      return false if !Meteor.user()
+      object.user_id == userId
+    update: (userId,object) ->
+      return false if !Meteor.user()
+      object.user_id == userId
+    remove: (userId,object) ->
+      return false if !Meteor.user()
+      object.user_id == userId
+  }
+
+Events.allow(genericPermission)
 Meteor.publish("events",
   () ->    
 #    Events.find({$or:[{user_id: this.userId}]})
