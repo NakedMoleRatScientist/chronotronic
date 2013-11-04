@@ -26,3 +26,11 @@ Session.set("edit_event", false)
 Meteor.subscribe("posts", () ->
   console.log("Subscription to posts successful")        
 )
+
+Deps.autorun(() => 
+  user = Meteor.userId()
+  if user != null
+    @Events = @One
+  else if user == null
+    @Events = @Two
+)
