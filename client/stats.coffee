@@ -1,3 +1,24 @@
+Template.stats.rendered = () ->
+  width = 800
+  height = 600
+
+  svg = d3.select("#svg")
+  .append("svg")
+  .attr("width",width)
+  .attr("height",height)
+
+  var colors = [
+    "#ffffd9",
+    "#edf8b1",
+    "#c7e9b4",
+    "#7fcdbb",
+    "#41b6c4",
+    "#1d91c0",
+    "#225ea8",
+    "#253494",
+    "#081d58"
+  ]
+  
 Template.stats.total_hours = () ->
   seconds = 0
   events = Events.find({user_id: Meteor.userId()})
