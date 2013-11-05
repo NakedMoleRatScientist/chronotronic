@@ -19,6 +19,16 @@ Template.stats.rendered = () ->
     "#081d58"
   ]
 
+  total = total_for_week()
+
+  svg.append("rect")
+  .attr("x",100)
+  .attr("y",100)
+  .attr("width",100)
+  .attr("height",100)
+  .attr("fill", colors[Math.floor(total / 5)])
+
+
 Template.stats.total_hours = () ->
   seconds = 0
   events = Events.find({user_id: Meteor.userId()})
