@@ -18,7 +18,7 @@ Template.stats.rendered = () ->
     "#253494",
     "#081d58"
   ]
-  
+
 Template.stats.total_hours = () ->
   seconds = 0
   events = Events.find({user_id: Meteor.userId()})
@@ -39,14 +39,17 @@ Template.stats.this_week = () ->
   for d in dates
     newdates.push(date: d.date, total: d.total.toFixed(2))
   newdates  
-  
-Template.stats.total_for_week = () ->  
+
+total_for_week = () ->
   seconds = 0
   dates = get_week(Session.get("weeknav"))
   dates.forEach((d) ->
     seconds += d.total
   )
   seconds.toFixed(2)
+  
+Template.stats.total_for_week = () ->  
+  total_for_week()
     
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
