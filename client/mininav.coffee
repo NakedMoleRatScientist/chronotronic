@@ -10,5 +10,3 @@ Template.mininav.events =
     Session.set("mininav","events")
   'click #categories': () ->
     Session.set("mininav","categories")
-  'click #settings': () ->
-    Session.set("mininav","settings")    
