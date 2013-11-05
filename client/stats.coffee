@@ -7,7 +7,7 @@ Template.stats.rendered = () ->
   .attr("width",width)
   .attr("height",height)
 
-  var colors = [
+  colors = [
     "#ffffd9",
     "#edf8b1",
     "#c7e9b4",
