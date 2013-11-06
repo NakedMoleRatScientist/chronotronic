@@ -50,9 +50,9 @@ Template.stats.this_week = () ->
     newdates.push(date: d.date, total: d.total.toFixed(2))
   newdates  
 
-total_for_week = (d = Session.get("weeknav")) ->
+total_for_week = (n = Session.get("weeknav")) ->
   seconds = 0
-  dates = d
+  dates = get_week(n)
   dates.forEach((d) ->
     seconds += d.total
   )
