@@ -72,7 +72,8 @@ total_for_week = (n = Session.get("weeknav")) ->
   dates.forEach((d) ->
     seconds += d.total
   )
-  seconds.toFixed(2)
+  name = dates[0].date
+  (name: name, total: seconds.toFixed(2))
 
 Template.stats.total_for_week = () ->  
   total_for_week()
