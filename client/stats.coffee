@@ -19,7 +19,12 @@ Template.stats.rendered = () ->
     "#081d58"
   ]
 
-  last_4_weeks = [total_for_week(),total_for_week(1),total_for_week(2),total_for_week(3)]
+  last_4_weeks = [
+    {total: total_for_week() },
+    {total: total_for_week(1)},
+    {total: total_for_week(2)},
+    {total: total_for_week(3)}
+  ]
 
   
   svg.selectAll("rect.week")
@@ -33,8 +38,8 @@ Template.stats.rendered = () ->
   .attr("width",50)
   .attr("height",50)
   .attr("fill",(d) ->
-    if d <= 40
-      return colors[Math.floor(d / 5)]
+    if d.total <= 40
+      return colors[Math.floor(d.total / 5)]
     else
       return colors[7]
   )
