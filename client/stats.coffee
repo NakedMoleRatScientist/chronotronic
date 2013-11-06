@@ -21,12 +21,23 @@ Template.stats.rendered = () ->
 
   last_4_weeks = [total_for_week(),total_for_week(1),total_for_week(2),total_for_week(3)]
 
-  svg.append("rect")
+  
+  svg.selectAll("rect.week")
+  .data(last_4_weeks)
+  .enter()
+  .append("rect")
   .attr("x",100)
-  .attr("y",100)
-  .attr("width",100)
-  .attr("height",100)
-  .attr("fill", colors[Math.floor(last_4_weeks[0] / 5)])
+  .attr("y",(d,i) ->
+    return 50 + 60 * i
+  )
+  .attr("width",50)
+  .attr("height",50)
+  .attr("fill",(d) ->
+    if d <= 40
+      return colors[Math.floor(d / 5)]
+    else
+      return colors[7]
+  )
 
 
 Template.stats.total_hours = () ->
