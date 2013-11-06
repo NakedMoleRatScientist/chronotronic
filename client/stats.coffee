@@ -19,14 +19,14 @@ Template.stats.rendered = () ->
     "#081d58"
   ]
 
-  last_4_week = [total_for_week(),total_for_week(1),total_for_week(2),total_for_week(3)]
+  last_4_weeks = [total_for_week(),total_for_week(1),total_for_week(2),total_for_week(3)]
 
   svg.append("rect")
   .attr("x",100)
   .attr("y",100)
   .attr("width",100)
   .attr("height",100)
-  .attr("fill", colors[Math.floor(last_4_week[0] / 5)])
+  .attr("fill", colors[Math.floor(last_4_weeks[0] / 5)])
 
 
 Template.stats.total_hours = () ->
