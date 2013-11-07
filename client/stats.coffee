@@ -19,13 +19,11 @@ Template.stats.rendered = () ->
     "#081d58"
   ]
 
-  last_4_weeks = [
-    {total: total_for_week() },
-    {total: total_for_week(1)},
-    {total: total_for_week(2)},
-    {total: total_for_week(3)}
-  ]
+  last_4_weeks = []
 
+  for i in [0..3] by 1
+    o = total_for_week(i)
+    last_4_weeks.push({name: o.name, total: o.total})
   
   svg.selectAll("rect.week")
   .data(last_4_weeks)
@@ -76,7 +74,7 @@ total_for_week = (n = Session.get("weeknav")) ->
   (name: name, total: seconds.toFixed(2))
 
 Template.stats.total_for_week = () ->  
-  total_for_week()
+  total_for_week().total
     
 Template.stats.size = () ->
   Events.find({user_id: Meteor.userId()}).count()
