@@ -48,7 +48,7 @@ Template.stats.rendered = () ->
     .append("text")
     .attr("x",10)
     .attr("y",(d,i) ->
-      return 50 + 50 * i
+      return 70 + 70 * i
     )
     .text("Hello")
     .attr("fill", "black")
