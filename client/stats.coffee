@@ -24,24 +24,35 @@ Template.stats.rendered = () ->
   for i in [0..3] by 1
     o = total_for_week(i)
     last_4_weeks.push({name: o.name, total: o.total})
-  
-  svg.selectAll("rect.week")
-  .data(last_4_weeks)
-  .enter()
-  .append("rect")
-  .attr("x",10)
-  .attr("y",(d,i) ->
-    return 50 + 70 * i
-  )
-  .attr("width",50)
-  .attr("height",50)
-  .attr("fill",(d) ->
-    if d.total <= 40
-      return colors[Math.floor(d.total / 5)]
-    else
-      return colors[7]
-  )
 
+  svg.selectAll("rect.week")
+    .data(last_4_weeks)
+    .enter()
+    .append("rect")
+    .attr("x",10)
+    .attr("y",(d,i) ->
+      return 50 + 70 * i
+    )
+    .attr("width",50)
+    .attr("height",50)
+    .attr("fill",(d) ->
+      if d.total <= 40
+        return colors[Math.floor(d.total / 5)]
+      else
+        return colors[7]
+    )
+
+    svg.selectAll("text.week")
+    .data(last_4_weeks)
+    .enter()
+    .append("text")
+    .attr("x",10)
+    .attr("y",(d,i) ->
+      return 50 + 50 * i
+    )
+    .attr("fill", "black")
+    .attr("font-size", "20px")
+    .attr("font-family", "sans-serif")
 
 Template.stats.total_hours = () ->
   seconds = 0
