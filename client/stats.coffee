@@ -29,9 +29,9 @@ Template.stats.rendered = () ->
   .data(last_4_weeks)
   .enter()
   .append("rect")
-  .attr("x",100)
+  .attr("x",10)
   .attr("y",(d,i) ->
-    return 50 + 60 * i
+    return 50 + 70 * i
   )
   .attr("width",50)
   .attr("height",50)
