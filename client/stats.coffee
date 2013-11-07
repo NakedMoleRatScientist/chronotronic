@@ -50,6 +50,7 @@ Template.stats.rendered = () ->
     .attr("y",(d,i) ->
       return 50 + 50 * i
     )
+    .text("Hello")
     .attr("fill", "black")
     .attr("font-size", "20px")
     .attr("font-family", "sans-serif")
