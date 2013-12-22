@@ -4,7 +4,7 @@ alarm = new Audio("alarmclock.wav")
 resume = "normal"
 
 playAlarm = () ->
-  alarm.play()
+#  alarm.play()
 
 stopAlarm = () ->
   alarm.pause()
