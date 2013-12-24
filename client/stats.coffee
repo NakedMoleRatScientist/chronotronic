@@ -37,7 +37,8 @@ Template.stats.rendered = () ->
     .attr("height",50)
     .attr("fill",(d) ->
       if d.total <= 40
-        return colors[Math.floor(d.total / 5)]
+        which = Math.floor(d.total / 5)
+        return colors[which]
       else
         return colors[7]
     )
