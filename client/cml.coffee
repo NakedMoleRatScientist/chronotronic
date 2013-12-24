@@ -6,6 +6,7 @@
   name = "blah" + random_num() + random_num()
   Events.insert({user_id: Meteor.userId(), seconds: (random_num() + random_num() * random_num()), pomo: 0 ,date: date._d, name: name})
 
+#Destroy last event
 @cdestroylast = () ->
   events = Events.find({user_id: Meteor.userId()}).fetch()
   e = Events.remove({_id: events[events.length - 1]._id})
