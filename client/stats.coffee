@@ -63,6 +63,11 @@ Template.stats.rendered = () ->
     
     svg.selectAll("rect.days")
     .data(days)
+    .enter()
+    .append("rect")
+    .attr("x",(d,i) ->
+      return 10 * i
+     )
 
 Template.stats.total_hours = () ->
   seconds = 0
