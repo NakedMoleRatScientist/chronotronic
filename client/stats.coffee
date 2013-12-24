@@ -68,6 +68,9 @@ Template.stats.rendered = () ->
     .attr("x",(d,i) ->
       return 10 * i
      )
+    .attr("y",(d,i) ->
+      times = i / 7
+    )
 
 Template.stats.total_hours = () ->
   seconds = 0
