@@ -58,6 +58,12 @@ Template.stats.rendered = () ->
     .attr("font-size", "20px")
     .attr("font-family", "sans-serif")
 
+    days = get_week(0)
+    days.concat(get_week(1),get_week(2),get_week(3))
+    
+    svg.selectAll("rect.days")
+    .data(days)
+
 Template.stats.total_hours = () ->
   seconds = 0
   events = Events.find({user_id: Meteor.userId()})
