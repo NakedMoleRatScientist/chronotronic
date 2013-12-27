@@ -69,8 +69,13 @@ Template.stats.rendered = () ->
       return 10 * i
      )
     .attr("y",(d,i) ->
-      times = i / 7
+      times = Math.floor(i / 7)
+      return 10 * (1 + times)
     )
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill","black")
+    
 
 Template.stats.total_hours = () ->
   seconds = 0
