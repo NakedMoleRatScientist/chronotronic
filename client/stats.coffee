@@ -59,18 +59,20 @@ Template.stats.rendered = () ->
     .attr("font-family", "sans-serif")
 
     days = get_week(0)
-    days.concat(get_week(1),get_week(2),get_week(3))
+    days = days.concat(get_week(1),get_week(2),get_week(3))
+    
     
     svg.selectAll("rect.days")
     .data(days)
     .enter()
     .append("rect")
     .attr("x",(d,i) ->
-      return 10 * i
+      n = i % 7
+      return 20 * n
      )
     .attr("y",(d,i) ->
       times = Math.floor(i / 7)
-      return 10 * (1 + times)
+      return 25 * (1 + times)
     )
     .attr("width", 10)
     .attr("height", 10)
