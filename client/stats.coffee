@@ -72,7 +72,7 @@ Template.stats.rendered = () ->
      )
     .attr("y",(d,i) ->
       times = Math.floor(i / 7)
-      return 25 * (1 + times) + 30
+      return 70 * (1 + times)
     )
     .attr("width", 10)
     .attr("height", 10)
