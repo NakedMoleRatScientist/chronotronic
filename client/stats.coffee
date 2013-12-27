@@ -76,7 +76,13 @@ Template.stats.rendered = () ->
     )
     .attr("width", 25)
     .attr("height", 25)
-    .attr("fill","black")
+    .attr("fill",(d,i) ->
+      which = Math.floor(d.total)
+      if which >= 8
+        return colors[7]
+      else
+        return colors[which]
+    )
     
 
 Template.stats.total_hours = () ->
