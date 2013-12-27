@@ -52,7 +52,8 @@ Template.stats.rendered = () ->
       return 70 + 70 * i
     )
     .text((d)->
-      d.name
+      name = d.name.split("-")
+      return name[1] + "-" + name[2]
     )
     .attr("fill", "black")
     .attr("font-size", "20px")
