@@ -68,11 +68,11 @@ Template.stats.rendered = () ->
     .append("rect")
     .attr("x",(d,i) ->
       n = i % 7
-      return 20 * n
+      return 20 * n + 100
      )
     .attr("y",(d,i) ->
       times = Math.floor(i / 7)
-      return 25 * (1 + times)
+      return 25 * (1 + times) + 30
     )
     .attr("width", 10)
     .attr("height", 10)
