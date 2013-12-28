@@ -70,7 +70,7 @@ Template.stats.rendered = () ->
     .append("rect")
     .attr("x",(d,i) ->
       n = i % 7
-      return 26 * n + 100
+      return 30 * n + 100
      )
     .attr("y",(d,i) ->
       times = Math.floor(i / 7)
