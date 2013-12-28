@@ -85,6 +85,7 @@ Template.stats.rendered = () ->
       else
         return colors[which]
     )
+    .attr("stroke","black")
     
 
 Template.stats.total_hours = () ->
