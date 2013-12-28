@@ -42,6 +42,7 @@ Template.stats.rendered = () ->
       else
         return colors[7]
     )
+    .attr("stroke","black")
 
     svg.selectAll("text.week")
     .data(last_4_weeks)
