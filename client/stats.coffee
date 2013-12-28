@@ -57,7 +57,7 @@ Template.stats.rendered = () ->
       return name[1] + "-" + name[2]
     )
     .attr("fill", "black")
-    .attr("font-size", "20px")
+    .attr("font-size", "15px")
     .attr("font-family", "sans-serif")
 
     days = get_week(0)
