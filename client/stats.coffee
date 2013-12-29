@@ -48,7 +48,7 @@ Template.stats.rendered = () ->
     .data(last_4_weeks)
     .enter()
     .append("text")
-    .attr("x",10)
+    .attr("x",13)
     .attr("y",(d,i) ->
       return 70 + 70 * i
     )
