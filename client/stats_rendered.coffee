@@ -57,6 +57,7 @@ Template.stats.rendered = () ->
       return 70 + 70 * i
     )
     .text((d)->
+      day = moment(d).format(dddd)
       name = d.name.split("-")
       return name[1] + "-" + name[2]
     )
