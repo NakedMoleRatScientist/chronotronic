@@ -1,5 +1,5 @@
 Template.stats.rendered = () ->
-  width = 800
+  width = 350
   height = 600
 
   svg = d3.select("#svg")
