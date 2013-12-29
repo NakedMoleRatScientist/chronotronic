@@ -85,5 +85,9 @@ Template.stats.rendered = () ->
       else
         return colors[which]
     )
-    .attr("stroke","black")
+    .attr("stroke",(d,i) ->
+      which = Math.floor(d.total)
+      if which == 0
+        return "black"
+    )
     
