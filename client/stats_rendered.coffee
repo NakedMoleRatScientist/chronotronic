@@ -47,8 +47,6 @@ Template.stats.rendered = () ->
       if which == 0
         return "black"
     )
-    day = moment(last_4_weeks[last_4_weeks.length - 1].name).format("dddd")
-    console.log(day)
     svg.selectAll("text.week")
     .data(last_4_weeks)
     .enter()
