@@ -47,7 +47,8 @@ Template.stats.rendered = () ->
       if which == 0
         return "black"
     )
-
+    day = moment(last_4_weeks[last_4_weeks.length - 1].name).format("dddd")
+    console.log(day)
     svg.selectAll("text.week")
     .data(last_4_weeks)
     .enter()
@@ -57,7 +58,6 @@ Template.stats.rendered = () ->
       return 70 + 70 * i
     )
     .text((d)->
-      day = moment(d).format(dddd)
       name = d.name.split("-")
       return name[1] + "-" + name[2]
     )
