@@ -66,7 +66,6 @@ Template.stats.rendered = () ->
     days = get_week(0)
     days = days.concat(get_week(1),get_week(2),get_week(3))
     
-    
     svg.selectAll("rect.days")
     .data(days)
     .enter()
@@ -93,4 +92,8 @@ Template.stats.rendered = () ->
       if which == 0
         return "black"
     )
+    .on("click",(d) ->
+      console.log(Math.floor(d.total))
+    )
+
     
