@@ -95,11 +95,10 @@ Template.stats.rendered = () ->
     .on("click",(d) ->
       svg
       .append("rect")
-      .attr("x",300)
+      .attr("x",400)
       .attr("y",50)
       .attr("width",100)
       .attr("height",100)
-      .attr("fill","black")
       .attr("stroke","black")
       console.log("beep")
     )
