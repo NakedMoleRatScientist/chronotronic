@@ -93,7 +93,15 @@ Template.stats.rendered = () ->
         return "black"
     )
     .on("click",(d) ->
-      console.log(Math.floor(d.total))
+      svg.selectAll("rect.info")
+      .append("rect")
+      .attr("x",300)
+      .attr("y",50)
+      .attr("width",100)
+      .attr("height",100)
+      .attr("fill","black")
+      .attr("stroke","black")
+      console.log("beep")
     )
 
     
