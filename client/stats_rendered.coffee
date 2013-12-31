@@ -93,7 +93,7 @@ Template.stats.rendered = () ->
         return "black"
     )
     .on("click",(d) ->
-      svg.selectAll("rect.info")
+      svg
       .append("rect")
       .attr("x",300)
       .attr("y",50)
